@@ -15,22 +15,43 @@ class Simd(r: Int, c: Int) {
 
 }
 
-class ProblemGenerator(board: Board, root: String, other: List[String], diff: Int=1) {
-  def solve: List[SimdConstraint] = other match {
-    case Nil => solveRootOnly
-    case y => {
-      val cons = y flatMap { n => new ProblemGenerator(board, n, Nil, diff).solve }
-      cons
-    }
+case class Plan(cur: String, children: List[Plan]) {
+  def solved: List[String] = this match {
+    case Plan(x, Nil) => List(x)
+    case Plan(x, y) => x :: (y flatMap { _.solved })
   }
-  def solveRootOnly: List[SimdConstraint] = {
-    Nil
+}
+
+case class ProblemGenerator(board: Board, sol: Map[String,Int]) {
+  def solve(plan: Plan): List[SimdConstraint] = plan match {
+    case Plan(x, Nil) => {
+      val valid = SimdConstraint.allValidPrimary(board, sol) filter { c => c.ball==x }
+      // TODO: Trim
+      valid
+    }
+    case Plan(x, y) => {
+      val solved = y flatMap { _.solved }
+      val cons = y flatMap { solve(_) }
+      val valid = SimdConstraint.allValidSecondary(board, sol) filter { c => c.b1==x || c.b2==x }
+      // TODO: Trim
+      valid
+    }
   }
 }
 
 object TestSimd {
   def main(args: Array[String]): Unit = {
-    simpleSolve();
+    //simpleSolve();
+    testGenerator();
+  }
+
+  def testGenerator() = {
+    val board = Board(List(Space(Black, 1, Set(Red), 0, 0), Space(Black, 2, Set(Green), 0, 0)))
+    val sol = Map("alpha" -> 0, "beta" -> 1)
+    val gen = ProblemGenerator(board, sol)
+    val plan = Plan("alpha", List(Plan("beta", Nil)))
+    val cons = gen.solve(plan)
+    println(cons);
   }
 
   def simpleSolve() = {

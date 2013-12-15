@@ -14,57 +14,57 @@ package com.xogeny.puzzles.simd
  *   * IsAdjacent
  */
 
-case object SameColor extends ConstraintGenerator {
+case object SameColor extends ConstraintGenerator[SecondaryConstraint] {
   def satisfies(s1: Space, s2: Space) = s1.color==s2.color;
-  def allValid(board: Board, sol: Map[String, Int]): List[SimdConstraint] = {
+  def allValid(board: Board, sol: Map[String, Int]): List[SecondaryConstraint] = {
     allValidPairsWhere(board, sol) { (ni, si, nj, sj) => if (satisfies(si, sj)) Some(SameColor(ni, nj)) else None }
   }
 }
 
-case class SameColor(b1: String, b2: String) extends SecondaryConstraint(b1, b2) {
+case class SameColor(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2) {
   def satisfies(s1: Space, s2: Space) = SameColor.satisfies(s1, s2);
 }
 
-case object SameNumber extends ConstraintGenerator {
+case object SameNumber extends ConstraintGenerator[SecondaryConstraint] {
   def satisfies(s1: Space, s2: Space) = s1.number==s2.number;
-  def allValid(board: Board, sol: Map[String, Int]): List[SimdConstraint] = {
+  def allValid(board: Board, sol: Map[String, Int]): List[SecondaryConstraint] = {
     allValidPairsWhere(board, sol) { (ni, si, nj, sj) => if (satisfies(si, sj)) Some(SameNumber(ni, nj)) else None }
   }
 }
 
-case class SameNumber(b1: String, b2: String) extends SecondaryConstraint(b1, b2) {
+case class SameNumber(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2) {
   def satisfies(s1: Space, s2: Space) = SameNumber.satisfies(s1, s2);
 }
 
-case object IsOnPathWith extends ConstraintGenerator {
+case object IsOnPathWith extends ConstraintGenerator[SecondaryConstraint] {
   def satisfies(s1: Space, s2: Space) = s1.path.intersect(s2.path).size>0;
-  def allValid(board: Board, sol: Map[String, Int]): List[SimdConstraint] = {
+  def allValid(board: Board, sol: Map[String, Int]): List[SecondaryConstraint] = {
     allValidPairsWhere(board, sol) { (ni, si, nj, sj) => if (satisfies(si, sj)) Some(IsOnPathWith(ni, nj)) else None }
   }
 }
 
-case class IsOnPathWith(b1: String, b2: String) extends SecondaryConstraint(b1, b2) {
+case class IsOnPathWith(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2) {
   def satisfies(s1: Space, s2: Space) = IsOnPathWith.satisfies(s1, s2);
 }
 
-case object LessThan extends ConstraintGenerator {
+case object LessThan extends ConstraintGenerator[SecondaryConstraint] {
   def satisfies(s1: Space, s2: Space) = s1.number<s2.number;
-  def allValid(board: Board, sol: Map[String, Int]): List[SimdConstraint] = {
+  def allValid(board: Board, sol: Map[String, Int]): List[SecondaryConstraint] = {
     allValidPairsWhere(board, sol) { (ni, si, nj, sj) => if (satisfies(si, sj)) Some(LessThan(ni, nj)) else None }
   }
 }
 
-case class LessThan(b1: String, b2: String) extends SecondaryConstraint(b1, b2) {
+case class LessThan(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2) {
   def satisfies(s1: Space, s2: Space) = LessThan.satisfies(s1, s2);
 }
 
-case object GreaterThan extends ConstraintGenerator {
+case object GreaterThan extends ConstraintGenerator[SecondaryConstraint] {
   def satisfies(s1: Space, s2: Space) = s1.number>s2.number;
-  def allValid(board: Board, sol: Map[String, Int]): List[SimdConstraint] = {
+  def allValid(board: Board, sol: Map[String, Int]): List[SecondaryConstraint] = {
     allValidPairsWhere(board, sol) { (ni, si, nj, sj) => if (satisfies(si, sj)) Some(GreaterThan(ni, nj)) else None }
   }
 }
 
-case class GreaterThan(b1: String, b2: String) extends SecondaryConstraint(b1, b2) {
+case class GreaterThan(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2) {
   def satisfies(s1: Space, s2: Space) = GreaterThan.satisfies(s1, s2);
 }
