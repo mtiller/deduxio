@@ -19,7 +19,7 @@ class TicTac(nrows: Int, ncols: Int) {
   val rows= 1 to nrows;
   val cols = 1 to ncols;
   val coords = rows flatMap { i => cols map { j => (i,j) }}
-  val vars = Map() ++ (coords map { p => (p -> mkVar(p._1, p._2)) })
+  val vars = Map() ++ (coords map { p => p -> mkVar(p._1, p._2) })
   val notThree = { (v1: IntVar, v2: IntVar, v3: IntVar) =>
     new Or(Array[PrimitiveConstraint](new XplusYplusQeqZ(v1, v2, v3, sv1),
       new XplusYplusQeqZ(v1, v2, v3, sv2)))}
@@ -37,8 +37,8 @@ class TicTac(nrows: Int, ncols: Int) {
   }
   def setX(i: Int, j: Int) = s.impose(new XeqC(vars.get((i,j)).get, 1))
   def setO(i: Int, j: Int) = s.impose(new XeqC(vars.get((i,j)).get, 0))
-  val hcons = rows flatMap { i => cols dropRight(2) map { j => hcon(i, j) }};
-  val vcons = rows dropRight(2) flatMap { i => cols map { j => vcon(i, j) }};
+  val hcons = rows flatMap { i => cols dropRight 2 map { j => hcon(i, j) }};
+  val vcons = rows dropRight 2  flatMap { i => cols map { j => vcon(i, j) }};
   val rvars: Seq[Array[IntVar]] = rows map { i => (cols map { j => vars.get((i,j)).get }).toArray}
   val cvars: Seq[Array[IntVar]] = cols map { j => (rows map { i => vars.get((i,j)).get }).toArray}
 
