@@ -1,4 +1,4 @@
-package com.xogeny.puzzles.simd
+package com.xogeny.puzzles.tictac
 
 import JaCoP.core.{IntVar, Store}
 import JaCoP.constraints._
