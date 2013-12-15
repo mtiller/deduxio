@@ -7,23 +7,6 @@ import JaCoP.core.{Store, IntVar}
  */
 
 /**
- * Properties of each space:
- *   * Color (shape?)
- *   * Number
- *   * Path colors
- *   * x
- *   * y
- * Constraints:
- *   * IsColor
- *   * IsNumber
- *   * IsOnPathWith
- *   * IsOnPathOfColor
- *   * IsLessThan
- *   * IsGreaterThan
- *   * IsAdjacent
- */
-
-/**
  * Used to build statement of Simd problems
  * @param r
  * @param c
@@ -51,7 +34,7 @@ object TestSimd {
   }
 
   def simpleSolve() = {
-    val board = Board(List(Space(Black, 1, Set(), 0, 0), Space(Black, 2, Set(), 0, 0)))
+    val board = Board(List(Space(Black, 1, Set(Red), 0, 0), Space(Black, 2, Set(Green), 0, 0)))
     val pos = SimdConstraint.allValid(board, Map("alpha" -> 0, "beta" -> 1))
     println("Possible constraints: "+pos);
     val prob = Problem(board, List("alpha", "beta"))

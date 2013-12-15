@@ -30,3 +30,12 @@ case class IsColor(v: String, c: Color) extends PrimaryConstraint(v) {
   def satisfies(s: Space) = s.color==c;
 }
 
+case object IsOnPath extends ConstraintGenerator {
+  def allValid(board: Board, sol: Map[String, Int]): List[SimdConstraint] = {
+    sol.toList flatMap { p => board.spaces(p._2).path.toList map { c: Color => IsOnPath(p._1, c) } }
+  }
+}
+case class IsOnPath(v: String, c: Color) extends PrimaryConstraint(v) {
+  def satisfies(s: Space) = s.path.contains(c)
+}
+

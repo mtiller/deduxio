@@ -10,11 +10,21 @@ import scala.Some
 
 trait ConstraintGenerator {
   def allValid(board: Board, sol: Map[String, Int]): List[SimdConstraint];
+  def allValidPairsWhere(board: Board, sol: Map[String, Int])(f: (String, Space, String, Space) => Option[SimdConstraint]): List[SimdConstraint] = {
+    val names = sol.keys.toList
+    for(i <- names;
+        j <- names;
+        si <- sol.get(i) map { board.spaces(_) };
+        sj <- sol.get(j) map { board.spaces(_) };
+        if i!=j;
+        con <- f(i, si, j, sj)) yield con
+  }
 }
 
 object SimdConstraint extends ConstraintGenerator {
   def allValid(board: Board, sol: Map[String,Int]): List[SimdConstraint] = {
-    IsNumber.allValid(board, sol) ::: IsColor.allValid(board, sol) ::: SameColor.allValid(board, sol)
+    val generators = List(IsNumber, IsColor, IsOnPath, SameColor, SameNumber, LessThan, GreaterThan, IsOnPathWith)
+    generators flatMap { _.allValid(board, sol) }
   }
 }
 
