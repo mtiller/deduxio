@@ -5,11 +5,9 @@ import scala.util.Random
 /**
  * Created by mtiller on 12/16/13.
  */
-case class Plan(cur: String, children: List[Plan]) {
-  def solved: List[String] = this match {
-    case Plan(x, Nil) => List(x)
-    case Plan(x, y) => x :: (y flatMap { _.solved })
-  }
+case class Plan(cur: List[String], children: List[Plan]) {
+  def solvedBelow: List[String] = children flatMap { _.solved }
+  def solved: List[String] = cur ::: solvedBelow
 }
 
 /* TODO: Stuff to try:
@@ -52,21 +50,29 @@ case class ProblemGenerator(board: Board, sol: Map[String,Int]) {
     }
   }
   def solve(plan: Plan): List[SimdConstraint] = plan match {
-    case Plan(x, Nil) => {
+    case Plan(x :: Nil, Nil) => {
       println("Solving for: "+x);
-      val valid = SimdConstraint.allValidPrimary(board, sol) filter { c => c.ball==x }
+      val valid = SimdConstraint.allValidPrimary(board, sol) filter { c => x==c.ball }
       checkValid(valid, List(x))
       val res = trim(List(x), Random.shuffle(valid), Nil)
       println("Constraints: "+res)
       res
     }
-    case Plan(x, y) => {
-      val solved = y flatMap { _.solved }
+    case Plan(xl, Nil) => {
+      println("Solving for: "+xl);
+      val valid = SimdConstraint.allValidSecondary(board, sol) filter { c => xl.contains(c.b1) || xl.contains(c.b2) }
+      checkValid(valid, xl)
+      val res = trim(xl, Random.shuffle(valid), Nil)
+      println("Constraints: "+res)
+      res
+    }
+    case p @ Plan(x, y) => {
+      val solved = p.solvedBelow;
       val cons = y flatMap { solve(_) }
       println("Solving for: "+x+", given: "+y)
-      val valid = SimdConstraint.allValidSecondary(board, sol) filter { c => c.b1==x || c.b2==x }
-      checkValid(valid ::: cons, x :: solved)
-      trim(x :: solved, Random.shuffle(valid ::: cons), Nil)
+      val valid = SimdConstraint.allValidSecondary(board, sol) filter { c => x.contains(c.b1) || x.contains(c.b2) }
+      checkValid(valid ::: cons, x ::: solved)
+      trim(x ::: solved, Random.shuffle(valid ::: cons), Nil)
     }
   }
 }
