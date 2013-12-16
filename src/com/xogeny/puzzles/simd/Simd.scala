@@ -31,6 +31,7 @@ case class ProblemGenerator(board: Board, sol: Map[String,Int]) {
       prob.impose(y)
       prob.impose(keep)
       val sols = prob.solveAll()
+      println("# of solutions:"+sols.length)
       // TODO: Ideally, this should just check to make sure the primary variable has only
       // one possible value across all solutions.
       if (sols.length==1) {
@@ -43,15 +44,26 @@ case class ProblemGenerator(board: Board, sol: Map[String,Int]) {
       }
     }
   }
+  def checkValid(valid: List[SimdConstraint], vars: List[String]) = {
+    val prob = Problem(board, vars)
+    prob.impose(valid)
+    val sols = prob.solveAll();
+    if (sols.length>1) {
+      println("Valid: "+valid)
+      throw new RuntimeException("Even with all valid constraints, we had "+sols.length+" solutions")
+    }
+  }
   def solve(plan: Plan): List[SimdConstraint] = plan match {
     case Plan(x, Nil) => {
       val valid = SimdConstraint.allValidPrimary(board, sol) filter { c => c.ball==x }
+      checkValid(valid, List(x))
       trim(Random.shuffle(valid), Nil)
     }
     case Plan(x, y) => {
       val solved = y flatMap { _.solved }
       val cons = y flatMap { solve(_) }
       val valid = SimdConstraint.allValidSecondary(board, sol) filter { c => c.b1==x || c.b2==x }
+      checkValid(valid ::: cons, x :: solved)
       trim(Random.shuffle(valid ::: cons), Nil)
     }
   }
