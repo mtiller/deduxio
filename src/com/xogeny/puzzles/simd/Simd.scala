@@ -7,58 +7,6 @@ import scala.util.Random
  * Created by mtiller on 12/14/13.
  */
 
-case class Plan(cur: String, children: List[Plan]) {
-  def solved: List[String] = this match {
-    case Plan(x, Nil) => List(x)
-    case Plan(x, y) => x :: (y flatMap { _.solved })
-  }
-}
-
-case class ProblemGenerator(board: Board, sol: Map[String,Int]) {
-  def trim[T <: SimdConstraint](c: List[T], keep: List[T]): List[T] = c match {
-    case Nil => keep
-    case x :: y => {
-      val prob = Problem(board, sol.keys.toList)
-      prob.impose(y)
-      prob.impose(keep)
-      val sols = prob.solveAll()
-      println("# of solutions:"+sols.length)
-      // TODO: Ideally, this should just check to make sure the primary variable has only
-      // one possible value across all solutions.
-      if (sols.length==1) {
-        println("We can get rid of "+x);
-        trim(y, keep) // x wasn't needed
-      }
-      else {
-        println("We have to keep "+x+" because otherwise we get "+sols.length+" solutions")
-        trim(y, x :: keep) // x was needed
-      }
-    }
-  }
-  def checkValid(valid: List[SimdConstraint], vars: List[String]) = {
-    val prob = Problem(board, vars)
-    prob.impose(valid)
-    val sols = prob.solveAll();
-    if (sols.length>1) {
-      println("Valid: "+valid)
-      throw new RuntimeException("Even with all valid constraints, we had "+sols.length+" solutions")
-    }
-  }
-  def solve(plan: Plan): List[SimdConstraint] = plan match {
-    case Plan(x, Nil) => {
-      val valid = SimdConstraint.allValidPrimary(board, sol) filter { c => c.ball==x }
-      checkValid(valid, List(x))
-      trim(Random.shuffle(valid), Nil)
-    }
-    case Plan(x, y) => {
-      val solved = y flatMap { _.solved }
-      val cons = y flatMap { solve(_) }
-      val valid = SimdConstraint.allValidSecondary(board, sol) filter { c => c.b1==x || c.b2==x }
-      checkValid(valid ::: cons, x :: solved)
-      trim(Random.shuffle(valid ::: cons), Nil)
-    }
-  }
-}
 
 
 object TestSimd {
@@ -70,9 +18,9 @@ object TestSimd {
   def testGenerator() = {
     val board = Board.random(4, 4, 0, 4, List(Red, Green, Blue, Yellow))
     println("Random board: "+board)
-    val sol = Map("alpha" -> 0, "beta" -> 1)
+    val sol = Map("alpha" -> 2, "beta" -> 9, "delta" -> 5)
     val gen = ProblemGenerator(board, sol)
-    val plan = Plan("alpha", List(Plan("beta", Nil)))
+    val plan = Plan("alpha", List(Plan("beta", Nil), Plan("delta", Nil)))
     val cons = gen.solve(plan)
     println(cons);
   }

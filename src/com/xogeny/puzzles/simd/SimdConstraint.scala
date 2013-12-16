@@ -26,11 +26,14 @@ object SimdConstraint extends ConstraintGenerator[SimdConstraint] {
     allValidPrimary(board, sol) ::: allValidSecondary(board, sol)
   }
   def allValidPrimary(board: Board, sol: Map[String,Int]): List[PrimaryConstraint] = {
-    val generators = List(IsNumber, IsColor, IsOnPath)
+    val generators = List(IsNumber, /* IsNotNumber, */ IsColor, /*IsNotColor,*/
+                          IsOnPath, IsRow /*, IsNotRow */ /*, IsNotColumn*/)
     generators flatMap { _.allValid(board, sol) }
   }
   def allValidSecondary(board: Board, sol: Map[String,Int]): List[SecondaryConstraint] = {
-    val generators = List(SameColor, SameNumber, LessThan, GreaterThan, IsOnPathWith, SameRow, SameCol)
+    val generators = List(SameColor, NotSameColor, SameNumber, NotSameNumber,
+                          LessThan, GreaterThan, IsOnPathWith, SameRow, SameCol,
+                          DifferentRow, DifferentColumn, AdjacentTo, NotAdjacentTo)
     generators flatMap { _.allValid(board, sol) }
   }
 }
@@ -38,21 +41,6 @@ object SimdConstraint extends ConstraintGenerator[SimdConstraint] {
 abstract class SimdConstraint {
   def constraints(prob: Problem): List[Constraint];
 }
-
-abstract class PrimaryConstraint(val ball: String) extends SimdConstraint {
-  def satisfies(s: Space): Boolean;
-  def constraints(prob: Problem): List[Constraint] = {
-    val candidates = ((0 to (prob.board.spaces.length-1)).toList filter { s => satisfies(prob.board.spaces(s)) }).toArray
-    val eqs = candidates map { new XeqC(prob.ball(ball), _) }
-    if (eqs.length==1) List(eqs(0))
-    else {
-      var ret = new util.ArrayList[PrimitiveConstraint];
-      eqs foreach { ret.add(_) }
-      List(new Or(ret));
-    }
-  }
-}
-
 
 abstract class SecondaryConstraint(val b1: String, val b2: String) extends SimdConstraint {
   def constraints(prob: Problem): List[Constraint] = {
