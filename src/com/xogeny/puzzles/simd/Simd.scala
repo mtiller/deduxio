@@ -7,15 +7,6 @@ import scala.util.Random
  * Created by mtiller on 12/14/13.
  */
 
-/**
- * Used to build statement of Simd problems
- * @param r
- * @param c
- */
-class Simd(r: Int, c: Int) {
-
-}
-
 case class Plan(cur: String, children: List[Plan]) {
   def solved: List[String] = this match {
     case Plan(x, Nil) => List(x)

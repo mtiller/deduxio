@@ -56,12 +56,12 @@ case class Problem(board: Board, ballNames: List[String]) {
     var select: SelectChoicePoint[IntVar]  =
       new InputOrderSelect[IntVar](store, vars.toArray,
         new IndomainMin[IntVar]());
-    search.getSolutionListener().searchAll(true);
-    search.getSolutionListener().recordSolutions(true);
+    search.getSolutionListener.searchAll(true);
+    search.getSolutionListener.recordSolutions(true);
     val result = search.labeling(store, select);
 
     if (result) {
-      val solnums = (1 to search.getSolutionListener().solutionsNo()).toList;
+      val solnums = (1 to search.getSolutionListener.solutionsNo()).toList;
       solnums map { i =>
         val sol = search.getSolution(i);
         val elems = (0 to sol.length-1).toList;
