@@ -31,8 +31,16 @@ case class ProblemGenerator(board: Board, sol: Map[String,Int]) {
       prob.impose(y)
       prob.impose(keep)
       val sols = prob.solveAll()
-      if (sols.length==1) trim(y, keep) // x wasn't needed
-      else trim(y, x :: keep) // x was needed
+      // TODO: Ideally, this should just check to make sure the primary variable has only
+      // one possible value across all solutions.
+      if (sols.length==1) {
+        println("We can get rid of "+x);
+        trim(y, keep) // x wasn't needed
+      }
+      else {
+        println("We have to keep "+x+" because otherwise we get "+sols.length+" solutions")
+        trim(y, x :: keep) // x was needed
+      }
     }
   }
   def solve(plan: Plan): List[SimdConstraint] = plan match {
@@ -44,10 +52,11 @@ case class ProblemGenerator(board: Board, sol: Map[String,Int]) {
       val solved = y flatMap { _.solved }
       val cons = y flatMap { solve(_) }
       val valid = SimdConstraint.allValidSecondary(board, sol) filter { c => c.b1==x || c.b2==x }
-      trim(Random.shuffle(valid), Nil)
+      trim(Random.shuffle(valid ::: cons), Nil)
     }
   }
 }
+
 
 object TestSimd {
   def main(args: Array[String]): Unit = {
@@ -56,7 +65,8 @@ object TestSimd {
   }
 
   def testGenerator() = {
-    val board = Board(List(Space(Black, 1, Set(Red), 0, 0), Space(Black, 2, Set(Green), 1, 0)))
+    val board = Board.random(4, 4, 0, 4, List(Red, Green, Blue, Yellow))
+    println("Random board: "+board)
     val sol = Map("alpha" -> 0, "beta" -> 1)
     val gen = ProblemGenerator(board, sol)
     val plan = Plan("alpha", List(Plan("beta", Nil)))
