@@ -23,15 +23,14 @@ trait ConstraintGenerator[T <: SimdConstraint] {
 
 object SimdConstraint extends ConstraintGenerator[SimdConstraint] {
   def allValid(board: Board, sol: Map[String,Int]): List[SimdConstraint] = {
-    val generators = List(IsNumber, IsColor, IsOnPath, SameColor, SameNumber, LessThan, GreaterThan, IsOnPathWith)
-    generators flatMap { _.allValid(board, sol) }
+    allValidPrimary(board, sol) ::: allValidSecondary(board, sol)
   }
   def allValidPrimary(board: Board, sol: Map[String,Int]): List[PrimaryConstraint] = {
     val generators = List(IsNumber, IsColor, IsOnPath)
     generators flatMap { _.allValid(board, sol) }
   }
   def allValidSecondary(board: Board, sol: Map[String,Int]): List[SecondaryConstraint] = {
-    val generators = List(SameColor, SameNumber, LessThan, GreaterThan, IsOnPathWith)
+    val generators = List(SameColor, SameNumber, LessThan, GreaterThan, IsOnPathWith, SameRow, SameCol)
     generators flatMap { _.allValid(board, sol) }
   }
 }

@@ -68,3 +68,26 @@ case object GreaterThan extends ConstraintGenerator[SecondaryConstraint] {
 case class GreaterThan(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2) {
   def satisfies(s1: Space, s2: Space) = GreaterThan.satisfies(s1, s2);
 }
+
+case object SameRow extends ConstraintGenerator[SecondaryConstraint] {
+  def satisfies(s1: Space, s2: Space) = s1.y==s2.y;
+  def allValid(board: Board, sol: Map[String, Int]): List[SecondaryConstraint] = {
+    allValidPairsWhere(board, sol) { (ni, si, nj, sj) => if (satisfies(si, sj)) Some(SameRow(ni, nj)) else None }
+  }
+}
+
+case class SameRow(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2) {
+  def satisfies(s1: Space, s2: Space) = SameRow.satisfies(s1, s2);
+}
+
+case object SameCol extends ConstraintGenerator[SecondaryConstraint] {
+  def satisfies(s1: Space, s2: Space) = s1.x==s2.x;
+  def allValid(board: Board, sol: Map[String, Int]): List[SecondaryConstraint] = {
+    allValidPairsWhere(board, sol) { (ni, si, nj, sj) => if (satisfies(si, sj)) Some(SameCol(ni, nj)) else None }
+  }
+}
+
+case class SameCol(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2) {
+  def satisfies(s1: Space, s2: Space) = SameCol.satisfies(s1, s2);
+}
+

@@ -1,6 +1,7 @@
 package com.xogeny.puzzles.simd
 
 import JaCoP.core.{Store, IntVar}
+import scala.util.Random
 
 /**
  * Created by mtiller on 12/14/13.
@@ -23,18 +24,27 @@ case class Plan(cur: String, children: List[Plan]) {
 }
 
 case class ProblemGenerator(board: Board, sol: Map[String,Int]) {
+  def trim[T <: SimdConstraint](c: List[T], keep: List[T]): List[T] = c match {
+    case Nil => keep
+    case x :: y => {
+      val prob = Problem(board, sol.keys.toList)
+      prob.impose(y)
+      prob.impose(keep)
+      val sols = prob.solveAll()
+      if (sols.length==1) trim(y, keep) // x wasn't needed
+      else trim(y, x :: keep) // x was needed
+    }
+  }
   def solve(plan: Plan): List[SimdConstraint] = plan match {
     case Plan(x, Nil) => {
       val valid = SimdConstraint.allValidPrimary(board, sol) filter { c => c.ball==x }
-      // TODO: Trim
-      valid
+      trim(Random.shuffle(valid), Nil)
     }
     case Plan(x, y) => {
       val solved = y flatMap { _.solved }
       val cons = y flatMap { solve(_) }
       val valid = SimdConstraint.allValidSecondary(board, sol) filter { c => c.b1==x || c.b2==x }
-      // TODO: Trim
-      valid
+      trim(Random.shuffle(valid), Nil)
     }
   }
 }
@@ -46,7 +56,7 @@ object TestSimd {
   }
 
   def testGenerator() = {
-    val board = Board(List(Space(Black, 1, Set(Red), 0, 0), Space(Black, 2, Set(Green), 0, 0)))
+    val board = Board(List(Space(Black, 1, Set(Red), 0, 0), Space(Black, 2, Set(Green), 1, 0)))
     val sol = Map("alpha" -> 0, "beta" -> 1)
     val gen = ProblemGenerator(board, sol)
     val plan = Plan("alpha", List(Plan("beta", Nil)))
