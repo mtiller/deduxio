@@ -43,46 +43,50 @@ case class ProblemGenerator(board: Board, sol: Map[String,Int], verbose: Boolean
       }
     }
   }
-  def checkValid(valid: List[SimdConstraint], vars: List[String]) = {
+  def checkValid(valid: List[SimdConstraint], vars: List[String]): Boolean = {
     val prob = Problem(board, vars)
     prob.impose(valid)
     val sols = prob.solveAll();
-    if (sols.length!=1) {
-      println("Valid: "+valid)
-      throw new RuntimeException("Even with all valid constraints, we had "+sols.length+" solutions")
-    }
+    sols.length==1
   }
-  def solve(plan: Plan): List[SimdConstraint] = plan match {
+  def solve(plan: Plan): Option[List[SimdConstraint]] = plan match {
     case Plan(x :: Nil, Nil) => {
       println("Solving (1) for: "+x);
       val valid = SimdConstraint.allValidPrimary(board, sol) filter { c => x==c.ball }
-      checkValid(valid, List(x))
-      val res = trim(List(x), shuffle(valid), Nil)
-      println("Constraints: "+res)
-      res
+      if (checkValid(valid, List(x))) {
+        val res = trim(List(x), shuffle(valid), Nil)
+        println("Constraints: "+res)
+        Some(res)
+      } else None
     }
     case p @ Plan(xl, Nil) => {
       val vars = p.solved;
       println("Solving (2) for: "+xl);
       val valid = SimdConstraint.allValidSecondary(board, sol) filter { c => vars.contains(c.b1) && vars.contains(c.b2) }
-      checkValid(valid, xl)
-      val res = trim(xl, shuffle(valid), Nil)
-      println("Constraints: "+res)
-      res
+      if (checkValid(valid, xl)) {
+        val res = trim(xl, shuffle(valid), Nil)
+        println("Constraints: "+res)
+        Some(res)
+      } else None
     }
     case p @ Plan(x, y) => {
       val solved = p.solvedBelow;
       val vars = p.solved;
-      val cons = y flatMap { solve(_) }
-      println("Solving (3) for: "+x+", given: "+y)
-      println("Cons for "+y+": "+cons)
-      /* If you add primary constraints here, you'll end up isolating the secondary variables so that they
-         don't really matter.
-       */
-      val valid = SimdConstraint.allValidSecondary(board, sol) filter { c => vars.contains(c.b1) && vars.contains(c.b2) }
-      println("Valid for "+x+": "+valid)
-      checkValid(valid ::: cons, x ::: solved)
-      trim(x ::: solved, shuffle(valid ::: cons), Nil)
+      val ysols = y map { solve(_) }
+      if (ysols.contains(None)) {
+        None
+      } else {
+        val cons = ysols flatMap { _.get }
+        println("Solving (3) for: "+x+", given: "+y)
+        println("Cons for "+y+": "+cons)
+        /* If you add primary constraints here, you'll end up isolating the secondary variables so that they
+           don't really matter.
+         */
+        val valid = SimdConstraint.allValidSecondary(board, sol) filter { c => vars.contains(c.b1) && vars.contains(c.b2) }
+        println("Valid for "+x+": "+valid)
+        if (checkValid(valid ::: cons, x ::: solved)) Some(trim(x ::: solved, shuffle(valid ::: cons), Nil))
+        else None
+      }
     }
   }
 }

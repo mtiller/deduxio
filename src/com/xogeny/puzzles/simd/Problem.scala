@@ -66,6 +66,24 @@ case object Board {
     }
     case x => p
   }
+
+  def randomSolution(board: Board, n: Int): Map[String,Int] = {
+    require(n>0);
+    val letters = List("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "L");
+    val names = "X" :: (letters take n-1)
+    val values = Random.shuffle((0 to board.spaces.length-1).toList)
+    Map() ++ (names zip values)
+  }
+
+  /**
+   *
+   * @param w Width of board
+   * @param h Height of board
+   * @param seed Random seed
+   * @param n Ball numbers (1-n)
+   * @param colors Ball colors
+   * @return A random board
+   */
   def random(w: Int, h: Int, seed: Long, n: Int, colors: List[Color]) = {
     val nums = 0 to w*h-1;
     Random.setSeed(seed);

@@ -10,21 +10,34 @@ import scala.util.Random
 object TestSimd {
   def main(args: Array[String]): Unit = {
     //simpleSolve();
-    testGenerator();
+    generateProblem()
   }
 
-  def testGenerator() = {
-    val board = Board.random(4, 4, 0, 4, List(Red, Green, Blue, Yellow))
+  def generateProblem() = {
+    var seed = 11;
+    var ret = generatePossibleProblem(seed)
+    while(ret==None) {
+      ret = generatePossibleProblem(seed);
+      seed = seed + 10;
+    }
+    val (board, sol, cons) = ret.get
+    println("### Solution ###");
+    println(board)
+    println(cons)
+    println(sol)
+  }
+  def generatePossibleProblem(seed: Int): Option[(Board, Map[String,Int], List[SimdConstraint])] = {
+    val board = Board.random(5, 5, seed, 5, List(Red, Green, Blue, Yellow, Purple))
+    val sol = Board.randomSolution(board, 5);
     println("Random board: "+board)
-    val sol = Map("alpha" -> 3, "beta" -> 8, "delta" -> 4, "gamma" -> 12)
+    println("Random solution: "+sol);
+    //val sol = Map("X" -> 6, "A" -> 0, "B" -> 9, "C" -> 2, "D" -> 14)
     val gen = ProblemGenerator(board, sol)
     //val plan = Plan(List("alpha"), List(Plan(List("beta"), Nil), Plan(List("delta"), Nil)))
     //val plan = Plan(List("alpha", "beta"), List(Plan(List("delta"), Nil)))
-    val plan = Plan(List("alpha"), Plan(List("beta")) :: Plan(List("delta"), List(Plan(List("gamma")))) :: Nil)
+    val plan = Plan(List("X"), Plan(List("A"), List(Plan(List("B")))) :: Plan(List("C"), List(Plan(List("D")))) :: Nil)
     val cons = gen.solve(plan)
-    println("### SOLUTION ###")
-    println(board);
-    println(cons);
+    cons map { (board, sol, _) }
   }
 
   def simpleSolve() = {
