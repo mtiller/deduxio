@@ -91,6 +91,17 @@ case class IsOnPathWith(ball1: String, ball2: String) extends SecondaryConstrain
   def satisfies(s1: Space, s2: Space) = IsOnPathWith.satisfies(s1, s2);
 }
 
+case object IsNotOnPathWith extends ConstraintGenerator[SecondaryConstraint] {
+  def satisfies(s1: Space, s2: Space) = s1.path.intersect(s2.path).size==0;
+  def allValid(board: Board, sol: Map[String, Int]): List[SecondaryConstraint] = {
+    allValidPairsWhere(board, sol) { (ni, si, nj, sj) => if (satisfies(si, sj)) Some(IsNotOnPathWith(ni, nj)) else None }
+  }
+}
+
+case class IsNotOnPathWith(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 30) {
+  def satisfies(s1: Space, s2: Space) = IsNotOnPathWith.satisfies(s1, s2);
+}
+
 case object LessThan extends ConstraintGenerator[SecondaryConstraint] {
   def satisfies(s1: Space, s2: Space) = s1.number<s2.number;
   def allValid(board: Board, sol: Map[String, Int]): List[SecondaryConstraint] = {

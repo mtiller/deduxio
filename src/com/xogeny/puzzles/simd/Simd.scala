@@ -7,8 +7,6 @@ import scala.util.Random
  * Created by mtiller on 12/14/13.
  */
 
-
-
 object TestSimd {
   def main(args: Array[String]): Unit = {
     //simpleSolve();
@@ -18,13 +16,14 @@ object TestSimd {
   def testGenerator() = {
     val board = Board.random(4, 4, 0, 4, List(Red, Green, Blue, Yellow))
     println("Random board: "+board)
-    val sol = Map("alpha" -> 2, "beta" -> 9, "delta" -> 5, "gamma" -> 11)
+    val sol = Map("alpha" -> 3, "beta" -> 8, "delta" -> 4, "gamma" -> 12)
     val gen = ProblemGenerator(board, sol)
     //val plan = Plan(List("alpha"), List(Plan(List("beta"), Nil), Plan(List("delta"), Nil)))
     //val plan = Plan(List("alpha", "beta"), List(Plan(List("delta"), Nil)))
     val plan = Plan(List("alpha"), Plan(List("beta")) :: Plan(List("delta"), List(Plan(List("gamma")))) :: Nil)
     val cons = gen.solve(plan)
     println("### SOLUTION ###")
+    println(board);
     println(cons);
   }
 
