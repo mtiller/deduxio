@@ -76,9 +76,10 @@ case class ProblemGenerator(board: Board, sol: Map[String,Int], verbose: Boolean
       val cons = y flatMap { solve(_) }
       println("Solving (3) for: "+x+", given: "+y)
       println("Cons for "+y+": "+cons)
-      val svalid = SimdConstraint.allValidSecondary(board, sol) filter { c => vars.contains(c.b1) && vars.contains(c.b2) }
-      val pvalid = SimdConstraint.allValidPrimary(board, sol) filter { c => vars.contains(c.ball) }
-      val valid = pvalid ::: svalid;
+      /* If you add primary constraints here, you'll end up isolating the secondary variables so that they
+         don't really matter.
+       */
+      val valid = SimdConstraint.allValidSecondary(board, sol) filter { c => vars.contains(c.b1) && vars.contains(c.b2) }
       println("Valid for "+x+": "+valid)
       checkValid(valid ::: cons, x ::: solved)
       trim(x ::: solved, shuffle(valid ::: cons), Nil)
