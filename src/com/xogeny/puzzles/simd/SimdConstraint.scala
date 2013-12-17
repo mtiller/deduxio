@@ -38,26 +38,8 @@ object SimdConstraint extends ConstraintGenerator[SimdConstraint] {
   }
 }
 
-abstract class SimdConstraint {
+abstract class SimdConstraint(val priority: Int) {
   def constraints(prob: Problem): List[Constraint];
 }
 
-abstract class SecondaryConstraint(val b1: String, val b2: String) extends SimdConstraint {
-  def constraints(prob: Problem): List[Constraint] = {
-    val spaces = 0 to (prob.board.spaces.length-1);
-    val candidates = for(i <- spaces;
-                         j <- spaces;
-                         if i!=j;
-                         si <- Some(prob.board.spaces(i));
-                         sj <- Some(prob.board.spaces(j));
-                         if satisfies(si,sj)) yield new And(new XeqC(prob.ball(b1), i), new XeqC(prob.ball(b2), j))
-    if (candidates.length==1) List(candidates(0))
-    else {
-      var ret = new util.ArrayList[PrimitiveConstraint];
-      candidates foreach { ret.add(_) }
-      List(new Or(ret));
-    }
-  }
-  def satisfies(s1: Space, s2: Space): Boolean;
-}
 

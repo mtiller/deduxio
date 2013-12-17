@@ -5,7 +5,7 @@ import scala.util.Random
 /**
  * Created by mtiller on 12/16/13.
  */
-case class Plan(cur: List[String], children: List[Plan]) {
+case class Plan(cur: List[String], children: List[Plan]=Nil) {
   def solvedBelow: List[String] = children flatMap { _.solved }
   def solved: List[String] = cur ::: solvedBelow
 }
@@ -19,7 +19,10 @@ case class Plan(cur: List[String], children: List[Plan]) {
      for creating puzzles where there are no primary constraints (which could be quite interesting).
  */
 
-case class ProblemGenerator(board: Board, sol: Map[String,Int]) {
+case class ProblemGenerator(board: Board, sol: Map[String,Int], verbose: Boolean=false) {
+  def shuffle(l: List[SimdConstraint]): List[SimdConstraint] = {
+    Random.shuffle(l).sortWith { (x, y) => x.priority < y.priority }
+  }
   def trim[T <: SimdConstraint](vars: List[String], c: List[T], keep: List[T]): List[T] = c match {
     case Nil => keep
     case x :: y => {
@@ -27,15 +30,15 @@ case class ProblemGenerator(board: Board, sol: Map[String,Int]) {
       prob.impose(y)
       prob.impose(keep)
       val sols = prob.solveAll()
-      println("# of solutions:"+sols.length)
+      if (verbose) println("# of solutions:"+sols.length)
       // TODO: Ideally, this should just check to make sure the primary variable has only
       // one possible value across all solutions.
       if (sols.length==1) {
-        println("We can get rid of "+x);
+        if (verbose) println("We can get rid of "+x);
         trim(vars, y, keep) // x wasn't needed
       }
       else {
-        println("We have to keep "+x+" because otherwise we get "+sols.length+" solutions")
+        if (verbose) println("We have to keep "+x+" because otherwise we get "+sols.length+" solutions")
         trim(vars, y, x :: keep) // x was needed
       }
     }
@@ -51,28 +54,34 @@ case class ProblemGenerator(board: Board, sol: Map[String,Int]) {
   }
   def solve(plan: Plan): List[SimdConstraint] = plan match {
     case Plan(x :: Nil, Nil) => {
-      println("Solving for: "+x);
+      println("Solving (1) for: "+x);
       val valid = SimdConstraint.allValidPrimary(board, sol) filter { c => x==c.ball }
       checkValid(valid, List(x))
-      val res = trim(List(x), Random.shuffle(valid), Nil)
+      val res = trim(List(x), shuffle(valid), Nil)
       println("Constraints: "+res)
       res
     }
-    case Plan(xl, Nil) => {
-      println("Solving for: "+xl);
-      val valid = SimdConstraint.allValidSecondary(board, sol) filter { c => xl.contains(c.b1) || xl.contains(c.b2) }
+    case p @ Plan(xl, Nil) => {
+      val vars = p.solved;
+      println("Solving (2) for: "+xl);
+      val valid = SimdConstraint.allValidSecondary(board, sol) filter { c => vars.contains(c.b1) && vars.contains(c.b2) }
       checkValid(valid, xl)
-      val res = trim(xl, Random.shuffle(valid), Nil)
+      val res = trim(xl, shuffle(valid), Nil)
       println("Constraints: "+res)
       res
     }
     case p @ Plan(x, y) => {
       val solved = p.solvedBelow;
+      val vars = p.solved;
       val cons = y flatMap { solve(_) }
-      println("Solving for: "+x+", given: "+y)
-      val valid = SimdConstraint.allValidSecondary(board, sol) filter { c => x.contains(c.b1) || x.contains(c.b2) }
+      println("Solving (3) for: "+x+", given: "+y)
+      println("Cons for "+y+": "+cons)
+      val svalid = SimdConstraint.allValidSecondary(board, sol) filter { c => vars.contains(c.b1) && vars.contains(c.b2) }
+      val pvalid = SimdConstraint.allValidPrimary(board, sol) filter { c => vars.contains(c.ball) }
+      val valid = pvalid ::: svalid;
+      println("Valid for "+x+": "+valid)
       checkValid(valid ::: cons, x ::: solved)
-      trim(x ::: solved, Random.shuffle(valid ::: cons), Nil)
+      trim(x ::: solved, shuffle(valid ::: cons), Nil)
     }
   }
 }

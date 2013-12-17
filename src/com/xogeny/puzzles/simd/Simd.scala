@@ -21,8 +21,10 @@ object TestSimd {
     val sol = Map("alpha" -> 2, "beta" -> 9, "delta" -> 5, "gamma" -> 11)
     val gen = ProblemGenerator(board, sol)
     //val plan = Plan(List("alpha"), List(Plan(List("beta"), Nil), Plan(List("delta"), Nil)))
-    val plan = Plan(List("alpha", "beta"), List(Plan(List("delta"), Nil), Plan(List("gamma"), Nil)))
+    //val plan = Plan(List("alpha", "beta"), List(Plan(List("delta"), Nil)))
+    val plan = Plan(List("alpha"), Plan(List("beta")) :: Plan(List("delta"), List(Plan(List("gamma")))) :: Nil)
     val cons = gen.solve(plan)
+    println("### SOLUTION ###")
     println(cons);
   }
 

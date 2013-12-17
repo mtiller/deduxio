@@ -16,7 +16,7 @@ import java.util
  */
 
 
-abstract class PrimaryConstraint(val ball: String, val priority: Int, val sf: (Space => Boolean)) extends SimdConstraint {
+abstract class PrimaryConstraint(val ball: String, priority: Int, val sf: (Space => Boolean)) extends SimdConstraint(priority) {
   def satisfies(s: Space) = sf(s)
   def constraints(prob: Problem): List[Constraint] = {
     val candidates = ((0 to (prob.board.spaces.length-1)).toList filter { s => satisfies(prob.board.spaces(s)) }).toArray
@@ -39,33 +39,33 @@ abstract class PrimaryConstraintGenerator(f: (String, Space) => PrimaryConstrain
 // TODO: Create inverse constraints
 
 case object IsNumber extends PrimaryConstraintGenerator({ (n, s) => new IsNumber(n,s.number) })
-case class IsNumber(v: String, n: Int) extends PrimaryConstraint(v, 30, {_.number==n})
+case class IsNumber(v: String, n: Int) extends PrimaryConstraint(v, 40, {_.number==n})
 
 case object IsNotNumber extends PrimaryConstraintGenerator({ (n, s) => new IsNotNumber(n,s.number) })
-case class IsNotNumber(v: String, n: Int) extends PrimaryConstraint(v, 20, {_.number!=n})
+case class IsNotNumber(v: String, n: Int) extends PrimaryConstraint(v, 30, {_.number!=n})
 
 case object IsRow extends PrimaryConstraintGenerator({ (n, s) => new IsRow(n,s.y) })
-case class IsRow(v: String, n: Int) extends PrimaryConstraint(v, 30, {_.y==n})
+case class IsRow(v: String, n: Int) extends PrimaryConstraint(v, 40, {_.y==n})
 
 case object IsNotRow extends PrimaryConstraintGenerator({ (n, s) => new IsNotRow(n,s.y) })
-case class IsNotRow(v: String, n: Int) extends PrimaryConstraint(v, 20, {_.y!=n})
+case class IsNotRow(v: String, n: Int) extends PrimaryConstraint(v, 30, {_.y!=n})
 
 case object IsColumn extends PrimaryConstraintGenerator({ (n, s) => new IsColumn(n,s.x) })
-case class IsColumn(v: String, n: Int) extends PrimaryConstraint(v, 30, {_.x==n})
+case class IsColumn(v: String, n: Int) extends PrimaryConstraint(v, 40, {_.x==n})
 
 case object IsNotColumn extends PrimaryConstraintGenerator({ (n, s) => new IsNotColumn(n,s.x) })
-case class IsNotColumn(v: String, n: Int) extends PrimaryConstraint(v, 20, {_.x!=n})
+case class IsNotColumn(v: String, n: Int) extends PrimaryConstraint(v, 30, {_.x!=n})
 
 case object IsColor extends PrimaryConstraintGenerator({ (n, s) => new IsColor(n,s.color) })
-case class IsColor(v: String, c: Color) extends PrimaryConstraint(v, 30, {_.color==c})
+case class IsColor(v: String, c: Color) extends PrimaryConstraint(v, 40, {_.color==c})
 
 case object IsNotColor extends PrimaryConstraintGenerator({ (n, s) => new IsNotColor(n,s.color) })
-case class IsNotColor(v: String, c: Color) extends PrimaryConstraint(v, 20, {_.color!=c})
+case class IsNotColor(v: String, c: Color) extends PrimaryConstraint(v, 30, {_.color!=c})
 
 case object IsOnPath extends ConstraintGenerator[PrimaryConstraint] {
   def allValid(board: Board, sol: Map[String, Int]): List[PrimaryConstraint] = {
     sol.toList flatMap { p => board.spaces(p._2).path map { c => new IsOnPath(p._1, c)} }
   }
 }
-case class IsOnPath(v: String, c: Color) extends PrimaryConstraint(v, 30, {_.path.contains(c)})
+case class IsOnPath(v: String, c: Color) extends PrimaryConstraint(v, 40, {_.path.contains(c)})
 
