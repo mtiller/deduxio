@@ -37,6 +37,35 @@ case object Board {
         if a.y==s.y || a.y==s.y+1 || a.y==s.y-1) yield if (a.x==s.x || a.y==s.y) List(i, i, i) else List(i)
     adj.flatten
   }
+  def buildPaths(board: Board, cur: List[(Color, List[Int])], dead: Set[Color], left: Set[Int]): Map[Color,List[Int]] = left.size match {
+    /* If all squares are on a path, we are done */
+    case 0 => Map() ++ cur
+    /* If not, look at the next color to extend */
+    case _ => cur match {
+      /* If that color is "dead" (cannot be extended), then move on to next element in list */
+      case (c, path) :: r if dead.contains(c) => buildPaths(board, (cur tail) ::: ((cur head) :: Nil), dead, left)
+      case (c, path) :: r => {
+        val adjs = adjacent(board, path head) filter { left.contains(_) }
+        if (adjs==Nil) {
+          var tadjs = adjacent(board, path last) filter { left.contains(_) }
+          if (tadjs==Nil) {
+            val newdead = dead + c;
+            /* No more colors we can process, we're done */
+            if (newdead.size==cur.length) Map() ++ cur;
+            else buildPaths(board, (cur tail) ::: ((cur head) :: Nil), newdead, left);
+          }
+          else {
+            val choice = Random.shuffle(tadjs.toList).head
+            buildPaths(board, (cur tail) ::: ((c, path ::: (choice :: Nil)) :: Nil), dead, left-choice)
+          }
+        }
+        else {
+          val choice = Random.shuffle(adjs.toList).head
+          buildPaths(board, (cur tail) ::: ((c, choice :: path) :: Nil), dead, left-choice)
+        }
+      }
+    }
+  }
   def pickPaths(board: Board, cur: List[(Color,(Int,Int))], p: Map[Color,Set[Int]], left: Set[Int]): Map[Color,Set[Int]] = cur match {
     case (c, (h, t)) :: r => left.size match {
       case 0 => p
@@ -98,22 +127,21 @@ case object Board {
       val orig = taken(i)
       Space(orig.color, orig.number, orig.path, i % w, i/w)
     }
-    val iboard = Board(spaces.toList)
+    val iboard = Board(spaces.toList, Map())
     val start = Random.shuffle(nums.toList)
     // TODO: Don't start in a corner
-    val cur = for(i <- (0 to colors.length-1).toList) yield (colors(i), (start(i), start(i)));
+    val cur = for(i <- (0 to colors.length-1).toList) yield (colors(i), List(start(i)));
     //println("Cur = "+cur);
-    val ip = Map() ++ (colors map { _ -> Set[Int]() })
-    val paths = pickPaths(iboard, cur, ip, nums.toSet)
+    val paths = buildPaths(iboard, cur, Set(), nums.toSet)
     println("Paths = "+paths)
     val newspaces = nums.toList map { i =>
       val s = iboard.spaces(i);
       Space(s.color, s.number, paths.keys.toSet filter { p => paths.get(p).get.contains(i) }, s.x, s.y)
     }
-    Board(newspaces)
+    Board(newspaces, paths)
   }
 }
-case class Board(spaces: List[Space]) {
+case class Board(spaces: List[Space], path: Map[Color,List[Int]]) {
   def toJSON = {
     "["+(spaces map { _.toJSON } mkString ",")+"]"
   }

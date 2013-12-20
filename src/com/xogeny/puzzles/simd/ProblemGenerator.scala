@@ -10,15 +10,6 @@ case class Plan(cur: List[String], children: List[Plan]=Nil) {
   def solved: List[String] = cur ::: solvedBelow
 }
 
-/* TODO: Stuff to try:
-   * Throw in a bunch of variables.  See what sticks.  If a variable isn't referenced by a secondary
-     constraint, consider eliminating it.  But test first to make sure getting rid of the variable
-     still gives a unique solution for the root variable.  It may not because of the "AllDifferent"
-     constraint regarding variables locations.
-   * Allow Plan to include a list of Strings for the 'cur' variable.  This would open the door
-     for creating puzzles where there are no primary constraints (which could be quite interesting).
- */
-
 case class ProblemGenerator(board: Board, sol: Map[String,Int], verbose: Boolean=false) {
   def shuffle(l: List[SimdConstraint]): List[SimdConstraint] = {
     Random.shuffle(l).sortWith { (x, y) => x.priority < y.priority }

@@ -40,6 +40,7 @@ object SimdConstraint extends ConstraintGenerator[SimdConstraint] {
 
 abstract class SimdConstraint(val priority: Int) {
   def constraints(prob: Problem): List[Constraint];
+  def toJSON: String;
 }
 
 

@@ -33,6 +33,10 @@ abstract class SecondaryConstraint(val b1: String, val b2: String, priority: Int
       List(new Or(ret));
     }
   }
+  def toJSON: String = {
+    val t = this.getClass.getSimpleName
+    s"""{"type": "$t", "b1": "$b1", "b2": "$b2"}"""
+  }
   def satisfies(s1: Space, s2: Space): Boolean;
 }
 
