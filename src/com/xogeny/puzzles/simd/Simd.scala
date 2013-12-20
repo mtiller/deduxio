@@ -11,7 +11,7 @@ object TestSimd {
   def main(args: Array[String]): Unit = {
     //simpleSolve();
     //generateProblem()
-    sculptProblem(10, false, false);
+    sculptProblem(10, true, false);
   }
 
   def sculptProblem(seed0: Int, allowPrimary: Boolean, verbose: Boolean) = {
@@ -52,8 +52,9 @@ object TestSimd {
 
   def sculptPossibleProblem(seed: Int, allowPrimary: Boolean, verbose: Boolean): Option[(Board, Map[String,Int], List[SimdConstraint])] = {
     val board = Board.random(5, 5, seed, 5, List(Red, Green, Blue, Yellow, Purple))
-    val plan = DTree(List("X" -> "A", "X" -> "B"))
-    //val plan = DTree(List("X" -> "A", "X" -> "B", "B" -> "C"))
+    //val plan = DTree(List("X" -> "A", "X" -> "B", "A" -> "C", "B" -> "D"))
+    val plan = DTree(List("X" -> "A", "X" -> "B", "B" -> "C"))
+    //val plan = DTree(List("X" -> "A", "X" -> "B"))
     val sol = Board.randomSolution(board, plan.solved.length);
     println("Random board: "+board)
     println("Random solution: "+sol);

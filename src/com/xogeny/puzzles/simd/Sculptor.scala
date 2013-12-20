@@ -28,7 +28,9 @@ case class Sculptor(board: Board, sol: Map[String,Int], allowPrimary: Boolean = 
   def solve(plan: DTree): Option[List[SimdConstraint]] = {
     val vars = plan.solved;
     val valid = if (allowPrimary) SimdConstraint.allValid(board, sol) else SimdConstraint.allValidSecondary(board, sol)
-    if (isValid(vars, valid) && plan.conforms(valid)) trim(Random.shuffle(valid) sortBy { _.priority }, vars, plan, Nil);
+    val start = Random.shuffle(valid) sortBy { -_.priority }
+    println("Initial constraints: "+start)
+    if (isValid(vars, valid) && plan.conforms(valid)) trim(start, vars, plan, Nil);
     else None
   }
 
