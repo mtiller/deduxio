@@ -21,6 +21,10 @@ import scala.util.Random
 
 case class Space(color: Color, number: Int, path: Set[Color], x: Int, y: Int) {
   val name: String = "s("+x+","+y+")";
+  def toJSON = {
+    val pathstr = path.toList map { _.toString } mkString ","
+    s"""{"color": "$color", "number": $number, "path": [$pathstr], "x": $x, "y": $y}"""
+  }
 }
 
 case object Board {
@@ -109,7 +113,11 @@ case object Board {
     Board(newspaces)
   }
 }
-case class Board(spaces: List[Space]);
+case class Board(spaces: List[Space]) {
+  def toJSON = {
+    "["+(spaces map { _.toJSON } mkString ",")+"]"
+  }
+}
 
 case class Problem(board: Board, ballNames: List[String]) {
   val store = new Store();
