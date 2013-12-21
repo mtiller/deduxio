@@ -1,25 +1,18 @@
 package com.xogeny.puzzles.simd.tests
 
-import org.scalatest.FlatSpec
-import scala.collection.mutable
+import org.scalatest.FunSuite
+import com.xogeny.puzzles.simd._
+import scala.util.Random
 
 /**
  * Created by mtiller on 12/20/13.
  */
-class PathSpec extends FlatSpec {
-
-  "A Stack" should "pop values in last-in-first-out order" in {
-    val stack = new mutable.Stack[Int]
-    stack.push(1)
-    stack.push(2)
-    assert(stack.pop() === 2)
-    assert(stack.pop() === 1)
-  }
-
-  it should "throw NoSuchElementException if an empty stack is popped" in {
-    val emptyStack = new mutable.Stack[String]
-    intercept[NoSuchElementException] {
-      emptyStack.pop()
-    }
+class PathSpec extends FunSuite {
+  test("Random path generator") {
+    val board = Board.random(4, 4, 0, 4, List(Red, Green, Blue, Purple))
+    val cur = List(Red -> List(4), Green -> List(10), Blue -> List(14), Purple -> List(8))
+    val paths = Paths.random(board, cur, Set(), (0 to board.spaces.length-1).toSet)
+    Random.setSeed(250);
+    println(paths)
   }
 }

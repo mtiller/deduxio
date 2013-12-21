@@ -9,16 +9,13 @@ case class DTree(cur: List[Pair[String,String]]) {
   def solved: List[String] = (cur flatMap { p => List(p._1, p._2)}).distinct;
   def conforms(cons: List[SimdConstraint]): Boolean = {
     cur forall { p =>
-      cons exists { c =>
-        c match {
-          case s: SecondaryConstraint => {
-            //println(s"looking for ${s.b1} and ${s.b2} in ${p._1} and ${p._2}")
-            val ret = (s.b1==p._1 && s.b2==p._2) || (s.b1==p._2 && s.b2==p._1)
-            //println(ret);
-            ret
-          }
-          case _ => false
+      cons exists {
+        case s: SecondaryConstraint => {
+          //println(s"looking for ${s.b1} and ${s.b2} in ${p._1} and ${p._2}")
+          val ret = (s.b1==p._1 && s.b2==p._2) || (s.b1==p._2 && s.b2==p._1)           //println(ret);
+          ret
         }
+        case _ => false
       }
     }
   }

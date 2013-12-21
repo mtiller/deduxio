@@ -11,7 +11,7 @@ object TestSimd {
   def main(args: Array[String]): Unit = {
     //simpleSolve();
     //generateProblem()
-    sculptProblem(17, true, false);
+    sculptProblem(17, allowPrimary=true, verbose=false);
   }
 
   def sculptProblem(seed0: Int, allowPrimary: Boolean, verbose: Boolean) = {
@@ -83,7 +83,7 @@ object TestSimd {
   }
 
   def simpleSolve() = {
-    val board = Board(List(Space(Black, 1, Set(Red), 0, 0), Space(Black, 2, Set(Green), 0, 0)), Map())
+    val board = Board(List(Space(Black, 1, Set(Red), 0, 0), Space(Black, 2, Set(Green), 0, 0)), Paths(Map()))
     val pos = SimdConstraint.allValid(board, Map("alpha" -> 0, "beta" -> 1))
     println("Possible constraints: "+pos);
     val prob = Problem(board, List("alpha", "beta"))
