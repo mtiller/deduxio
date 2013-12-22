@@ -21,13 +21,13 @@ case class DTree(cur: List[Pair[String,String]]) {
   }
 }
 
-case class Sculptor(board: Board, sol: Map[String,Int], allowPrimary: Boolean = false, verbose: Boolean=false) {
+case class Sculptor(board: Board, sol: Map[String,Int], conforms: (List[SimdConstraint] => Boolean), allowPrimary: Boolean = false, verbose: Boolean=false) {
   def solve(plan: DTree): Option[List[SimdConstraint]] = {
     val vars = plan.solved;
     val valid = if (allowPrimary) SimdConstraint.allValid(board, sol) else SimdConstraint.allValidSecondary(board, sol)
     val start = Random.shuffle(valid) sortBy { -_.priority }
     println("Initial constraints: "+start)
-    if (isValid(vars, valid) && plan.conforms(valid)) trim(start, vars, plan, Nil);
+    if (isValid(vars, valid) && conforms(valid)) trim(start, vars, plan, Nil);
     else None
   }
 
@@ -40,8 +40,8 @@ case class Sculptor(board: Board, sol: Map[String,Int], allowPrimary: Boolean = 
 
   def trim(cons: List[SimdConstraint], vars: List[String], plan: DTree, keep: List[SimdConstraint]): Option[List[SimdConstraint]] = cons match {
     case Nil => Some(keep)
-    case (c: SecondaryConstraint) :: y => {
-      if (plan.conforms(y ::: keep)) {
+    case (c :: y) => {
+      if (conforms(y ::: keep)) {
         if (verbose) println("Conformant if we get rid of "+c);
         if (isValid(vars, keep ::: y)) {
           if (verbose) println("We can get rid "+c)
@@ -55,16 +55,6 @@ case class Sculptor(board: Board, sol: Map[String,Int], allowPrimary: Boolean = 
       else {
         if (verbose) println("Non-conformant if we get rid of "+c+" [tail="+y+"]")
         trim(y, vars, plan, c :: keep)
-      }
-    }
-    case x :: y => {
-      if (isValid(vars, keep ::: y)) {
-        if (verbose) println("We can get rid of "+x)
-        trim(y, vars, plan, keep)
-      }
-      else {
-        if (verbose) println("We have to keep "+x)
-        trim(y, vars, plan, x :: keep)
       }
     }
   }

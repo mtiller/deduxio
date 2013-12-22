@@ -11,7 +11,7 @@ object TestSimd {
   def main(args: Array[String]): Unit = {
     //simpleSolve();
     //generateProblem()
-    sculptProblem(17, allowPrimary=true, verbose=false);
+    sculptProblem(10, allowPrimary=true, verbose=false);
   }
 
   def sculptProblem(seed0: Int, allowPrimary: Boolean, verbose: Boolean) = {
@@ -63,7 +63,13 @@ object TestSimd {
     val sol = Board.randomSolution(board, plan.solved.length);
     println("Random board: "+board)
     println("Random solution: "+sol);
-    val gen = Sculptor(board, sol, allowPrimary, verbose)
+    //val conf = { l: List[SimdConstraint] => plan.conforms(l) && l.count({ case c: PrimaryConstraint => true; case _ => false })>=1 }
+    val conf = { l: List[SimdConstraint] =>
+      val c = l.count({_.isInstanceOf[PrimaryConstraint]})
+      println(c+" primary constraints in "+l);
+      plan.conforms(l) && c>=1
+    }
+    val gen = Sculptor(board, sol, conf, allowPrimary, verbose)
     val cons = gen.solve(plan)
     cons map { (board, sol, _) }
   }

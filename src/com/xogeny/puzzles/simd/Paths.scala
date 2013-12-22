@@ -5,7 +5,11 @@ import scala.util.Random
 /**
  * Created by mtiller on 12/21/13.
  */
-case class Paths(map: Map[Color,List[Int]]);
+case class Paths(map: Map[Color,List[Int]]) {
+  def toJSON = {
+    "["+(map map { p => s"""{"color": "${p._1}", "elems": [${p._2 mkString ","}]}""" })+"]"
+  }
+}
 
 case object Paths {
   type CurList = List[Pair[Color,List[Int]]];

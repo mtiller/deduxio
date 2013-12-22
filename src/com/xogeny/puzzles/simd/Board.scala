@@ -32,6 +32,10 @@ case object Board {
     Map() ++ (names zip values)
   }
 
+  def randomSpaces() = {
+
+  }
+
   /**
    *
    * @param w Width of board
@@ -56,13 +60,8 @@ case object Board {
     // TODO: Don't start in a corner
     val cur = for(i <- (0 to colors.length-1).toList) yield (colors(i), List(start(i)));
     //println("Cur = "+cur);
-    val paths = Paths.random(iboard, cur, Set(), nums.toSet)
-    println("Paths = "+paths)
-    val newspaces = nums.toList map { i =>
-      val s = iboard.spaces(i);
-      Space(s.color, s.number, paths.map.keys.toSet filter { p => paths.map.get(p).get.contains(i) }, s.x, s.y)
-    }
-    Board(newspaces, paths)
+    val paths = Paths.random(iboard, cur, Set(), nums.toSet--(start take colors.length).toSet)
+    iboard.overlay(paths)
   }
 }
 
@@ -85,7 +84,9 @@ case class Board(spaces: List[Space], paths: Paths) {
     Board(newspaces, p)
   }
   def toJSON = {
-    "["+(spaces map { _.toJSON } mkString ",")+"]"
+    val sjson = "["+(spaces map { _.toJSON } mkString ",")+"]"
+    val pjson = paths.toJSON
+    s"""{"spaces": $sjson, "paths": $pjson}"""
   }
 }
 

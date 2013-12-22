@@ -91,7 +91,7 @@ case object IsOnPathWith extends ConstraintGenerator[SecondaryConstraint] {
   }
 }
 
-case class IsOnPathWith(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 30) {
+case class IsOnPathWith(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 19) {
   def satisfies(s1: Space, s2: Space) = IsOnPathWith.satisfies(s1, s2);
 }
 
@@ -139,15 +139,15 @@ case class SameRow(ball1: String, ball2: String) extends SecondaryConstraint(bal
   def satisfies(s1: Space, s2: Space) = SameRow.satisfies(s1, s2);
 }
 
-case object SameCol extends ConstraintGenerator[SecondaryConstraint] {
+case object SameColumn extends ConstraintGenerator[SecondaryConstraint] {
   def satisfies(s1: Space, s2: Space) = s1.x==s2.x;
   def allValid(board: Board, sol: Map[String, Int]): List[SecondaryConstraint] = {
-    allValidPairsWhere(board, sol) { (ni, si, nj, sj) => if (satisfies(si, sj)) Some(SameCol(ni, nj)) else None }
+    allValidPairsWhere(board, sol) { (ni, si, nj, sj) => if (satisfies(si, sj)) Some(SameColumn(ni, nj)) else None }
   }
 }
 
-case class SameCol(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 25) {
-  def satisfies(s1: Space, s2: Space) = SameCol.satisfies(s1, s2);
+case class SameColumn(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 25) {
+  def satisfies(s1: Space, s2: Space) = SameColumn.satisfies(s1, s2);
 }
 
 case object DifferentRow extends ConstraintGenerator[SecondaryConstraint] {

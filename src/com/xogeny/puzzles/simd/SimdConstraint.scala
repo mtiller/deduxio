@@ -32,7 +32,7 @@ object SimdConstraint extends ConstraintGenerator[SimdConstraint] {
   }
   def allValidSecondary(board: Board, sol: Map[String,Int]): List[SecondaryConstraint] = {
     val generators = List(SameColor, NotSameColor, SameNumber, NotSameNumber,
-                          LessThan, GreaterThan, IsOnPathWith, IsNotOnPathWith, SameRow, SameCol,
+                          LessThan, GreaterThan, IsOnPathWith, IsNotOnPathWith, SameRow, SameColumn,
                           DifferentRow, DifferentColumn, AdjacentTo, NotAdjacentTo)
     generators flatMap { _.allValid(board, sol) }
   }
