@@ -26,8 +26,10 @@ object SimdConstraint extends ConstraintGenerator[SimdConstraint] {
     allValidPrimary(board, sol) ::: allValidSecondary(board, sol)
   }
   def allValidPrimary(board: Board, sol: Map[String,Int]): List[PrimaryConstraint] = {
-    val generators = List(IsNumber, /* IsNotNumber, */ IsColor, /*IsNotColor,*/
-                          IsOnPath, IsRow /*, IsNotRow */ /*, IsNotColumn*/)
+    val generators = List(IsNumber, IsColor, IsOnPath, IsRow
+                          //IsNotNumber, IsNotColor,
+                          //IsNotRow, IsNotColumn
+    )
     generators flatMap { _.allValid(board, sol) }
   }
   def allValidSecondary(board: Board, sol: Map[String,Int]): List[SecondaryConstraint] = {
@@ -39,6 +41,9 @@ object SimdConstraint extends ConstraintGenerator[SimdConstraint] {
 }
 
 abstract class SimdConstraint(val priority: Int) {
+  def isPrimary: Boolean;
+  def involves(s: String): Boolean;
+  def isNegative: Boolean;
   def constraints(prob: Problem): List[Constraint];
   def toJSON: String;
 }

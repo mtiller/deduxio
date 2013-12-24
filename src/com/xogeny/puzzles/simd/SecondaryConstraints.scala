@@ -18,6 +18,9 @@ import java.util
  */
 
 sealed abstract class SecondaryConstraint(val b1: String, val b2: String, priority: Int) extends SimdConstraint(priority) {
+  def isPrimary: Boolean = false;
+  def involves(s: String): Boolean = b1==s || b2==s;
+  def isNegative: Boolean = false;
   def constraints(prob: Problem): List[Constraint] = {
     val spaces = 0 to (prob.board.spaces.length-1);
     val candidates = for(i <- spaces;
@@ -47,7 +50,7 @@ case object SameColor extends ConstraintGenerator[SecondaryConstraint] {
   }
 }
 
-case class SameColor(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 30) {
+case class SameColor(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 0) {
   def satisfies(s1: Space, s2: Space) = SameColor.satisfies(s1, s2);
 }
 
@@ -58,7 +61,8 @@ case object NotSameColor extends ConstraintGenerator[SecondaryConstraint] {
   }
 }
 
-case class NotSameColor(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 20) {
+case class NotSameColor(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 0) {
+  override def isNegative = true;
   def satisfies(s1: Space, s2: Space) = NotSameColor.satisfies(s1, s2);
 }
 
@@ -69,7 +73,7 @@ case object SameNumber extends ConstraintGenerator[SecondaryConstraint] {
   }
 }
 
-case class SameNumber(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 30) {
+case class SameNumber(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 0) {
   def satisfies(s1: Space, s2: Space) = SameNumber.satisfies(s1, s2);
 }
 
@@ -80,7 +84,8 @@ case object NotSameNumber extends ConstraintGenerator[SecondaryConstraint] {
   }
 }
 
-case class NotSameNumber(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 20) {
+case class NotSameNumber(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 0) {
+  override def isNegative = true;
   def satisfies(s1: Space, s2: Space) = NotSameNumber.satisfies(s1, s2);
 }
 
@@ -91,7 +96,7 @@ case object IsOnPathWith extends ConstraintGenerator[SecondaryConstraint] {
   }
 }
 
-case class IsOnPathWith(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 19) {
+case class IsOnPathWith(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 0) {
   def satisfies(s1: Space, s2: Space) = IsOnPathWith.satisfies(s1, s2);
 }
 
@@ -102,7 +107,8 @@ case object IsNotOnPathWith extends ConstraintGenerator[SecondaryConstraint] {
   }
 }
 
-case class IsNotOnPathWith(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 30) {
+case class IsNotOnPathWith(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 10) {
+  override def isNegative = true;
   def satisfies(s1: Space, s2: Space) = IsNotOnPathWith.satisfies(s1, s2);
 }
 
@@ -113,7 +119,7 @@ case object LessThan extends ConstraintGenerator[SecondaryConstraint] {
   }
 }
 
-case class LessThan(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 20) {
+case class LessThan(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 0) {
   def satisfies(s1: Space, s2: Space) = LessThan.satisfies(s1, s2);
 }
 
@@ -124,7 +130,7 @@ case object GreaterThan extends ConstraintGenerator[SecondaryConstraint] {
   }
 }
 
-case class GreaterThan(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 20) {
+case class GreaterThan(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 0) {
   def satisfies(s1: Space, s2: Space) = GreaterThan.satisfies(s1, s2);
 }
 
@@ -135,7 +141,7 @@ case object SameRow extends ConstraintGenerator[SecondaryConstraint] {
   }
 }
 
-case class SameRow(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 25) {
+case class SameRow(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 0) {
   def satisfies(s1: Space, s2: Space) = SameRow.satisfies(s1, s2);
 }
 
@@ -146,7 +152,7 @@ case object SameColumn extends ConstraintGenerator[SecondaryConstraint] {
   }
 }
 
-case class SameColumn(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 25) {
+case class SameColumn(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 0) {
   def satisfies(s1: Space, s2: Space) = SameColumn.satisfies(s1, s2);
 }
 
@@ -157,7 +163,8 @@ case object DifferentRow extends ConstraintGenerator[SecondaryConstraint] {
   }
 }
 
-case class DifferentRow(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 20) {
+case class DifferentRow(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 10) {
+  override def isNegative = true;
   def satisfies(s1: Space, s2: Space) = DifferentRow.satisfies(s1, s2);
 }
 
@@ -168,7 +175,8 @@ case object DifferentColumn extends ConstraintGenerator[SecondaryConstraint] {
   }
 }
 
-case class DifferentColumn(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 20) {
+case class DifferentColumn(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 10) {
+  override def isNegative = true;
   def satisfies(s1: Space, s2: Space) = DifferentColumn.satisfies(s1, s2);
 }
 
@@ -182,7 +190,7 @@ case object AdjacentTo extends ConstraintGenerator[SecondaryConstraint] {
   }
 }
 
-case class AdjacentTo(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 10) {
+case class AdjacentTo(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 0) {
   def satisfies(s1: Space, s2: Space) = AdjacentTo.satisfies(s1, s2);
 }
 
@@ -196,6 +204,7 @@ case object NotAdjacentTo extends ConstraintGenerator[SecondaryConstraint] {
   }
 }
 
-case class NotAdjacentTo(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 20) {
+case class NotAdjacentTo(ball1: String, ball2: String) extends SecondaryConstraint(ball1, ball2, 10) {
+  override def isNegative = true;
   def satisfies(s1: Space, s2: Space) = NotAdjacentTo.satisfies(s1, s2);
 }

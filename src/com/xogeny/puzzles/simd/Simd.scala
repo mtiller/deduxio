@@ -10,32 +10,22 @@ object TestSimd {
   def main(args: Array[String]): Unit = {
     //simpleSolve();
     //generateProblem()
-    sculptProblem(10, verbose=true);
+    sculptProblem(107, verbose=true);
   }
 
   def sculptProblem(seed0: Int, verbose: Boolean) = {
     var seed = seed0;
     var ret = sculptPossibleProblem(seed, 4, verbose)
-    while(ret==None) {
-      ret = sculptPossibleProblem(seed, 4, verbose);
-      seed = seed + 10;
+    if (ret==None) {
+      println("Invalid problem")
+    } else {
+      val (board, sol, cons) = ret.get
+      println("  # Constraints #")
+      cons foreach { c => println(c) }
+      println(sol)
+      val html = SVGRender.render(board, cons, sol);
+      File("gen_puzzle.html").writeAll(html)
     }
-    val (board, sol, cons) = ret.get
-    val bjson = board.toJSON
-    val cjson = "["+(cons map { _.toJSON } mkString ",")+"]"
-    val sjson = "{"+(sol map { p => "\""+p._1+"\": "+p._2} mkString ",")+"}"
-    //println("### Solution ###");
-    //println("  # Board #")
-    //println(board)
-    println("  # Constraints #")
-    cons foreach { c => println(c) }
-    //println("  Number of constraints: "+cons.length)
-    //println("  # Solution #")
-    println(sol)
-    //println("JSON:")
-    //println(s"""{"board": $bjson, "cons": $cjson, "sol": $sjson}""")
-    val html = SVGRender.render(board, cons, sol);
-    File("gen_puzzle.html").writeAll(html)
   }
 
   def generateProblem() = {
