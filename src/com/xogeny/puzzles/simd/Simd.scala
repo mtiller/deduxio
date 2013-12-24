@@ -25,16 +25,17 @@ object TestSimd {
     val bjson = board.toJSON
     val cjson = "["+(cons map { _.toJSON } mkString ",")+"]"
     val sjson = "{"+(sol map { p => "\""+p._1+"\": "+p._2} mkString ",")+"}"
-    println("### Solution ###");
-    println("  # Board #")
-    println(board)
-    println("  # Constraints #")
-    cons foreach { c => println(c) }
-    println("  Number of constraints: "+cons.length)
-    println("  # Solution #")
-    println(sol)
-    println("JSON:")
-    println(s"""{"board": $bjson, "cons": $cjson, "sol": $sjson}""")
+    //println("### Solution ###");
+    //println("  # Board #")
+    //println(board)
+    //println("  # Constraints #")
+    //cons foreach { c => println(c) }
+    //println("  Number of constraints: "+cons.length)
+    //println("  # Solution #")
+    //println(sol)
+    //println("JSON:")
+    //println(s"""{"board": $bjson, "cons": $cjson, "sol": $sjson}""")
+    SVGRender.render(board, cons, sol)
   }
 
   def generateProblem() = {
