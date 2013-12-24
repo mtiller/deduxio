@@ -27,7 +27,7 @@ case class Sculptor(board: Board, sol: Map[String,Int], conforms: (List[SimdCons
     val valid = if (allowPrimary) SimdConstraint.allValid(board, sol) else SimdConstraint.allValidSecondary(board, sol)
     val start = Random.shuffle(valid) sortBy { -_.priority }
     println("Initial constraints: "+start)
-    if (isValid(vars, valid) && conforms(valid)) trim(start, vars, plan, Nil);
+    if (isValid(vars, valid) && conforms(valid)) trim(start, vars, Nil);
     else None
   }
 
@@ -38,23 +38,26 @@ case class Sculptor(board: Board, sol: Map[String,Int], conforms: (List[SimdCons
     sols.length==1;
   }
 
-  def trim(cons: List[SimdConstraint], vars: List[String], plan: DTree, keep: List[SimdConstraint]): Option[List[SimdConstraint]] = cons match {
-    case Nil => Some(keep)
+  def trim(cons: List[SimdConstraint], vars: List[String], keep: List[SimdConstraint]): Option[List[SimdConstraint]] = cons match {
+    case Nil => {
+      println("Processed all constraints, keeping: "+keep)
+      Some(keep)
+    }
     case (c :: y) => {
       if (conforms(y ::: keep)) {
         if (verbose) println("Conformant if we get rid of "+c);
         if (isValid(vars, keep ::: y)) {
           if (verbose) println("We can get rid "+c)
-          trim(y, vars, plan, keep)
+          trim(y, vars, keep)
         }
         else {
           if (verbose) println("We have to keep "+c)
-          trim(y, vars, plan, c :: keep)
+          trim(y, vars, c :: keep)
         }
       }
       else {
         if (verbose) println("Non-conformant if we get rid of "+c+" [tail="+y+"]")
-        trim(y, vars, plan, c :: keep)
+        trim(y, vars, c :: keep)
       }
     }
   }

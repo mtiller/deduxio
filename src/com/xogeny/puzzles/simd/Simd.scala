@@ -12,7 +12,7 @@ object TestSimd {
   def main(args: Array[String]): Unit = {
     //simpleSolve();
     //generateProblem()
-    sculptProblem(10, allowPrimary=true, verbose=false);
+    sculptProblem(10, allowPrimary=true, verbose=true);
   }
 
   def sculptProblem(seed0: Int, allowPrimary: Boolean, verbose: Boolean) = {
@@ -29,8 +29,8 @@ object TestSimd {
     //println("### Solution ###");
     //println("  # Board #")
     //println(board)
-    //println("  # Constraints #")
-    //cons foreach { c => println(c) }
+    println("  # Constraints #")
+    cons foreach { c => println(c) }
     //println("  Number of constraints: "+cons.length)
     //println("  # Solution #")
     println(sol)

@@ -93,7 +93,7 @@ object SVGRender {
         val p1 = path(List(x-40 -> y, x+120 -> y), "#ffffff")
         val b1 = ball(s.b1, x, y, "#ffffff")
         val b2 = ball(s.b2, x+80, y, "#ffffff")
-        b1+b2
+        p1+b1+b2
       }
       case _ => s""" <text fill="black" x="$x" y="${y+10}" font-size="32px"  style="text-anchor: left;">$s</text> """
     }
