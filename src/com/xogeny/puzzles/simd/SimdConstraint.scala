@@ -26,7 +26,7 @@ object SimdConstraint extends ConstraintGenerator[SimdConstraint] {
     allValidPrimary(board, sol) ::: allValidSecondary(board, sol)
   }
   def allValidPrimary(board: Board, sol: Map[String,Int]): List[PrimaryConstraint] = {
-    val generators = List(IsNumber, IsColor, IsOnPath, IsRow
+    val generators = List(IsNumber, IsColor, IsOnPath, IsRow, IsColumn
                           //IsNotNumber, IsNotColor,
                           //IsNotRow, IsNotColumn
     )
