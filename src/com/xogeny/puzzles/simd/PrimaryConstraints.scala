@@ -16,7 +16,7 @@ import java.util
  */
 
 
-abstract class PrimaryConstraint(val ball: String, priority: Int, val sf: (Space => Boolean)) extends SimdConstraint(priority) {
+sealed abstract class PrimaryConstraint(val ball: String, priority: Int, val sf: (Space => Boolean)) extends SimdConstraint(priority) {
   def satisfies(s: Space) = sf(s)
   def constraints(prob: Problem): List[Constraint] = {
     val candidates = ((0 to (prob.board.spaces.length-1)).toList filter { s => satisfies(prob.board.spaces(s)) }).toArray

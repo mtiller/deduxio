@@ -2,6 +2,7 @@ package com.xogeny.puzzles.simd
 
 import JaCoP.core.{Store, IntVar}
 import scala.util.Random
+import scala.reflect.io.File
 
 /**
  * Created by mtiller on 12/14/13.
@@ -32,10 +33,11 @@ object TestSimd {
     //cons foreach { c => println(c) }
     //println("  Number of constraints: "+cons.length)
     //println("  # Solution #")
-    //println(sol)
+    println(sol)
     //println("JSON:")
     //println(s"""{"board": $bjson, "cons": $cjson, "sol": $sjson}""")
-    SVGRender.render(board, cons, sol)
+    val html = SVGRender.render(board, cons, sol);
+    File("gen_puzzle.html").writeAll(html)
   }
 
   def generateProblem() = {

@@ -17,7 +17,7 @@ import java.util
  *   * IsAdjacent
  */
 
-abstract class SecondaryConstraint(val b1: String, val b2: String, priority: Int) extends SimdConstraint(priority) {
+sealed abstract class SecondaryConstraint(val b1: String, val b2: String, priority: Int) extends SimdConstraint(priority) {
   def constraints(prob: Problem): List[Constraint] = {
     val spaces = 0 to (prob.board.spaces.length-1);
     val candidates = for(i <- spaces;
