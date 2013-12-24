@@ -10,7 +10,7 @@ object TestSimd {
   def main(args: Array[String]): Unit = {
     //simpleSolve();
     //generateProblem()
-    sculptProblem(21, verbose=true);
+    (0 to 20) map { sculptProblem(_, false) }
   }
 
   def sculptProblem(seed0: Int, verbose: Boolean) = {
@@ -24,7 +24,7 @@ object TestSimd {
       cons foreach { c => println(c) }
       println(sol)
       val html = SVGRender.render(board, cons, sol);
-      File("gen_puzzle.html").writeAll(html)
+      File("gen_puzzle_"+seed0+".html").writeAll(html)
     }
   }
 

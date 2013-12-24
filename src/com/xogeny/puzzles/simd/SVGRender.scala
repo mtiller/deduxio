@@ -84,6 +84,7 @@ object SVGRender {
       case GreaterThan(a, b) => renderTwoBallsWithText(s.b1, s.b2, ">", x, y)
       case LessThan(a, b) => renderTwoBallsWithText(s.b1, s.b2, "<", x, y)
       case NotAdjacentTo(a, b) => renderTwoBallsWithText(s.b1, s.b2, "/", x, y)
+      case SameNumber(a, b) => renderTwoBallsWithText(s.b1, s.b2, "=", x, y)
       case AdjacentTo(a, b) => {
         val b1 = ball(s.b1, x, y, "#ffffff")
         val b2 = ball(s.b2, x+80, y, "#ffffff")
@@ -99,13 +100,13 @@ object SVGRender {
         val p1 = path(List(x-40 -> y, x+120 -> y), "#ffffff")
         p1+renderTwoBallsWithText(s.b1, s.b2, "/", x, y)
       }
-      case SameColor(a, b) => {
-        s""" <text fill="black" x="$x" y="${y+10}" font-size="32px"  style="text-anchor: left;">$a is the same color as $b</text> """
-      }
-      case DifferentRow(a, b) => {
-        s""" <text fill="black" x="$x" y="${y+10}" font-size="32px"  style="text-anchor: left;">$a is on a different row from $b</text> """
-      }
-      case _ => s""" <text fill="black" x="$x" y="${y+10}" font-size="32px"  style="text-anchor: left;">$s</text> """
+      case SameColor(a, b) => ltext(a+" is the same color as "+b, x-12, y+10)
+      case NotSameColor(a, b) => ltext(a+" is a different color from "+b, x-12, y+10)
+      case DifferentRow(a, b) => ltext(a+" is in a different row from "+b, x-12, y+10)
+      case DifferentColumn(a, b) => ltext(a+" is in a different column from "+b, x-12, y+10)
+      case SameRow(a, b) => ltext(a+" is in the same row as "+b, x-12, y+10)
+      case SameColumn(a, b) => ltext(a+" is in the same column as "+b, x-12, y+10)
+      case _ => ltext(s.toString, x-12, y+10)
     }
   }
 }
