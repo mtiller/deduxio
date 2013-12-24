@@ -1,7 +1,5 @@
 package com.xogeny.puzzles.simd
 
-import JaCoP.core.{Store, IntVar}
-import scala.util.Random
 import scala.reflect.io.File
 
 /**
@@ -12,14 +10,14 @@ object TestSimd {
   def main(args: Array[String]): Unit = {
     //simpleSolve();
     //generateProblem()
-    sculptProblem(10, allowPrimary=true, verbose=true);
+    sculptProblem(10, verbose=true);
   }
 
-  def sculptProblem(seed0: Int, allowPrimary: Boolean, verbose: Boolean) = {
+  def sculptProblem(seed0: Int, verbose: Boolean) = {
     var seed = seed0;
-    var ret = sculptPossibleProblem(seed, allowPrimary, verbose)
+    var ret = sculptPossibleProblem(seed, 4, verbose)
     while(ret==None) {
-      ret = sculptPossibleProblem(seed, allowPrimary, verbose);
+      ret = sculptPossibleProblem(seed, 4, verbose);
       seed = seed + 10;
     }
     val (board, sol, cons) = ret.get
@@ -58,22 +56,19 @@ object TestSimd {
     println(sol)
   }
 
-  def sculptPossibleProblem(seed: Int, allowPrimary: Boolean, verbose: Boolean): Option[(Board, Map[String,Int], List[SimdConstraint])] = {
+  def sculptPossibleProblem(seed: Int, nvars: Int, verbose: Boolean): Option[(Board, Map[String,Int], List[SimdConstraint])] = {
     val board = Board.random(5, 5, seed, 5, List(Red, Green, Blue, Yellow, Purple))
     //val plan = DTree(List("X" -> "A", "X" -> "B", "A" -> "C", "B" -> "D"))
-    val plan = DTree(List("X" -> "A", "X" -> "B", "B" -> "C"))
     //val plan = DTree(List("X" -> "A", "X" -> "B"))
-    val sol = Board.randomSolution(board, plan.solved.length);
+    val sol = Board.randomSolution(board, nvars);
     println("Random board: "+board)
     println("Random solution: "+sol);
-    //val conf = { l: List[SimdConstraint] => plan.conforms(l) && l.count({ case c: PrimaryConstraint => true; case _ => false })>=1 }
-    val conf = { l: List[SimdConstraint] =>
-      val c = l.count({_.isInstanceOf[PrimaryConstraint]})
-      println(c+" primary constraints in "+l);
-      plan.conforms(l) && c>=1
-    }
-    val gen = Sculptor(board, sol, conf, allowPrimary, verbose)
-    val cons = gen.solve(plan)
+    val valid = SimdConstraint.allValid(board, sol)
+    //val tweaker = NullTweaker
+    val plan = List("X" -> "A", "X" -> "B", "B" -> "C")
+    val tweaker = TreeTweaker(plan)
+    val gen = Sculptor(board, sol, valid, tweaker, verbose)
+    val cons = gen.solve(sol.keys.toList)
     cons map { (board, sol, _) }
   }
 
