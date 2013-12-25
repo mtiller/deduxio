@@ -19,11 +19,30 @@ object SVGRender {
   </body>
 </html>
 """
+  def pathString(points: List[(Int,Int)]) = {
+    points map { p => s"${p._1},${p._2}"} mkString " "
+  }
   def path(points: List[(Int,Int)], color: String) = {
-    val path = points map { p => s"${p._1},${p._2}"} mkString " "
+    val path = pathString(points)
     s"""
     <polyline points="$path" style="fill:none;stroke:black;stroke-width:12" />
     <polyline points="$path" style="fill:none;stroke:$color;stroke-width:10" />
+    """
+  }
+  def row(x: Int, y: Int, w: Int) = {
+    val p1 = (x-40, y+30) :: (x+w+40, y+30) :: Nil;
+    val p2 = (x-40, y-30) :: (x+w+40, y-30) :: Nil;
+    s"""
+    <polyline points="${pathString(p1)}" style="fill:none;stroke:black;stroke-width:2" />
+    <polyline points="${pathString(p2)}" style="fill:none;stroke:black;stroke-width:2" />
+    """
+  }
+  def column(x: Int, y: Int, w: Int) = {
+    val p1 = (x-40, y+30) :: (x-40, y-30) :: Nil;
+    val p2 = (x+w+40, y+30) :: (x+w+40, y-30) :: Nil;
+    s"""
+    <polyline points="${pathString(p1)}" style="fill:none;stroke:black;stroke-width:2" />
+    <polyline points="${pathString(p2)}" style="fill:none;stroke:black;stroke-width:2" />
     """
   }
   def ball(num: String, x: Int, y: Int, color: String) = {
@@ -38,10 +57,10 @@ object SVGRender {
   def ltext(s: String, x: Int, y: Int) = {
     s""" <text fill="black" x="$x" y="${y+10}" font-size="32px"  style="text-anchor: left;">$s</text> """
   }
-  def renderTwoBallsWithText(s1: String, s2: String, t: String, x: Int, y: Int) = {
-    val b1 = ball(s1, x, y, "#ffffff")
+  def renderTwoBallsWithText(s1: String, s2: String, t: String, x: Int, y: Int, c1: String="#ffffff", c2: String="#ffffff") = {
+    val b1 = ball(s1, x, y, c1)
     val ct = ctext(t, x+40, y)
-    val b2 = ball(s2, x+80, y, "#ffffff")
+    val b2 = ball(s2, x+80, y, c2)
     b1+ct+b2
   }
   def renderPath(board: Board, c: Color, elems: List[Int]) = {
@@ -51,8 +70,9 @@ object SVGRender {
   def render(board: Board, cons: List[SimdConstraint], sol: Map[String,Int]) = {
     val paths = board.paths.map map { p: Pair[Color,List[Int]] => renderPath(board, p._1, p._2) } mkString "\n"
     val balls = board.spaces map { s => ball(s.number.toString, 40+80*s.x, 40+80*s.y, s.color.rgb) } mkString "\n"
-    val cs = (0 to cons.length-1).toList map { i => renderConstraint(500, 40+80*i, cons(i)) }
-    file(paths+balls+cs)
+    val cs = (0 to cons.length-1).toList map { i => renderConstraint(500+(i/8)*300, 40+100*(i % 8), cons(i)) }
+    val ss = "<!-- "+sol+" -->"
+    file(paths+balls+cs+ss)
   }
   def renderConstraint(x: Int, y: Int, c: SimdConstraint) = c match {
     case p: PrimaryConstraint => p match {
@@ -69,14 +89,18 @@ object SVGRender {
         pa + b
       }
       case ir: IsRow => {
+        val r = row(x, y, 0);
         val b = ball(p.ball, x, y, "#ffffff")
-        val t = ltext("is in row #"+(ir.n+1), x+40, y);
-        b + t
+        val e = ctext("=", x+60, y);
+        val t = ctext((ir.n+1).toString, x+80, y);
+        r + b + e + t
       }
       case ic: IsColumn => {
+        val c = column(x, y, 0);
         val b = ball(p.ball, x, y, "#ffffff")
-        val t = ltext("is in column #"+(ic.n+1), x+40, y);
-        b + t
+        val e = ctext("=", x+60, y);
+        val t = ctext((ic.n+1).toString, x+80, y);
+        c + b + e + t
       }
       case _ => s""" <text fill="black" x="$x" y="${y+10}" font-size="32px"  style="text-anchor: left;">$p</text> """
     }
@@ -100,12 +124,34 @@ object SVGRender {
         val p1 = path(List(x-40 -> y, x+120 -> y), "#ffffff")
         p1+renderTwoBallsWithText(s.b1, s.b2, "/", x, y)
       }
-      case SameColor(a, b) => ltext(a+" is the same color as "+b, x-12, y+10)
-      case NotSameColor(a, b) => ltext(a+" is a different color from "+b, x-12, y+10)
-      case DifferentRow(a, b) => ltext(a+" is in a different row from "+b, x-12, y+10)
-      case DifferentColumn(a, b) => ltext(a+" is in a different column from "+b, x-12, y+10)
-      case SameRow(a, b) => ltext(a+" is in the same row as "+b, x-12, y+10)
-      case SameColumn(a, b) => ltext(a+" is in the same column as "+b, x-12, y+10)
+      case SameColor(a, b) => renderTwoBallsWithText(s.b1, s.b2, "", x, y, "#808080", "#808080")
+      case NotSameColor(a, b) => renderTwoBallsWithText(s.b1, s.b2, "/", x, y, "#808080", "#808080")
+      case DifferentRow(a, b) => {
+        val r = row(x, y, 80);
+        val ab = ball(a, x, y, "#ffffff")
+        val sl = ctext("/", x+40, y)
+        val bb = ball(b, x+80, y, "#ffffff")
+        r + ab + sl + bb
+      }
+      case DifferentColumn(a, b) => {
+        val c = column(x, y, 80);
+        val ab = ball(a, x, y, "#ffffff")
+        val sl = ctext("/", x+40, y)
+        val bb = ball(b, x+80, y, "#ffffff")
+        c + ab + sl + bb
+      }
+      case SameRow(a, b) => {
+        val r = row(x, y, 80);
+        val ab = ball(a, x, y, "#ffffff")
+        val bb = ball(b, x+80, y, "#ffffff")
+        r + ab + bb
+      }
+      case SameColumn(a, b) => {
+        val c = column(x, y, 80);
+        val ab = ball(a, x, y, "#ffffff")
+        val bb = ball(b, x+80, y, "#ffffff")
+        c + ab + bb
+      }
       case _ => ltext(s.toString, x-12, y+10)
     }
   }

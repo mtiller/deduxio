@@ -16,4 +16,5 @@ case object Green extends Color(2, "#00ff00");
 case object Blue extends Color(3, "#0000ff");
 case object Yellow extends Color(4, "#ffff00");
 case object Purple extends Color(5, "#ff00ff");
+case object Cyan extends Color(6, "#00ffff");
 
