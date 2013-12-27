@@ -10,14 +10,14 @@ case class Sculptor(board: Board, sol: Map[String,Int],
                     valid: List[SimdConstraint],
                     tweaker: Tweaker,
                     verbose: Boolean=false) {
-  def solve(vars: List[String]): Option[List[SimdConstraint]] = {
+  def solve(vars: List[String]): List[SimdConstraint] = {
     val start = Random.shuffle(valid) sortBy { c => -(c.priority+tweaker.adjustPriority(c)) }
     if (verbose) {
       start foreach { c => println(c.priority+"+"+tweaker.adjustPriority(c)+":"+c)}
     }
     println("Initial (sorted) constraints: "+start)
-    if (isValid(vars, valid)) trim(start, vars, Nil);
-    else None
+    if (!isValid(vars, valid)) throw new RuntimeException("Invalid problem, couldn't find a unique solution (this should not happen");
+    trim(start, vars, Nil);
   }
 
   def isValid(vars: List[String], cons: List[SimdConstraint]) = {
@@ -27,10 +27,10 @@ case class Sculptor(board: Board, sol: Map[String,Int],
     sols.length==1;
   }
 
-  def trim(cons: List[SimdConstraint], vars: List[String], keep: List[SimdConstraint]): Option[List[SimdConstraint]] = cons match {
+  def trim(cons: List[SimdConstraint], vars: List[String], keep: List[SimdConstraint]): List[SimdConstraint] = cons match {
     case Nil => {
       println("Processed all constraints, keeping: "+keep)
-      Some(keep)
+      keep
     }
     case (c :: y) => {
       if (isValid(vars, keep ::: y)) {

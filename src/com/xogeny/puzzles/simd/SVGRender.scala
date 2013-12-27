@@ -64,13 +64,14 @@ object SVGRender {
     b1+ct+b2
   }
   def renderPath(board: Board, c: Color, elems: List[Int]) = {
-    val coords = elems map { e => ((40+80*board.spaces(e).x) -> (40+80*board.spaces(e).y)) }
+    val coords = elems map { e => (40+80*board.spaces(e).x) -> (40+80*board.spaces(e).y) }
     path(coords, c.rgb)
   }
   def render(board: Board, cons: List[SimdConstraint], sol: Map[String,Int]) = {
     val paths = board.paths.map map { p: Pair[Color,List[Int]] => renderPath(board, p._1, p._2) } mkString "\n"
     val balls = board.spaces map { s => ball(s.number.toString, 40+80*s.x, 40+80*s.y, s.color.rgb) } mkString "\n"
-    val cs = (0 to cons.length-1).toList map { i => renderConstraint(500+(i/8)*300, 40+100*(i % 8), cons(i)) }
+    val xmax = board.spaces map { s => (s.x+2)*80 } max
+    val cs = (0 to cons.length-1).toList map { i => renderConstraint(xmax+(i/8)*300, 40+100*(i % 8), cons(i)) }
     val ss = "<!-- "+sol+" -->"
     file(paths+balls+cs+ss)
   }

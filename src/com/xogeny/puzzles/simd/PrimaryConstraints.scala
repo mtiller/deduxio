@@ -53,7 +53,7 @@ case class IsNotNumber(v: String, n: Int) extends PrimaryConstraint(v, 0, {_.num
 }
 
 case object IsRow extends PrimaryConstraintGenerator({ (n, s) => new IsRow(n,s.y) })
-case class IsRow(v: String, n: Int) extends PrimaryConstraint(v, 0, {_.y==n}) {
+case class IsRow(v: String, n: Int) extends PrimaryConstraint(v, 2, {_.y==n}) {
   def toJSON = s"""{"type": "IsRow", "ball": "$v", "row": $n}"""
 }
 
@@ -64,7 +64,7 @@ case class IsNotRow(v: String, n: Int) extends PrimaryConstraint(v, 0, {_.y!=n})
 }
 
 case object IsColumn extends PrimaryConstraintGenerator({ (n, s) => new IsColumn(n,s.x) })
-case class IsColumn(v: String, n: Int) extends PrimaryConstraint(v, 0, {_.x==n}) {
+case class IsColumn(v: String, n: Int) extends PrimaryConstraint(v, 2, {_.x==n}) {
   def toJSON = s"""{"type": "IsColumn", "ball": "$v", "column": $n}"""
 }
 

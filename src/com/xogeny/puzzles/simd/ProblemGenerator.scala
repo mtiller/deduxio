@@ -5,80 +5,62 @@ import scala.util.Random
 /**
  * Created by mtiller on 12/16/13.
  */
-case class Plan(cur: List[String], children: List[Plan]=Nil) {
-  def solvedBelow: List[String] = children flatMap { _.solved }
-  def solved: List[String] = cur ::: solvedBelow
+
+trait ProblemGenerator {
+  type Problem = (Board, Map[String, Int], List[SimdConstraint])
+  def generate(seed: Int): Problem;
 }
 
-case class ProblemGenerator(board: Board, sol: Map[String,Int], verbose: Boolean=false) {
-  def shuffle(l: List[SimdConstraint]): List[SimdConstraint] = {
-    Random.shuffle(l).sortWith { (x, y) => x.priority < y.priority }
-  }
-  def trim[T <: SimdConstraint](vars: List[String], c: List[T], keep: List[T]): List[T] = c match {
-    case Nil => keep
-    case x :: y => {
-      val prob = Problem(board, vars)
-      prob.impose(y)
-      prob.impose(keep)
-      val sols = prob.solveAll()
-      if (verbose) println("# of solutions:"+sols.length)
-      // TODO: Ideally, this should just check to make sure the primary variable has only
-      // one possible value across all solutions.
-      if (sols.length==1) {
-        if (verbose) println("We can get rid of "+x);
-        trim(vars, y, keep) // x wasn't needed
-      }
-      else {
-        if (verbose) println("We have to keep "+x+" because otherwise we get "+sols.length+" solutions")
-        trim(vars, y, x :: keep) // x was needed
-      }
-    }
-  }
-  def checkValid(valid: List[SimdConstraint], vars: List[String]): Boolean = {
-    val prob = Problem(board, vars)
-    prob.impose(valid)
-    val sols = prob.solveAll();
-    sols.length==1
-  }
-  def solve(plan: Plan): Option[List[SimdConstraint]] = plan match {
-    case Plan(x :: Nil, Nil) => {
-      println("Solving (1) for: "+x);
-      val valid = SimdConstraint.allValidPrimary(board, sol) filter { c => x==c.ball }
-      if (checkValid(valid, List(x))) {
-        val res = trim(List(x), shuffle(valid), Nil)
-        println("Constraints: "+res)
-        Some(res)
-      } else None
-    }
-    case p @ Plan(xl, Nil) => {
-      val vars = p.solved;
-      println("Solving (2) for: "+xl);
-      val valid = SimdConstraint.allValidSecondary(board, sol) filter { c => vars.contains(c.b1) && vars.contains(c.b2) }
-      if (checkValid(valid, xl)) {
-        val res = trim(xl, shuffle(valid), Nil)
-        println("Constraints: "+res)
-        Some(res)
-      } else None
-    }
-    case p @ Plan(x, y) => {
-      val solved = p.solvedBelow;
-      val vars = p.solved;
-      val ysols = y map { solve(_) }
-      if (ysols.contains(None)) {
-        None
-      } else {
-        val cons = ysols flatMap { _.get }
-        println("Solving (3) for: "+x+", given: "+y)
-        println("Cons for "+y+": "+cons)
-        /* If you add primary constraints here, you'll end up isolating the secondary variables so that they
-           don't really matter.
-         */
-        val valid = SimdConstraint.allValidSecondary(board, sol) filter { c => vars.contains(c.b1) && vars.contains(c.b2) }
-        println("Valid for "+x+": "+valid)
-        if (checkValid(valid ::: cons, x ::: solved)) Some(trim(x ::: solved, shuffle(valid ::: cons), Nil))
-        else None
-      }
-    }
+class TreeTweakedGenerator(sz: Int, nvars: Int, verbose: Boolean) extends ProblemGenerator {
+  def generate(seed: Int) = {
+    val colors = List(Red, Green, Blue, Yellow, Purple, Cyan)
+    val board = Board.random(sz, sz, seed, sz, colors take sz)
+    val sol = Board.randomSolution(board, nvars);
+    println("Random board: "+board)
+    println("Random solution: "+sol);
+    val valid = SimdConstraint.allValid(board, sol)
+    val plan = TreeTweaker.randomPlan(sol.keys.toList)
+    println("Plan = "+plan)
+    val tweaker = TreeTweaker(plan)
+    val gen = Sculptor(board, sol, valid, tweaker, verbose)
+    val cons = gen.solve(sol.keys.toList)
+    (board, sol, cons)
   }
 }
 
+class PlainGenerator(sz: Int, nvars: Int, verbose: Boolean) extends ProblemGenerator {
+  def generate(seed: Int) = {
+    val colors = List(Red, Green, Blue, Yellow, Purple, Cyan)
+    val board = Board.random(sz, sz, seed, sz, colors take sz)
+    val sol = Board.randomSolution(board, nvars);
+    println("Random board: "+board)
+    println("Random solution: "+sol);
+    val valid = SimdConstraint.allValid(board, sol)
+    val tweaker = NullTweaker
+    val gen = Sculptor(board, sol, valid, tweaker, verbose)
+    val cons = gen.solve(sol.keys.toList)
+    (board, sol, cons)
+  }
+}
+
+class CircularGenerator(sz: Int, nvars: Int, verbose: Boolean) extends ProblemGenerator {
+  def generate(seed: Int) = {
+    val colors = List(Red, Green, Blue, Yellow, Purple, Cyan)
+    val board = Board.random(sz, sz, seed, sz, colors take sz)
+    val sol = Board.randomSolution(board, nvars);
+    println("Random board: "+board)
+    println("Random solution: "+sol);
+    val valid = SimdConstraint.allValid(board, sol)
+    val tweaker = CircularTweaker
+    val gen = Sculptor(board, sol, valid, tweaker, verbose)
+    val cons = gen.solve(sol.keys.toList)
+    (board, sol, cons)
+  }
+}
+
+case object Simple4x4 extends TreeTweakedGenerator(4, 3, false);
+case object Simple5x5 extends TreeTweakedGenerator(5, 4, false);
+case object Medium5x5 extends TreeTweakedGenerator(5, 5, false);
+case object Simple6x6 extends TreeTweakedGenerator(6, 2, false);
+case object Medium6x6 extends CircularGenerator(6, 3, false);
+case object Hard6x6 extends TreeTweakedGenerator(6, 3, false);
