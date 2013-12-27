@@ -47,7 +47,7 @@ object SVGRender {
   }
   def ball(num: String, x: Int, y: Int, color: String) = {
     s"""
-      <circle cx="$x" cy="$y" r="25" stroke="black" stroke-width="1" fill="$color" />
+      <circle cx="$x" cy="$y" r="25" stroke="#808080" stroke-width="1" stroke-antialiasing="true" fill="$color" />
       <text fill="black" x="$x" y="${y+10}" font-size="32px"  style="text-anchor: middle;">$num</text>
     """
   }
