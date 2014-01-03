@@ -50,6 +50,7 @@ class Analyzer(board: Board, sol: Map[String, Int], cons: List[SimdConstraint]) 
     if (ssol.length==0) None else Some(ssol.toSet)
   }
   def solvesAtLeastOne(c: List[SimdConstraint]): Boolean = {
+    println("Considering set: "+c)
     val vars = sol.keys.toList;
     val prob = Problem(board, vars);
     prob.impose(c);
@@ -67,8 +68,8 @@ class Analyzer(board: Board, sol: Map[String, Int], cons: List[SimdConstraint]) 
     case 0 => Map()
     case 1 => Map(left.toList.head -> c.length)
     case _ => {
-      //println("What can be uniquely solved for given "+given+" plus "+c);
-      //println("  Among: "+left);
+      println("What can be uniquely solved for given "+given+" plus "+c);
+      println("  Among: "+left);
       val solveForOne = flatMap(solvesWhich(_), Nil, cons) filter { p => (p._2 & left).size>0 }
       if (solveForOne.size==0) {
         println("Couldn't solve for anything uniquely...this shouldn't happen")
@@ -84,12 +85,13 @@ class Analyzer(board: Board, sol: Map[String, Int], cons: List[SimdConstraint]) 
       val solvedVar = solvesFor.head
       val newgiven = neededcons ::: given
       val next = path(c filter { c => !newgiven.contains(c) }, newgiven, left - solvedVar, sol)
-      //println("Answer: "+solvedVar+" using "+neededcons);
+      println("Answer: "+solvedVar+" using "+neededcons);
       next + (solvedVar -> neededcons.length)
     }
   }
   def analyze() = {
     println("Analyzing");
+    println("# of constraints: "+cons.length);
     val uniq = filter(solvesAtLeastOne(_), Nil, cons);
     val sizes = uniq map { _.length }
     val ncon = cons.length
