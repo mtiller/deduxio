@@ -1,6 +1,6 @@
 package com.xogeny.puzzles.simd
 
-import JaCoP.core.{Domain, IntVar, Store}
+import JaCoP.core.{ValueEnumeration, Domain, IntVar, Store}
 import JaCoP.constraints.Alldifferent
 import JaCoP.search._
 import scala.util.Random
@@ -31,7 +31,13 @@ case class Problem(board: Board, ballNames: List[String]) {
   def impose(cl: List[SimdConstraint]): Unit = cl foreach { impose(_) }
   def ball(n: String) = balls.get(n).get;
 
-  def solveAll(): List[Map[String,Domain]] = {
+  def getValues(v: ValueEnumeration): Set[Int] = {
+    var ret = Set[Int]();
+    while (v.hasMoreElements()) ret = ret + v.nextElement();
+    ret
+  }
+
+  def solveAll(): List[Map[String,Set[Int]]] = {
     var search: DepthFirstSearch[IntVar]  = new DepthFirstSearch[IntVar]();
     search.setPrintInfo(false);
     var select: SelectChoicePoint[IntVar]  =
@@ -46,7 +52,7 @@ case class Problem(board: Board, ballNames: List[String]) {
       solnums map { i =>
         val sol = search.getSolution(i);
         val elems = (0 to sol.length-1).toList;
-        Map() ++ (elems map { j: Int => ballNames(j) -> sol(j) })
+        Map() ++ (elems map { j: Int => ballNames(j) -> getValues(sol(j).valueEnumeration()) })
       }
     } else Nil
   }
