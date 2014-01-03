@@ -1,0 +1,1510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="434d5255-624f-4425-9866-c7f9f6805082" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Analyzer.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/PrimaryConstraints.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/PrimaryConstraints.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Problem.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Problem.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Simd.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Simd.scala" />
+    </list>
+    <ignored path="PoirotPuzzles.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="PoirotPuzzles" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="Simd.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Simd.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="34" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Analyzer.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Analyzer.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="100" column="6" selection-start="3931" selection-end="3931" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1725">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProblemGenerator.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/ProblemGenerator.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="52" selection-start="2386" selection-end="2386" vertical-scroll-proportion="0.0" vertical-offset="582" max-vertical-offset="1080">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrimaryConstraints.scala" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/PrimaryConstraints.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="34" selection-start="1724" selection-end="1724" vertical-scroll-proportion="0.45783132" vertical-offset="597" max-vertical-offset="2025">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tweaker.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Tweaker.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="17" selection-start="1651" selection-end="1651" vertical-scroll-proportion="0.0" vertical-offset="589" max-vertical-offset="1095">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SVGRender.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/SVGRender.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="52" selection-start="1707" selection-end="1707" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="2475">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Problem.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Problem.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="60" column="0" selection-start="1851" selection-end="1851" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Board.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Board.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="30" selection-start="1026" selection-end="1026" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1470">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestRender.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/simd/tests/TestRender.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="0" selection-start="429" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+              <folding>
+                <element signature="e#39#68#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Color.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Color.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="0" selection-start="523" selection-end="523" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Test.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/SimdConstraint.scala" />
+        <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/simd/tests/PathSpec.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Paths.scala" />
+        <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/simd/tests/TestRender.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/SecondaryConstraints.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/SimdConstraint.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Sculptor.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Board.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/ProblemGenerator.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Tweaker.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Color.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/SVGRender.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Problem.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Analyzer.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Simd.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/PrimaryConstraints.scala" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Scala: General</id>
+          </State>
+          <State>
+            <id>Scala: Method signature</id>
+          </State>
+          <State>
+            <id>Spelling</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>ScalaFileName</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tweaker.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimdConstraint.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Simd.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SecondaryConstraints.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProblemGenerator.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PrimaryConstraints.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Color.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Board.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Dropbox/Public/Simd_Puzzles3/puzzle13.html" />
+    <property name="FullScreen" value="true" />
+    <property name="recentsLimit" value="5" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="SearchEverywhereHistory" value="" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.xogeny.puzzles.simd" />
+      <recent name="com.xogeny.puzzles.tictac" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.TestSimd">
+    <configuration default="false" name="TestRun" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.xogeny.puzzles.simd.TestRun" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="PoirotPuzzles" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestSimd" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.xogeny.puzzles.simd.TestSimd" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="PoirotPuzzles" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Scala Console" type="ScalaScriptConsoleRunConfiguration" factoryName="Scala Console" temporary="true">
+      <module name="PoirotPuzzles" />
+      <setting name="vmparams4" value="-Djline.terminal=NONE" />
+      <setting name="consoleArgs" value="-usejavacp" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="PathSpec" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <module name="PoirotPuzzles" />
+      <setting name="path" value="com.xogeny.puzzles.simd.tests.PathSpec" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestRender" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <module name="PoirotPuzzles" />
+      <setting name="path" value="com.xogeny.puzzles.simd.tests.TestRender" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="ScalaScriptConsoleRunConfiguration" factoryName="Scala Console">
+      <module name="" />
+      <setting name="vmparams4" value="-Djline.terminal=NONE" />
+      <setting name="consoleArgs" value="-usejavacp" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Application.TestRun" />
+      <item index="1" class="java.lang.String" itemvalue="Application.TestSimd" />
+      <item index="2" class="java.lang.String" itemvalue="Scala Console.Scala Console" />
+      <item index="3" class="java.lang.String" itemvalue="ScalaTest.PathSpec" />
+      <item index="4" class="java.lang.String" itemvalue="ScalaTest.TestRender" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.TestSimd" />
+        <item index="1" class="java.lang.String" itemvalue="ScalaTest.TestRender" />
+        <item index="2" class="java.lang.String" itemvalue="ScalaTest.PathSpec" />
+        <item index="3" class="java.lang.String" itemvalue="Scala Console.Scala Console" />
+        <item index="4" class="java.lang.String" itemvalue="Application.TestRun" />
+      </list>
+    </recent_temporary>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="434d5255-624f-4425-9866-c7f9f6805082" name="Default" comment="" />
+      <created>1386972024153</created>
+      <updated>1386972024153</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Started working on Simd like problem.&#10;&#10;I like the way I was able to formulate this.  The formulation&#10;of IsNumber loops over all the squares on the board and&#10;just introduces a constraint that that square's number&#10;is a valid solution.  I suspect this will make solving very,&#10;very fast (about as fast as possible).  Hopefully all the&#10;constraints can work that way (I think they can). &#10;&#10;Speed is important because my next step will be generation&#10;of all possible satisfied constraints and puzzle generation&#10;should be much faster.">
+      <created>1387055614516</created>
+      <updated>1387055614516</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Lots of progress on Simd stuff">
+      <created>1387067037000</created>
+      <updated>1387067037000</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Generating constraints&#10;&#10;This approach seems like it is really efficient.  By&#10;presupposing the solution, we can reduce the number&#10;of constraints significantly.">
+      <created>1387074397450</created>
+      <updated>1387074397450</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Big refactoring&#10;&#10;Cleaned things up.  Now I don't have one giant file but&#10;rather several smaller better organized files.">
+      <created>1387075171672</created>
+      <updated>1387075171672</updated>
+    </task>
+    <task id="LOCAL-00005" summary="More Constraints">
+      <created>1387118249163</created>
+      <updated>1387118249163</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Functional puzzle generator&#10;&#10;I seem to have created a puzzle generator that works.  I&#10;went with an approach that sketches out not just the&#10;board and the solution but also a &quot;plan&quot;.  This plan allows&#10;me to define the order of deductions.  This helps guide the&#10;creation of constraints so that you don't end up with stupid&#10;problems where there are constraints that define secondary&#10;variables but those variables don't affect any other variables.&#10;&#10;The plan is a hierarchical description of the solution order.  I&#10;think it is rich enough to create sufficiently interesting or&#10;complex problem.&#10;&#10;What is current missing is the &quot;trim&quot; capability to get rid&#10;of redundant constraints.  I'm not sure if this should be&#10;done locally as we construct constraints or globally at&#10;the end.  I have to think about which is more efficient&#10;but also make sure it doesn't negatively impact the &quot;fun&quot;&#10;factor of each puzzle.&#10;&#10;Ultimately, what I expect to happen is that through some&#10;random process we will synthesize a board, a solution&#10;and a plan.  Then the puzzle builder will identify a set&#10;of clues that are consistent and well specified subject&#10;to those constraints.&#10;&#10;For harder puzzles, I think it will be necessary/interesting&#10;for secondary variables to have multiple solutions.  In other&#10;words, the criteria for &quot;trimming&quot; the system should be&#10;that the primary variable always has a unique solution but&#10;that the secondary variables are not required to have a&#10;unique solution.  The number of solutions for secondary&#10;variables could be used as a measure of &quot;hardness&quot;.&#10;&#10;Finally, although we currently synthesize the constraints&#10;to be consistent with a specifical a priori solution.  When&#10;we trim, we don't need to maintain that unique solution,&#10;only the unique solution on the primary variable.">
+      <created>1387121542215</created>
+      <updated>1387121542215</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Got the trim function working.">
+      <created>1387158592112</created>
+      <updated>1387158592113</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Actually working&#10;&#10;I fixed a bug in trim and added a random board&#10;generator.  Plugging those together got the generator&#10;synthesizing puzzles.  Even more interesting, the&#10;current puzzle it spits out (which is deterministic&#10;because of the random seed) is actually quite interesting.&#10;I'm going to remove IsNumber though, it is too direct.">
+      <created>1387160118265</created>
+      <updated>1387160118265</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added checks for bogus problems&#10;&#10;This code checks to make sure there actually&#10;are solutions to the base problem">
+      <created>1387163096243</created>
+      <updated>1387163096243</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Cleaned up some warnings (and turned others off)">
+      <created>1387163247576</created>
+      <updated>1387163247576</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Tried to simplify PrimaryConstraints">
+      <created>1387236350743</created>
+      <updated>1387236350743</updated>
+    </task>
+    <task id="LOCAL-00012" summary="This actually looks like an interesting problem">
+      <created>1387237035098</created>
+      <updated>1387237035098</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Had to add primary expressions or I couldn't get a solution&#10;&#10;I'm not sure adding the primary expressions was a good&#10;idea because the end result was that you didn't need the&#10;secondary variables at all.  Better to simply throw an&#10;exception that a well-posed problem statement can't&#10;be found than to spit out a lame problem.">
+      <created>1387250719959</created>
+      <updated>1387250719959</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Got rid of primary constraints">
+      <created>1387278168321</created>
+      <updated>1387278168321</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Generated a puzzle using paths&#10;&#10;I've got a random path generator in here now and&#10;I generated a puzzle that seems to be OK.  I need&#10;to try it out more.&#10;">
+      <created>1387290747148</created>
+      <updated>1387290747148</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Produced an interesting puzzle&#10;&#10;I'm not happy about the CPU time required to synthesize&#10;one puzzle, but at least the generator is working.&#10;&#10;Now, I really need to work on visualization!  It is getting&#10;tedious to transcribe these and try and solve them in&#10;textual format.&#10;&#10;Generate in JSON notation?">
+      <created>1387309908899</created>
+      <updated>1387309908899</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Created a new problem generator&#10;&#10;I call this the Scuptor approach.  It generates all valid&#10;constraints.  At that point, it confirms that a solution&#10;exists for the specified solution.  Once that is established,&#10;it randomizes and sorts (by priority) those constraints and&#10;attempts to eliminate them one by one.  If eliminating&#10;a constraint would break the &quot;plan&quot; (represented by the&#10;DTree class) for dependencies between variables, then&#10;the constraint cannot be eliminated.  If the constraint&#10;doesn't break the plan, then we check to make sure a&#10;unique solution exists if the constraint is eliminated.  If&#10;so, the constraint is removed...otherwise we keep it.&#10;&#10;This seems to work (even for purely secondary constraints!).&#10;But the number of constraints ends up being pretty high.&#10;I'm curious whether this could be a measure of difficulty?&#10;">
+      <created>1387505620323</created>
+      <updated>1387505620323</updated>
+    </task>
+    <task id="LOCAL-00018" summary="We seem to have a pretty robust little algorith here&#10;&#10;For 3-4 variables, it seems to consistently produce&#10;solutions that are about 6-8 constraints.  It does seem&#10;to find lots of random starting points that don't have&#10;a solution, but it prunes them quickly.">
+      <created>1387511715613</created>
+      <updated>1387511715613</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Fixed a bug in sorting&#10;&#10;Now I use all possible valid constraints and it seems&#10;to very consistently get rid of primaries if at all possible.">
+      <created>1387512204587</created>
+      <updated>1387512204587</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Need to start testing&#10;&#10;Things are getting too complicated and too much of&#10;what I'm running as an application is really a test.  So&#10;I'm getting serious about testing.  I installed ScalaTest&#10;through Maven and I created a tests directory (I figured&#10;out that I have to &quot;Mark&quot; the directory as a tests directory).&#10;&#10;Now I'm figuring out how to trigger the test runners&#10;in IDEA.  Then, I can start writing the tests I need to&#10;validate all this stuff.  In the short term, the critical&#10;piece is debugging the new path generation stuff.">
+      <created>1387577058934</created>
+      <updated>1387577058934</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Some refactoring and just starting some testing">
+      <created>1387665206144</created>
+      <updated>1387665206144</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Using new path generation and more flexible conformity checks">
+      <created>1387673724422</created>
+      <updated>1387673724422</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Starting on rendering">
+      <created>1387856075691</created>
+      <updated>1387856075691</updated>
+    </task>
+    <task id="LOCAL-00024" summary="More graphics">
+      <created>1387898634642</created>
+      <updated>1387898634642</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Fixed a visualization bug">
+      <created>1387899030367</created>
+      <updated>1387899030367</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Generating puzzlers with priority adjustments">
+      <created>1387902089685</created>
+      <updated>1387902089685</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Refactored to put more importance on Tweaker&#10;&#10;There is a bug in one of the commented out contraint&#10;generators.  I'm thinking it is IsNotNumber, but I need to&#10;track it down.">
+      <created>1387917558388</created>
+      <updated>1387917558388</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Seems to be making nice puzzles">
+      <created>1387920666936</created>
+      <updated>1387920666936</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Generating 20 problems that look pretty good">
+      <created>1387921655608</created>
+      <updated>1387921655608</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Purely graphical constraints and much better constraint layout">
+      <created>1387978958174</created>
+      <updated>1387978958174</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Random plan generation and flexible problem statement">
+      <created>1387980617329</created>
+      <updated>1387980617329</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Nice Medium6x6 puzzle generator now">
+      <created>1388114150411</created>
+      <updated>1388114150411</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Improved look and feel.">
+      <created>1388114740865</created>
+      <updated>1388114740865</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942554" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25035766" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3987952" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3385542" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USERS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+    <MESSAGE value="Added checks for bogus problems&#10;&#10;This code checks to make sure there actually&#10;are solutions to the base problem" />
+    <MESSAGE value="Cleaned up some warnings (and turned others off)" />
+    <MESSAGE value="Tried to simplify PrimaryConstraints" />
+    <MESSAGE value="This actually looks like an interesting problem" />
+    <MESSAGE value="Had to add primary expressions or I couldn't get a solution&#10;&#10;I'm not sure adding the primary expressions was a good&#10;idea because the end result was that you didn't need the&#10;secondary variables at all.  Better to simply throw an&#10;exception that a well-posed problem statement can't&#10;be found than to spit out a lame problem." />
+    <MESSAGE value="Got rid of primary constraints" />
+    <MESSAGE value="Generated a puzzle using paths&#10;&#10;I've got a random path generator in here now and&#10;I generated a puzzle that seems to be OK.  I need&#10;to try it out more.&#10;" />
+    <MESSAGE value="Produced an interesting puzzle&#10;&#10;I'm not happy about the CPU time required to synthesize&#10;one puzzle, but at least the generator is working.&#10;&#10;Now, I really need to work on visualization!  It is getting&#10;tedious to transcribe these and try and solve them in&#10;textual format.&#10;&#10;Generate in JSON notation?" />
+    <MESSAGE value="Created a new problem generator&#10;&#10;I call this the Scuptor approach.  It generates all valid&#10;constraints.  At that point, it confirms that a solution&#10;exists for the specified solution.  Once that is established,&#10;it randomizes and sorts (by priority) those constraints and&#10;attempts to eliminate them one by one.  If eliminating&#10;a constraint would break the &quot;plan&quot; (represented by the&#10;DTree class) for dependencies between variables, then&#10;the constraint cannot be eliminated.  If the constraint&#10;doesn't break the plan, then we check to make sure a&#10;unique solution exists if the constraint is eliminated.  If&#10;so, the constraint is removed...otherwise we keep it.&#10;&#10;This seems to work (even for purely secondary constraints!).&#10;But the number of constraints ends up being pretty high.&#10;I'm curious whether this could be a measure of difficulty?&#10;" />
+    <MESSAGE value="We seem to have a pretty robust little algorith here&#10;&#10;For 3-4 variables, it seems to consistently produce&#10;solutions that are about 6-8 constraints.  It does seem&#10;to find lots of random starting points that don't have&#10;a solution, but it prunes them quickly." />
+    <MESSAGE value="Fixed a bug in sorting&#10;&#10;Now I use all possible valid constraints and it seems&#10;to very consistently get rid of primaries if at all possible." />
+    <MESSAGE value="Need to start testing&#10;&#10;Things are getting too complicated and too much of&#10;what I'm running as an application is really a test.  So&#10;I'm getting serious about testing.  I installed ScalaTest&#10;through Maven and I created a tests directory (I figured&#10;out that I have to &quot;Mark&quot; the directory as a tests directory).&#10;&#10;Now I'm figuring out how to trigger the test runners&#10;in IDEA.  Then, I can start writing the tests I need to&#10;validate all this stuff.  In the short term, the critical&#10;piece is debugging the new path generation stuff." />
+    <MESSAGE value="Some refactoring and just starting some testing" />
+    <MESSAGE value="Using new path generation and more flexible conformity checks" />
+    <MESSAGE value="Starting on rendering" />
+    <MESSAGE value="More graphics" />
+    <MESSAGE value="Fixed a visualization bug" />
+    <MESSAGE value="Generating puzzlers with priority adjustments" />
+    <MESSAGE value="Refactored to put more importance on Tweaker&#10;&#10;There is a bug in one of the commented out contraint&#10;generators.  I'm thinking it is IsNotNumber, but I need to&#10;track it down." />
+    <MESSAGE value="Seems to be making nice puzzles" />
+    <MESSAGE value="Generating 20 problems that look pretty good" />
+    <MESSAGE value="Purely graphical constraints and much better constraint layout" />
+    <MESSAGE value="Random plan generation and flexible problem statement" />
+    <MESSAGE value="Nice Medium6x6 puzzle generator now" />
+    <MESSAGE value="Improved look and feel." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved look and feel." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Sculptor.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="26" selection-start="1540" selection-end="1540" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/SecondaryConstraints.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="1" selection-start="4170" selection-end="4170" vertical-scroll-proportion="0.0" vertical-offset="1530" max-vertical-offset="3090">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/PrimaryConstraints.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="0" selection-start="3599" selection-end="3599" vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="1425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/SimdConstraint.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="99" selection-start="1393" selection-end="1393" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Problem.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1095">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Board.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="23" selection-start="2869" selection-end="2869" vertical-scroll-proportion="0.0" vertical-offset="376" max-vertical-offset="1470">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Paths.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="47" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/simd/tests/PathSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="24" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Color.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="23" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Simd.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="28" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1485">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/ProblemGenerator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="1" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1350">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Sculptor.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="48" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="1215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/SecondaryConstraints.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="5" selection-start="1015" selection-end="1015" vertical-scroll-proportion="0.0" vertical-offset="207" max-vertical-offset="3090">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/PrimaryConstraints.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="0" selection-start="3599" selection-end="3599" vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="1425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/SimdConstraint.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="21" selection-start="1657" selection-end="1657" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Problem.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="35" selection-start="2997" selection-end="2997" vertical-scroll-proportion="0.0" vertical-offset="709" max-vertical-offset="3030">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Color.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="23" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Simd.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="28" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1485">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/ProblemGenerator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="1" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1350">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Sculptor.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="48" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="1215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/SecondaryConstraints.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="5" selection-start="1015" selection-end="1015" vertical-scroll-proportion="0.0" vertical-offset="207" max-vertical-offset="3090">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/PrimaryConstraints.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="0" selection-start="3599" selection-end="3599" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/SimdConstraint.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="21" selection-start="1657" selection-end="1657" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Problem.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="31" selection-start="3735" selection-end="3735" vertical-scroll-proportion="0.0" vertical-offset="719" max-vertical-offset="2595">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Color.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="23" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Simd.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="28" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1485">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/ProblemGenerator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="1" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1350">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Sculptor.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="48" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="1215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/SecondaryConstraints.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="5" selection-start="1015" selection-end="1015" vertical-scroll-proportion="0.0" vertical-offset="207" max-vertical-offset="3090">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/PrimaryConstraints.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="0" selection-start="3599" selection-end="3599" vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="1425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/SimdConstraint.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="21" selection-start="1657" selection-end="1657" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Problem.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="31" selection-start="3735" selection-end="3735" vertical-scroll-proportion="0.0" vertical-offset="719" max-vertical-offset="2595">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Color.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="23" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/tictac/Test.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="25" selection-start="1196" selection-end="1196" vertical-scroll-proportion="1.0542169" vertical-offset="0" max-vertical-offset="1620" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Paths.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="47" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/simd/tests/PathSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="31" selection-start="186" selection-end="202" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_puzzle.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/simd/tests/TestRender.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="429" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <folding>
+            <element signature="e#39#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/SecondaryConstraints.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="206" column="98" selection-start="9014" selection-end="9014" vertical-scroll-proportion="0.0" vertical-offset="2712" max-vertical-offset="3210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/Public/Simd_Puzzles3/puzzle13.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="64" selection-start="1980" selection-end="1980" vertical-scroll-proportion="-15.625" vertical-offset="60" max-vertical-offset="2730">
+          <folding>
+            <element signature="n#style#0;n#polyline#0;n#svg#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#polyline#1;n#svg#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#text#0;n#svg#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Sculptor.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="768" selection-end="768" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Tweaker.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="17" selection-start="1651" selection-end="1651" vertical-scroll-proportion="0.0" vertical-offset="589" max-vertical-offset="1095">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Color.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="523" selection-end="523" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/SVGRender.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="52" selection-start="1707" selection-end="1707" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="2475">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Board.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="30" selection-start="1026" selection-end="1026" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1470">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/ProblemGenerator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="52" selection-start="2386" selection-end="2386" vertical-scroll-proportion="0.0" vertical-offset="301" max-vertical-offset="1080">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Analyzer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="6" selection-start="3931" selection-end="3931" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1725">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Simd.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="34" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/SimdConstraint.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="15" selection-start="1574" selection-end="1574" vertical-scroll-proportion="0.5481928" vertical-offset="327" max-vertical-offset="825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Problem.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="0" selection-start="1851" selection-end="1851" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1230">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/PrimaryConstraints.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="34" selection-start="1724" selection-end="1724" vertical-scroll-proportion="0.45783132" vertical-offset="597" max-vertical-offset="2025">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Scala</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>JaCoP-3.2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>PoirotPuzzles</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>scala-compiler</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+
