@@ -92,20 +92,23 @@ class Analyzer(board: Board, sol: Map[String, Int], cons: List[SimdConstraint]) 
   def analyze() = {
     println("Analyzing");
     println("# of constraints: "+cons.length);
-    val uniq = filter(solvesAtLeastOne(_), Nil, cons);
-    val sizes = uniq map { _.length }
+    //val uniq2 = filter(solvesAtLeastOne(_), Nil, cons);
+    //val sizes = uniq map { _.length }
     val ncon = cons.length
-    val minc = sizes min
-    val nprimary = cons count { _.isInstanceOf[PrimaryConstraint] }
-    val p = path(cons, Nil, sol.keys.toSet, sol)
+    //val minc = sizes min
+    //val nprimary = cons count { _.isInstanceOf[PrimaryConstraint] }
+    val (primary, other) = cons partition { _.isInstanceOf[PrimaryConstraint] }
+    val nprimary = primary.length
+    val p = path(other, primary, sol.keys.toSet, sol)
     val maxc = p.values.toList max;
     //println("Sets of constraints that uniquely solve at least one variable:")
     //uniq foreach { p => println(p) }
     println("Number of constraints: "+ncon)
     println("Number of primary constraints: "+nprimary)
-    println("Min constraints for single var: "+minc);
+    //println("Min constraints for single var: "+minc);
     println("Max constraints needed at a single stage: "+maxc)
     println("Path = "+p)
-    (nprimary, minc, maxc)
+    (nprimary, maxc)
   }
 }
+

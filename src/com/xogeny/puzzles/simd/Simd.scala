@@ -26,7 +26,7 @@ object TestSimd {
   def sculptProblem(desc: String, seed0: Int, generator: ProblemGenerator) = {
     val (board, sol, cons) = generator.generate(seed0)
     val a = new Analyzer(board, sol, cons)
-    val (np, minc, maxc) = a.analyze()
+    val (np, maxc) = a.analyze()
     println("  # Constraints #")
     cons foreach { c => println(c) }
     println(sol)
