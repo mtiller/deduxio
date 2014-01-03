@@ -14,7 +14,3 @@ abstract class PrimaryConstraint(val v: String) extends Constraint {
   def satisfies(s: Space): Boolean;
   def evaluate(board: Board): Set[Int] = (for (s <- board.elements; if (satisfies(s._2))) yield s._1).toSet;
 }
-
-abstract class SecondaryConstraint(val v1: String, val v2: String) extends Constraint {
-  def evaluate(board: Board): (Set[Int],Set[Int]);
-}
