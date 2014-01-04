@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="434d5255-624f-4425-9866-c7f9f6805082" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/TestIsColor.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/AllCons.scala" afterPath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/AllCons.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/ConstraintGenerator.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/ConstraintGenerator.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/PrimaryConstraints.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/PrimaryConstraints.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/SecondaryConstraints.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/SecondaryConstraints.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/TestIsNumber.scala" afterPath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/TestIsNumber.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala" afterPath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PoirotPuzzles.iws" />
@@ -106,10 +102,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestIsNumber.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TestIsNumber.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/TestIsNumber.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="3" selection-start="457" selection-end="457" vertical-scroll-proportion="0.45180723" vertical-offset="0" max-vertical-offset="498">
+            <state line="15" column="3" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
               <folding>
                 <element signature="e#53#82#0" expanded="true" />
               </folding>
@@ -117,20 +113,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Problem.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Problem.scala">
+      <file leaf-file-name="TestSetSolver.scala" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="13" selection-start="968" selection-end="968" vertical-scroll-proportion="0.0" vertical-offset="331" max-vertical-offset="1140">
+            <state line="95" column="41" selection-start="3378" selection-end="3378" vertical-scroll-proportion="0.93172693" vertical-offset="901" max-vertical-offset="1500">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AllCons.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/AllCons.scala">
+      <file leaf-file-name="SetSolver.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="18" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
-              <folding />
+            <state line="59" column="0" selection-start="2209" selection-end="2209" vertical-scroll-proportion="0.0" vertical-offset="477" max-vertical-offset="990">
+              <folding>
+                <element signature="e#49#95#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -214,7 +212,6 @@
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/BoardTests.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/IsNumberTests.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Board.scala" />
-        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/TestSetSolver.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/Constraint.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/repr/AllRepr.scala" />
@@ -225,6 +222,8 @@
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/SecondaryConstraints.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/PrimaryConstraints.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/TestIsNumber.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala" />
+        <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala" />
       </list>
     </option>
   </component>
@@ -627,23 +626,7 @@
       <recent name="com.xogeny.puzzles.tictac" />
     </key>
   </component>
-  <component name="RunManager" selected="ScalaTest.AllTests">
-    <configuration default="false" name="TestSimd" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.xogeny.puzzles.simd.TestSimd" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="PoirotPuzzles" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="ScalaTest.TestSetSolver (1)">
     <configuration default="false" name="BoardTests" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <module name="PoirotPuzzles" />
       <setting name="path" value="com.xogeny.puzzles.deduxio.tests.alpha.BoardTests" />
@@ -692,6 +675,21 @@
     <configuration default="false" name="TestSetSolver" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <module name="PoirotPuzzles" />
       <setting name="path" value="com.xogeny.puzzles.deduxio.tests.alpha.TestSetSolver" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestSetSolver (1)" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <module name="PoirotPuzzles" />
+      <setting name="path" value="com.xogeny.puzzles.deduxio.tests.alpha.solver.TestSetSolver" />
       <setting name="package" value="" />
       <setting name="vmparams" value="" />
       <setting name="params" value="" />
@@ -865,19 +863,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.TestSimd" />
-      <item index="1" class="java.lang.String" itemvalue="ScalaTest.BoardTests" />
-      <item index="2" class="java.lang.String" itemvalue="ScalaTest.IsNumberTests" />
-      <item index="3" class="java.lang.String" itemvalue="ScalaTest.AllTests" />
-      <item index="4" class="java.lang.String" itemvalue="ScalaTest.TestSetSolver" />
+      <item index="0" class="java.lang.String" itemvalue="ScalaTest.BoardTests" />
+      <item index="1" class="java.lang.String" itemvalue="ScalaTest.IsNumberTests" />
+      <item index="2" class="java.lang.String" itemvalue="ScalaTest.AllTests" />
+      <item index="3" class="java.lang.String" itemvalue="ScalaTest.TestSetSolver" />
+      <item index="4" class="java.lang.String" itemvalue="ScalaTest.TestSetSolver (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="ScalaTest.AllTests" />
-        <item index="1" class="java.lang.String" itemvalue="ScalaTest.TestSetSolver" />
-        <item index="2" class="java.lang.String" itemvalue="ScalaTest.IsNumberTests" />
-        <item index="3" class="java.lang.String" itemvalue="ScalaTest.BoardTests" />
-        <item index="4" class="java.lang.String" itemvalue="Application.TestSimd" />
+        <item index="0" class="java.lang.String" itemvalue="ScalaTest.TestSetSolver (1)" />
+        <item index="1" class="java.lang.String" itemvalue="ScalaTest.AllTests" />
+        <item index="2" class="java.lang.String" itemvalue="ScalaTest.TestSetSolver" />
+        <item index="3" class="java.lang.String" itemvalue="ScalaTest.IsNumberTests" />
+        <item index="4" class="java.lang.String" itemvalue="ScalaTest.BoardTests" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1069,7 +1067,11 @@
       <created>1388813885767</created>
       <updated>1388813885767</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Refactored generators and it looks good.&#10;&#10;There is some weird issue I'm having with for&#10;comprehensions and option types.  I converted&#10;the options to a List and it fixed the issue.  I think it&#10;might be some kind of bug in IntelliJ, the presentation&#10;compiler, the fast compiler or whatever zinc-y kind&#10;thing they are doing to compile because it looks&#10;perfectly valid to me.">
+      <created>1388815656987</created>
+      <updated>1388815656987</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1114,7 +1116,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Created a new problem generator&#10;&#10;I call this the Scuptor approach.  It generates all valid&#10;constraints.  At that point, it confirms that a solution&#10;exists for the specified solution.  Once that is established,&#10;it randomizes and sorts (by priority) those constraints and&#10;attempts to eliminate them one by one.  If eliminating&#10;a constraint would break the &quot;plan&quot; (represented by the&#10;DTree class) for dependencies between variables, then&#10;the constraint cannot be eliminated.  If the constraint&#10;doesn't break the plan, then we check to make sure a&#10;unique solution exists if the constraint is eliminated.  If&#10;so, the constraint is removed...otherwise we keep it.&#10;&#10;This seems to work (even for purely secondary constraints!).&#10;But the number of constraints ends up being pretty high.&#10;I'm curious whether this could be a measure of difficulty?&#10;" />
     <MESSAGE value="We seem to have a pretty robust little algorith here&#10;&#10;For 3-4 variables, it seems to consistently produce&#10;solutions that are about 6-8 constraints.  It does seem&#10;to find lots of random starting points that don't have&#10;a solution, but it prunes them quickly." />
     <MESSAGE value="Fixed a bug in sorting&#10;&#10;Now I use all possible valid constraints and it seems&#10;to very consistently get rid of primaries if at all possible." />
     <MESSAGE value="Need to start testing&#10;&#10;Things are getting too complicated and too much of&#10;what I'm running as an application is really a test.  So&#10;I'm getting serious about testing.  I installed ScalaTest&#10;through Maven and I created a tests directory (I figured&#10;out that I have to &quot;Mark&quot; the directory as a tests directory).&#10;&#10;Now I'm figuring out how to trigger the test runners&#10;in IDEA.  Then, I can start writing the tests I need to&#10;validate all this stuff.  In the short term, the critical&#10;piece is debugging the new path generation stuff." />
@@ -1139,7 +1140,8 @@
     <MESSAGE value="Solver seems to be completely implemented&#10;&#10;I tried a couple of basic problems with constraints and&#10;they all seem to work.  I don't have any of the generation&#10;stuff implemented yet, so that might complicate things.&#10;But overall, I'm pretty happy with simplicity of the&#10;implementations so far." />
     <MESSAGE value="Refactored Constraints&#10;&#10;Now I need to really look at generators." />
     <MESSAGE value="Refactored Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored Tests" />
+    <MESSAGE value="Refactored generators and it looks good.&#10;&#10;There is some weird issue I'm having with for&#10;comprehensions and option types.  I converted&#10;the options to a List and it fixed the issue.  I think it&#10;might be some kind of bug in IntelliJ, the presentation&#10;compiler, the fast compiler or whatever zinc-y kind&#10;thing they are doing to compile because it looks&#10;perfectly valid to me." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored generators and it looks good.&#10;&#10;There is some weird issue I'm having with for&#10;comprehensions and option types.  I converted&#10;the options to a List and it fixed the issue.  I think it&#10;might be some kind of bug in IntelliJ, the presentation&#10;compiler, the fast compiler or whatever zinc-y kind&#10;thing they are doing to compile because it looks&#10;perfectly valid to me." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1396,22 +1398,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="20" selection-start="869" selection-end="869" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="990">
-          <folding>
-            <element signature="e#49#95#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="31" selection-start="3027" selection-end="3027" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1365">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/repr/TestBoard.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="0" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="585">
@@ -1437,7 +1423,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="3" selection-start="241" selection-end="241" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
           <folding>
-            <element signature="e#48#75#0" expanded="true" />
+            <element signature="e#48#75#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1509,10 +1495,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/TestIsNumber.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="3" selection-start="457" selection-end="457" vertical-scroll-proportion="0.45180723" vertical-offset="0" max-vertical-offset="498">
+        <state line="15" column="3" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
           <folding>
             <element signature="e#53#82#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="0" selection-start="2209" selection-end="2209" vertical-scroll-proportion="0.0" vertical-offset="477" max-vertical-offset="990">
+          <folding>
+            <element signature="e#49#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="41" selection-start="3378" selection-end="3378" vertical-scroll-proportion="0.93172693" vertical-offset="901" max-vertical-offset="1500">
+          <folding />
         </state>
       </provider>
     </entry>

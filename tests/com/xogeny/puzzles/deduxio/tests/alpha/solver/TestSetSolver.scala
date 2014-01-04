@@ -82,4 +82,17 @@ class TestSetSolver extends FunSuite {
     val sol = ss1.impose(c1 :: c2 :: c3 :: c4 :: c5 :: c6 :: Nil).solve()
     assert(sol==Set(Map("A" -> 0, "B" -> 1, "C" -> 2)));
   }
+
+  test("For comprehensions") {
+    val x: Option[Int] = Some(1)
+    val y: List[Int] = List(2,3,4)
+    val z: Set[Int] = Set(5,6)
+    val a = for(zv <- z; if zv>=0; xv <- x.toList; if xv>=0; yv <-y) yield (xv, yv, zv)
+    println(a)
+  }
+
+  test("Test forall") {
+    val x = Nil;
+    assert(x forall { x => false}, true);
+  }
 }
