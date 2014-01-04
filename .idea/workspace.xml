@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="434d5255-624f-4425-9866-c7f9f6805082" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala" afterPath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PoirotPuzzles.iws" />
@@ -113,19 +112,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestSetSolver.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TestSetSolver.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="41" selection-start="3378" selection-end="3378" vertical-scroll-proportion="0.93172693" vertical-offset="901" max-vertical-offset="1500">
+            <state line="95" column="41" selection-start="3378" selection-end="3378" vertical-scroll-proportion="0.0" vertical-offset="886" max-vertical-offset="1500">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SetSolver.scala" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SetSolver.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="0" selection-start="2209" selection-end="2209" vertical-scroll-proportion="0.0" vertical-offset="477" max-vertical-offset="990">
+            <state line="45" column="26" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.30722892" vertical-offset="522" max-vertical-offset="1020">
               <folding>
                 <element signature="e#49#95#0" expanded="true" />
               </folding>
@@ -222,8 +221,8 @@
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/SecondaryConstraints.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/PrimaryConstraints.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/TestIsNumber.scala" />
-        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala" />
       </list>
     </option>
   </component>
@@ -1071,7 +1070,11 @@
       <created>1388815656987</created>
       <updated>1388815656987</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Got rid of the stupid flatten operation">
+      <created>1388838596380</created>
+      <updated>1388838596380</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1116,7 +1119,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="We seem to have a pretty robust little algorith here&#10;&#10;For 3-4 variables, it seems to consistently produce&#10;solutions that are about 6-8 constraints.  It does seem&#10;to find lots of random starting points that don't have&#10;a solution, but it prunes them quickly." />
     <MESSAGE value="Fixed a bug in sorting&#10;&#10;Now I use all possible valid constraints and it seems&#10;to very consistently get rid of primaries if at all possible." />
     <MESSAGE value="Need to start testing&#10;&#10;Things are getting too complicated and too much of&#10;what I'm running as an application is really a test.  So&#10;I'm getting serious about testing.  I installed ScalaTest&#10;through Maven and I created a tests directory (I figured&#10;out that I have to &quot;Mark&quot; the directory as a tests directory).&#10;&#10;Now I'm figuring out how to trigger the test runners&#10;in IDEA.  Then, I can start writing the tests I need to&#10;validate all this stuff.  In the short term, the critical&#10;piece is debugging the new path generation stuff." />
     <MESSAGE value="Some refactoring and just starting some testing" />
@@ -1141,7 +1143,8 @@
     <MESSAGE value="Refactored Constraints&#10;&#10;Now I need to really look at generators." />
     <MESSAGE value="Refactored Tests" />
     <MESSAGE value="Refactored generators and it looks good.&#10;&#10;There is some weird issue I'm having with for&#10;comprehensions and option types.  I converted&#10;the options to a List and it fixed the issue.  I think it&#10;might be some kind of bug in IntelliJ, the presentation&#10;compiler, the fast compiler or whatever zinc-y kind&#10;thing they are doing to compile because it looks&#10;perfectly valid to me." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored generators and it looks good.&#10;&#10;There is some weird issue I'm having with for&#10;comprehensions and option types.  I converted&#10;the options to a List and it fixed the issue.  I think it&#10;might be some kind of bug in IntelliJ, the presentation&#10;compiler, the fast compiler or whatever zinc-y kind&#10;thing they are doing to compile because it looks&#10;perfectly valid to me." />
+    <MESSAGE value="Got rid of the stupid flatten operation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got rid of the stupid flatten operation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1502,19 +1505,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala">
+    <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="2209" selection-end="2209" vertical-scroll-proportion="0.0" vertical-offset="477" max-vertical-offset="990">
-          <folding>
-            <element signature="e#49#95#0" expanded="true" />
-          </folding>
+        <state line="95" column="41" selection-start="3378" selection-end="3378" vertical-scroll-proportion="0.0" vertical-offset="886" max-vertical-offset="1500">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala">
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="41" selection-start="3378" selection-end="3378" vertical-scroll-proportion="0.93172693" vertical-offset="901" max-vertical-offset="1500">
-          <folding />
+        <state line="45" column="26" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.30722892" vertical-offset="522" max-vertical-offset="1020">
+          <folding>
+            <element signature="e#49#95#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

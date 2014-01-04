@@ -38,22 +38,24 @@ case class SetSolver(prob: Problem, vals: Map[String,Set[Int]], cons: List[Secon
     }
   }
   def solve(): Set[Map[String,Int]] = solve(Map[String,Int](), None, prob.vars.toList, cons);
+
+
   private def solve(sol: Map[String,Int], last: Option[String],
                     left: List[String], scons: List[SecondaryConstraint]): Set[Map[String,Int]] = left match {
     case Nil => Set(sol)
-    case next :: tail => last match {
-      case None => for(ne <- vals.get(next).get;
-                       ns <- List(board.spaces(ne));
-                       s  <- solve(sol + (next -> ne), Some(next), tail, scons)) yield s;
-      case Some(x) => {
-        val (active, rem) = scons.partition { _.involves(x, next) }
-        val ls = board.spaces(sol.get(x).get);
-        for(ne <- vals.get(next).get;
-            if !sol.values.toSet.contains(ne);
-            ns <- List(board.spaces(ne));
-            if active.forall { _.satisfies(board, ls, ns)};
-            s  <- solve(sol + (next -> ne), Some(next), tail, rem)) yield s;
+    case next :: tail => {
+      val (consistent, rem) = last match {
+        case None => ({ ns: Space => true}, scons)
+        case Some(x) => {
+          val (active, rem) = scons.partition { _.involves(x, next) }
+          val ls = board.spaces(sol.get(x).get);
+          ({ ns: Space => active.forall { _.satisfies(board, ls, ns)}}, rem)
+        }
       }
+      for(ne <- vals.get(next).get;             // Consider each potential value for current variable
+          if !sol.values.toSet.contains(ne);    // Make sure that value hasn't already been assigned
+          if consistent(board.spaces(ne));      // Make sure it is consistent with activated constraints
+          s  <- solve(sol + (next -> ne), Some(next), tail, rem)) yield s;
     }
   }
 }
