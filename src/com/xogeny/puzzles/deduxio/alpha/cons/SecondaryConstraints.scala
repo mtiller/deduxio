@@ -20,13 +20,15 @@ trait SecondaryConstraintGenerator extends ConstraintGenerator {
     for (v1 <- prob.vars;
          v2 <- prob.vars;
          if v1!=v2;
-         s1 <- sol.get(v1) map { prob.board.spaces(_) } toList;
-         s2 <- sol.get(v2) map { prob.board.spaces(_) } toList;
+         s1 <- (sol.get(v1) map { prob.board.spaces(_) }).toList;
+         s2 <- (sol.get(v2) map { prob.board.spaces(_) }).toList;
          if s1!=s2;
          c <- generate(prob.board, v1, s1, v2, s2)) yield c;
   }
   def generate(board: Board, v1: String, s1: Space, v2: String, s2: Space): List[SecondaryConstraint];
 }
+
+/* AdjacentTo, SameColumn, SameRow, GreaterThan, LessThan, SameNumber, SameColor, SamePath */
 
 case object SamePath extends SecondaryConstraintGenerator {
   def generate(board: Board, v1: String, s1: Space, v2: String, s2: Space) = (board.paths(s1) & board.paths(s2)).size match {
