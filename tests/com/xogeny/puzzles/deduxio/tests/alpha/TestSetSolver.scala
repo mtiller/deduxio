@@ -51,7 +51,34 @@ class TestSetSolver extends FunSuite {
 
   test("Test collision detection") {
     val ss1 = SetSolver.forProblem(Problem(Samples.B1, Set("A", "B")));
-    val bsols = ss1.solve();
-    assert(bsols.size==72);
+    val bsol1 = ss1.solve();
+    assert(bsol1.size==72);
+    val ss2 = SetSolver.forProblem(Problem(Samples.B1, Set("A", "B", "C")));
+    val bsol2 = ss2.solve();
+    assert(bsol2.size==9*8*7);
+  }
+
+  test("Test SetSolver with primary constraints") {
+    val ss1 = SetSolver.forProblem(Problem(Samples.B1, Set("A", "B", "C")));
+    val c1 = IsNumber("A", 1)
+    val c2 = IsColor("A", Red)
+    val c3 = IsNumber("B", 2)
+    val c4 = IsColor("B", Red)
+    val c5 = IsNumber("C", 3)
+    val c6 = IsColor("C", Red)
+    val sol = ss1.impose(c1 :: c2 :: c3 :: c4 :: c5 :: c6 :: Nil).solve()
+    assert(sol==Set(Map("A" -> 0, "B" -> 1, "C" -> 2)));
+  }
+
+  test("Test SetSolver with secondary constraints") {
+    val ss1 = SetSolver.forProblem(Problem(Samples.B1, Set("A", "B", "C")));
+    val c1 = IsNumber("A", 1)
+    val c2 = IsColor("A", Red)
+    val c3 = IsNumber("B", 2)
+    val c4 = SamePath("A", "B")
+    val c5 = IsNumber("C", 3)
+    val c6 = SamePath("B", "C")
+    val sol = ss1.impose(c1 :: c2 :: c3 :: c4 :: c5 :: c6 :: Nil).solve()
+    assert(sol==Set(Map("A" -> 0, "B" -> 1, "C" -> 2)));
   }
 }

@@ -40,6 +40,14 @@ case class IsNumber(V: String, number: Int) extends PrimaryConstraint(V) {
   def satisfies(board: Board, s: Space): Boolean = s.number==number
 }
 
+case object IsColor extends PrimaryConstraintGenerator {
+  def generate(board: Board, v: String, s: Space): List[PrimaryConstraint] = List(IsColor(v, s.color))
+}
+
+case class IsColor(V: String, color: Color) extends PrimaryConstraint(V) {
+  def satisfies(board: Board, s: Space): Boolean = s.color==color
+}
+
 case object SamePath extends SecondaryConstraintGenerator {
   def generate(board: Board, v1: String, s1: Space, v2: String, s2: Space) = (board.paths(s1) & board.paths(s2)).size match {
     case 0 => Nil

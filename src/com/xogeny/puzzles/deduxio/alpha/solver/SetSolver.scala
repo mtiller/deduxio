@@ -23,7 +23,11 @@ case class SetSolver(prob: Problem, vals: Map[String,Set[Int]], cons: List[Secon
       m ++ List(c.v1 -> l1, c.v2 -> l2)
     }
   }
-  def impose(c: Constraint) = c match {
+  def impose(cl: List[Constraint]): SetSolver = cl match {
+    case Nil => this
+    case x :: y => impose(y).impose(x)
+  }
+  def impose(c: Constraint): SetSolver = c match {
     case p: PrimaryConstraint => {
       val orig = vals.get(p.v).get
       val consistent = orig filter { e => p.satisfies(board, board.spaces(e)) }
