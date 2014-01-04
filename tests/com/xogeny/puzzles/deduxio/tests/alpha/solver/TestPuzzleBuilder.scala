@@ -11,7 +11,7 @@ import com.xogeny.puzzles.deduxio.alpha.solver._
  */
 class TestPuzzleBuilder extends FunSuite {
   test("Puzzle builder algorithm") {
-    val (prob, sol) = ProblemGenerator.generate(0, 3, 3, 3, List(Red, Green, Blue))
+    val (prob, sol) = ProblemGenerator.generate(0, (3, 3), 3, List(Red, Green, Blue))
     println(prob);
     println(sol);
     val builder = PuzzleBuilder(prob, sol, PvS)

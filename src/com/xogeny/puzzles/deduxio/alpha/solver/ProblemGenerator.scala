@@ -10,8 +10,9 @@ import scala.util.Random
 object ProblemGenerator {
   type CurList = List[Pair[Color,List[Int]]];
 
-  def generate(w: Int, h: Int, seed: Int, n: Int, colors: List[Color]) = {
-    val board = randomBoard(w, h, seed, n, colors);
+  def generate(seed: Long, size: (Int, Int), n: Int, colors: List[Color]) = {
+    val (w, h) = size
+    val board = randomBoard(seed, size, n, colors);
     val s = randomSolution(board, n)
     val p = Problem(board, s.keys.toSet)
     val pgens = List(IsNumber, IsColor);
@@ -20,7 +21,8 @@ object ProblemGenerator {
     (p, s)
   }
 
-  def randomBoard(w: Int, h: Int, seed: Long, n: Int, colors: List[Color]): Board = {
+  def randomBoard(seed: Long, size: (Int, Int), n: Int, colors: List[Color]): Board = {
+    val (w, h) = size
     val nums = 0 to w*h-1;
     Random.setSeed(seed);
     val balls = (1 to n).toList flatMap { n => colors map { c => Space(c, n, 0, 0 )}}
@@ -58,27 +60,19 @@ object ProblemGenerator {
       /* If that color is "dead" (cannot be extended), then move on to next element in list */
       case (c, path) :: r if dead.contains(c) => growPaths(board, (cur tail) ::: ((cur head) :: Nil), dead, left)
       case (c, path) :: r => {
-        val adjs2 = board.adjacent(path head) filter { left.contains(_) }
-        adjs2.toList match {
-          case Nil => {
-            val tadjs2 = board.adjacent(path last) filter { left.contains(_) }
-            tadjs2.toList match {
-              case Nil => {
-                val newdead = dead + c;
-                /* No more colors we can process, we're done */
-                if (newdead.size==cur.length) Paths(Map() ++ cur);
-                else growPaths(board, (cur tail) ::: ((cur head) :: Nil), newdead, left);
-              }
-              case x => {
-                val choice = Random.shuffle(x).head
-                growPaths(board, (cur tail) ::: ((c, path ::: (choice :: Nil)) :: Nil), dead, left-choice)
-              }
-            }
-          }
-          case x => {
-            val choice = Random.shuffle(x).head
-            growPaths(board, (cur tail) ::: ((c, choice :: path) :: Nil), dead, left-choice)
-          }
+        val hadj = board.adjacent(path head) map { (true, _) };  // adjacent to head of current path
+        val tadj = board.adjacent(path last) map { (false, _) }; // adjacent to end of current path
+        val adjs = (hadj ++ tadj) filter { x => left.contains(x._2) } // Keep ones that are "left"
+        val adj = Random.shuffle(adjs.toList) // Randomize
+        adj match {
+          // Check if all colors have been processed.  If so, we are done.
+          case Nil if dead.size+1==cur.length => Paths(Map() ++ cur)
+          // If no adjacents, skip this color, mark it as dead and continue with next color
+          case Nil => growPaths(board, (cur tail) ::: ((cur head) :: Nil), dead + c, left);
+          // If we find an adjacent element, check if it is at the front.  If so, add it to head of path and continue
+          case (athead, choice) :: y if athead => growPaths(board, (cur tail) ::: ((c, choice :: path) :: Nil), dead, left-choice)
+          // We found an element at the end.  Add it to the end of the path and continue
+          case (_, choice) :: y => growPaths(board, (cur tail) ::: ((c, path ::: (choice :: Nil)) :: Nil), dead, left-choice)
         }
       }
     }
