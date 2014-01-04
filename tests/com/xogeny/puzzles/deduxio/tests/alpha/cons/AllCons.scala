@@ -9,7 +9,8 @@ class AllCons extends Suites(
   new TestIsColor,
   new TestIsNumber,
   new TestIsRow,
-  new TestIsColumn
+  new TestIsColumn,
+  new TestPrimaryNot
 ) {
 
 }

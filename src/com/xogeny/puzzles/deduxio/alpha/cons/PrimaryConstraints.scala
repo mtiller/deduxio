@@ -45,7 +45,7 @@ case class IsColor(V: String, color: Color) extends PositivePrimaryConstraint(V)
   def satisfies(board: Board, s: Space): Boolean = s.color==color
 }
 
-case class PrimaryNot(V: String, c: PositivePrimaryConstraint) extends PrimaryConstraint(V) {
+case class PrimaryNot(c: PositivePrimaryConstraint) extends PrimaryConstraint(c.v) {
   def satisfies(board: Board, s: Space): Boolean = !c.satisfies(board, s)
 }
 
