@@ -28,7 +28,34 @@ trait SecondaryConstraintGenerator extends ConstraintGenerator {
   def generate(board: Board, v1: String, s1: Space, v2: String, s2: Space): List[SecondaryConstraint];
 }
 
-/* AdjacentTo, SameColumn, SameRow, GreaterThan, LessThan, SameNumber, SameColor, SamePath */
+case class AdjacentTo(V1: String, V2: String) extends SecondaryConstraint(V1, V2) {
+  def satisfies(board: Board, s1: Space, s2: Space): Boolean = {
+    (s1.x+1==s2.x && s1.y==s2.y) ||
+    (s1.x-1==s2.x && s1.y==s2.y) ||
+    (s1.x==s2.x && s1.y+1==s2.y) ||
+    (s1.x==s2.x && s1.y-1==s2.y)
+  }
+}
+
+case class GreaterThan(V1: String, V2: String) extends SecondaryConstraint(V1, V2) {
+  def satisfies(board: Board, s1: Space, s2: Space): Boolean = s1.number>s2.number;
+}
+
+case class LessThan(V1: String, V2: String) extends SecondaryConstraint(V1, V2) {
+  def satisfies(board: Board, s1: Space, s2: Space): Boolean = s1.number<s2.number;
+}
+
+case class SameColor(V1: String, V2: String) extends SecondaryConstraint(V1, V2) {
+  def satisfies(board: Board, s1: Space, s2: Space): Boolean = s1.color==s2.color;
+}
+
+case class SameColumn(V1: String, V2: String) extends SecondaryConstraint(V1, V2) {
+  def satisfies(board: Board, s1: Space, s2: Space): Boolean = s1.x==s2.x;
+}
+
+case class SameNumber(V1: String, V2: String) extends SecondaryConstraint(V1, V2) {
+  def satisfies(board: Board, s1: Space, s2: Space): Boolean = s1.number==s2.number;
+}
 
 case object SamePath extends SecondaryConstraintGenerator {
   def generate(board: Board, v1: String, s1: Space, v2: String, s2: Space) = (board.paths(s1) & board.paths(s2)).size match {
@@ -39,4 +66,8 @@ case object SamePath extends SecondaryConstraintGenerator {
 
 case class SamePath(V1: String, V2: String) extends SecondaryConstraint(V1, V2) {
   def satisfies(board: Board, s1: Space, s2: Space): Boolean = (board.paths(s1) & board.paths(s2)).size>0
+}
+
+case class SameRow(V1: String, V2: String) extends SecondaryConstraint(V1, V2) {
+  def satisfies(board: Board, s1: Space, s2: Space): Boolean = s1.y==s2.y;
 }

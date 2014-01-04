@@ -1,8 +1,6 @@
 package com.xogeny.puzzles.deduxio.tests.alpha.solver
 
 import org.scalatest.FunSuite
-import com.xogeny.puzzles.deduxio.tests.alpha.Samples
-import com.xogeny.puzzles.deduxio.alpha.cons._
 import com.xogeny.puzzles.deduxio.alpha.repr._
 import com.xogeny.puzzles.deduxio.alpha.solver._
 
