@@ -28,7 +28,7 @@ case class SetSolver(prob: Problem, vals: Map[String,Set[Int]], cons: List[Secon
   val board = prob.board;
 
   def unique = vals.values forall { _.size==1 }
-  def multiple = solve().size>1
+  def multiple = solveAtMost(2).size>1
 
   def impose(c: Constraint): SetSolver = c match {
     case p: PrimaryConstraint => {
@@ -41,7 +41,7 @@ case class SetSolver(prob: Problem, vals: Map[String,Set[Int]], cons: List[Secon
     }
   }
 
-  def solve(): Set[Map[String,Int]] = solve(Map[String,Int](), None, prob.vars.toList, cons);
+  def solve(): Set[Map[String,Int]] = solutionStream(Map[String,Int](), None, prob.vars.toList, cons).toSet;
   def solveAtMost(atmost: Int): Set[Map[String,Int]] = (solutionStream(Map[String,Int](), None, prob.vars.toList, cons) take atmost).toSet
 
   private def solutionStream(sol: Map[String,Int], last: Option[String],
@@ -57,22 +57,6 @@ case class SetSolver(prob: Problem, vals: Map[String,Set[Int]], cons: List[Secon
           if !sol.values.toSet.contains(ne);    // Make sure that value hasn't already been assigned
           if consistent(board.spaces(ne));      // Make sure it is consistent with activated constraints
           s  <- solutionStream(sol + (next -> ne), Some(next), tail, rem)) yield s;
-    }
-  }
-
-  private def solve(sol: Map[String,Int], last: Option[String],
-                    left: List[String], scons: List[SecondaryConstraint]): Set[Map[String,Int]] = left match {
-    case Nil => Set(sol)
-    case next :: tail => {
-      val activeInfo = last map { x: String =>                          // If there was a last variable solved for
-        val (active, rem) = scons.partition { _.involves(x, next) }     // Get newly active constraints
-        ({ ns: Space => active.forall { _.satisfies(board, board.spaces(sol.get(x).get), ns)}}, rem)
-      }
-      val (consistent, rem) = activeInfo.getOrElse(({ns: Space => true}, scons))
-      for(ne <- vals.get(next).get;             // Consider each potential value for current variable
-          if !sol.values.toSet.contains(ne);    // Make sure that value hasn't already been assigned
-          if consistent(board.spaces(ne));      // Make sure it is consistent with activated constraints
-          s  <- solve(sol + (next -> ne), Some(next), tail, rem)) yield s;
     }
   }
 }

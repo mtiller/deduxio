@@ -20,16 +20,16 @@ class TestPuzzleBuilder extends FunSuite {
     val cons = builder.craft();
     assert(cons.length>0)
   }
-  //test("Puzzle builder algorithm for 5x5 problem") {
-  //  val (prob, sol) = ProblemGenerator.generate(0, (5, 5), 5, List(Red, Green, Blue, Yellow, Purple))
-  //  val builder = PuzzleBuilder(0, prob, sol, PvS)
-  //  val cons = builder.craft();
-  //  assert(cons.length>0)
-  //}
-  //test("Puzzle builder algorithm for 6x6 problem") {
-  //  val (prob, sol) = ProblemGenerator.generate(0, (6, 6), 6, List(Red, Green, Blue, Yellow, Purple, Cyan))
-  //  val builder = PuzzleBuilder(0, prob, sol, PvS)
-  //  val cons = builder.craft();
-  //  assert(cons.length>0)
-  //}
+  test("Puzzle builder algorithm for 5x5 problem") {
+    val (prob, sol) = ProblemGenerator.generate(0, (5, 5), 5, List(Red, Green, Blue, Yellow, Purple))
+    val builder = PuzzleBuilder(0, prob, sol, PvS)
+    val cons = builder.craft();
+    assert(cons.length>0)
+  }
+  test("Puzzle builder algorithm for 6x6 problem") {
+    val (prob, sol) = ProblemGenerator.generate(0, (6, 6), 6, List(Red, Green, Blue, Yellow, Purple, Cyan))
+    val builder = PuzzleBuilder(0, prob, sol, PvS)
+    val cons = builder.craft();
+    assert(cons.length>0)
+  }
 }

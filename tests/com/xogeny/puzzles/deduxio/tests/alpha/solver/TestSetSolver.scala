@@ -54,6 +54,12 @@ class TestSetSolver extends FunSuite {
     assert(bsol2.size==9*8*7);
   }
 
+  test("Test solveAtMost underflow") {
+    val ss1 = SetSolver.forProblem(Problem(Samples.B1, Set("A", "B")));
+    val bsol1 = ss1.solveAtMost(100);
+    assert(bsol1.size==72);
+  }
+
   test("Test solveAtMost") {
     val ss1 = SetSolver.forProblem(Problem(Samples.B1, Set("A", "B")));
     val bsol1 = ss1.solveAtMost(2);
