@@ -15,6 +15,7 @@ abstract class PrimaryConstraint(val v: String) extends Constraint {
 }
 
 abstract class SecondaryConstraint(val v1: String, val v2: String) extends Constraint {
+  def involves(i1: String, i2: String) = (i1==v1 && i2==v2) || (i1==v2 && i2==v1)
   def satisfies(board: Board, s1: Space, s2: Space): Boolean;
   def evaluate(board: Board): Set[(Int,Int)] = (for (s1 <- board.elements;
                                                      s2 <- board.elements;
