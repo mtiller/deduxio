@@ -5,7 +5,7 @@ import com.xogeny.puzzles.deduxio.alpha.repr._
 /**
  * Created by mtiller on 1/4/14.
  */
-abstract class PrimaryConstraint(val v: String) extends Constraint {
+sealed abstract class PrimaryConstraint(val v: String) extends Constraint {
   def satisfies(board: Board, s: Space): Boolean;
   def evaluate(board: Board): Set[Int] = (for (s <- board.elements; if satisfies(board, s._2)) yield s._1).toSet;
 }
@@ -19,20 +19,34 @@ trait PrimaryConstraintGenerator extends ConstraintGenerator {
   def generate(board: Board, v: String, s: Space): List[PrimaryConstraint];
 }
 
-case object IsNumber extends PrimaryConstraintGenerator {
-  def generate(board: Board, v: String, s: Space): List[PrimaryConstraint] = List(IsNumber(v, s.number))
+sealed abstract class PositivePrimaryConstraint(V: String) extends PrimaryConstraint(V);
+
+class SpaceBasedConstraintGenerator(f: ((String, Space) => PrimaryConstraint)) extends PrimaryConstraintGenerator {
+  def generate(board: Board, v: String, s: Space): List[PrimaryConstraint] = List(f(v, s))
 }
 
-case class IsNumber(V: String, number: Int) extends PrimaryConstraint(V) {
+case object IsNumber extends SpaceBasedConstraintGenerator({ (v, s) => new IsNumber(v,s.number) })
+case class IsNumber(V: String, number: Int) extends PositivePrimaryConstraint(V) {
   def satisfies(board: Board, s: Space): Boolean = s.number==number
 }
 
-case object IsColor extends PrimaryConstraintGenerator {
-  def generate(board: Board, v: String, s: Space): List[PrimaryConstraint] = List(IsColor(v, s.color))
+case object IsColumn extends SpaceBasedConstraintGenerator({ (v, s) => new IsColumn(v,s.x) })
+case class IsColumn(V: String, column: Int) extends PositivePrimaryConstraint(V) {
+  def satisfies(board: Board, s: Space): Boolean = s.x==column
 }
 
-case class IsColor(V: String, color: Color) extends PrimaryConstraint(V) {
+case object IsRow extends SpaceBasedConstraintGenerator({ (v, s) => new IsRow(v,s.y) })
+case class IsRow(V: String, row: Int) extends PositivePrimaryConstraint(V) {
+  def satisfies(board: Board, s: Space): Boolean = s.y==row
+}
+
+case object IsColor extends SpaceBasedConstraintGenerator({ (v, s) => new IsColor(v,s.color) })
+case class IsColor(V: String, color: Color) extends PositivePrimaryConstraint(V) {
   def satisfies(board: Board, s: Space): Boolean = s.color==color
+}
+
+case class PrimaryNot(V: String, c: PositivePrimaryConstraint) extends PrimaryConstraint(V) {
+  def satisfies(board: Board, s: Space): Boolean = !c.satisfies(board, s)
 }
 
 

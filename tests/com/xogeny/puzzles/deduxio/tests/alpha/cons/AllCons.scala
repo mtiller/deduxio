@@ -7,7 +7,9 @@ import org.scalatest.Suites
  */
 class AllCons extends Suites(
   new TestIsColor,
-  new TestIsNumber
+  new TestIsNumber,
+  new TestIsRow,
+  new TestIsColumn
 ) {
 
 }
