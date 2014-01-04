@@ -1,7 +1,8 @@
-package com.xogeny.puzzles.deduxio.tests.alpha
+package com.xogeny.puzzles.deduxio.tests.alpha.repr
 
 import org.scalatest.FunSuite
 import com.xogeny.puzzles.deduxio.alpha.repr._
+import com.xogeny.puzzles.deduxio.tests.alpha.Samples
 
 /**
  * Created by mtiller on 1/3/14.
