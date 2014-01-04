@@ -11,10 +11,10 @@ abstract class PrimaryConstraint(val v: String) extends Constraint {
 }
 
 trait PrimaryConstraintGenerator extends ConstraintGenerator {
-  def valid(prob: Problem): Set[Constraint] = {
-    for (v <- prob.vars;
-         s <- prob.board.spaces;
-         c <- generate(prob.board, v, s)) yield c;
+  def valid(prob: Problem, sol: Map[String,Int]): Set[Constraint] = {
+    for (v: String <- prob.vars;
+         s: Space <- (sol.get(v) map { prob.board.spaces(_) }).toList;
+         c: Constraint <- generate(prob.board, v, s)) yield c;
   }
   def generate(board: Board, v: String, s: Space): List[PrimaryConstraint];
 }

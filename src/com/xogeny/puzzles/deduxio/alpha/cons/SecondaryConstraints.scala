@@ -16,12 +16,12 @@ abstract class SecondaryConstraint(val v1: String, val v2: String) extends Const
 }
 
 trait SecondaryConstraintGenerator extends ConstraintGenerator {
-  def valid(prob: Problem): Set[Constraint] = {
+  def valid(prob: Problem, sol: Map[String,Int]): Set[Constraint] = {
     for (v1 <- prob.vars;
          v2 <- prob.vars;
          if v1!=v2;
-         s1 <- prob.board.spaces;
-         s2 <- prob.board.spaces;
+         s1 <- sol.get(v1) map { prob.board.spaces(_) } toList;
+         s2 <- sol.get(v2) map { prob.board.spaces(_) } toList;
          if s1!=s2;
          c <- generate(prob.board, v1, s1, v2, s2)) yield c;
   }

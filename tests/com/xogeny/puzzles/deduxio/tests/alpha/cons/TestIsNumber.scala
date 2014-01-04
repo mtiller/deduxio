@@ -16,8 +16,7 @@ class TestIsNumber extends FunSuite {
   }
   test("Test IsNumber constraint generator for B1") {
     val prob = Problem(Samples.B1, Set("A", "B"));
-    val cons = IsNumber.valid(prob);
-    assert(cons==Set(IsNumber("B",2), IsNumber("B", 1), IsNumber("B", 3),
-                     IsNumber("A",2), IsNumber("A", 1), IsNumber("A", 3)))
+    val cons = IsNumber.valid(prob, Map("A" -> 0, "B" -> 1));
+    assert(cons==Set(IsNumber("B",2), IsNumber("A", 1)))
   }
 }

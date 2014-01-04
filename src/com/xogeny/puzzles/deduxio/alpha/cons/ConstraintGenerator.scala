@@ -7,5 +7,5 @@ import com.xogeny.puzzles.deduxio.alpha.repr._
  */
 
 trait ConstraintGenerator {
-  def valid(prob: Problem): Set[Constraint];
+  def valid(prob: Problem, sol: Map[String,Int]): Set[Constraint];
 }
