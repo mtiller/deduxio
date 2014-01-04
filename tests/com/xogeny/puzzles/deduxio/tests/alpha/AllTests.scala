@@ -6,8 +6,8 @@ import org.scalatest.Suites
  * Created by mtiller on 1/3/14.
  */
 class AllTests extends Suites(
-  new BoardTests,
-  new IsNumberTests,
+  new TestBoard,
+  new TestIsNumber,
   new TestSetSolver
 ) {
 

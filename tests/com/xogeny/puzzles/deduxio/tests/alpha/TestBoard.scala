@@ -6,7 +6,7 @@ import com.xogeny.puzzles.deduxio.alpha.repr._
 /**
  * Created by mtiller on 1/3/14.
  */
-class BoardTests extends FunSuite {
+class TestBoard extends FunSuite {
   test("Space numbers in B1") {
     assert(Samples.B1.spaces(0).number==1);
     assert(Samples.B1.spaces(1).number==2);

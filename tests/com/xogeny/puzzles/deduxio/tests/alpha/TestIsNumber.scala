@@ -7,7 +7,7 @@ import com.xogeny.puzzles.deduxio.alpha.repr._
 /**
  * Created by mtiller on 1/3/14.
  */
-class IsNumberTests extends FunSuite {
+class TestIsNumber extends FunSuite {
   test("Test IsNumber constraint class") {
     val c = IsNumber("A", 1);
     val sets = c.evaluate(Samples.B1);
