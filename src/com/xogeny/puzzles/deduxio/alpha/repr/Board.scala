@@ -1,8 +1,11 @@
 package com.xogeny.puzzles.deduxio.alpha.repr
 
+import scala.util.Random
+
 /**
  * Created by mtiller on 1/3/14.
  */
+
 case class Board(spaces: List[Space], paths: Paths) {
   def elements: List[(Int,Space)] = (0 to spaces.length-1).toList map { i => i -> spaces(i)}
   def element(s: Space): Int = spaces.indexOf(s)

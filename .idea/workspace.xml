@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="434d5255-624f-4425-9866-c7f9f6805082" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/ProblemGenerator.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestProblemGenerator.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/AllSolver.scala" afterPath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/AllSolver.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Board.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Board.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Paths.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Paths.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala" afterPath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PoirotPuzzles.iws" />
@@ -72,24 +77,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ConstraintGenerator.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/ConstraintGenerator.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sculptor.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Sculptor.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="19" selection-start="948" selection-end="948" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="795">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TestSetSolver.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala">
           <provider selected="true" editor-type-id="text-editor">
@@ -99,10 +86,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SetSolver.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala">
+      <file leaf-file-name="PuzzleBuilder.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="11" selection-start="575" selection-end="575" vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="960">
+            <state line="22" column="70" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
               <folding>
                 <element signature="e#49#95#0" expanded="true" />
               </folding>
@@ -110,12 +97,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PuzzleBuilder.scala" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala">
+      <file leaf-file-name="ProblemGenerator.scala" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/ProblemGenerator.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="6" selection-start="271" selection-end="271" vertical-scroll-proportion="0.27108434" vertical-offset="0" max-vertical-offset="498">
+            <state line="65" column="27" selection-start="2618" selection-end="2618" vertical-scroll-proportion="0.57028115" vertical-offset="691" max-vertical-offset="1380">
               <folding>
                 <element signature="e#49#95#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestProblemGenerator.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestProblemGenerator.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="4" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+              <folding>
+                <element signature="e#55#84#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,7 +122,7 @@
       <file leaf-file-name="TestPuzzleBuilder.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="58" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+            <state line="15" column="17" selection-start="524" selection-end="524" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
               <folding>
                 <element signature="e#55#84#0" expanded="true" />
               </folding>
@@ -132,37 +130,46 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Board.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Board.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="0" selection-start="835" selection-end="1131" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1470">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Board.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Board.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="0" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="AllSolver.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/AllSolver.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="6" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+            <state line="11" column="3" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AllCons.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/AllCons.scala">
+      <file leaf-file-name="Paths.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Paths.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="123" selection-end="197" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+            <state line="45" column="0" selection-start="264" selection-end="1675" vertical-scroll-proportion="0.0" vertical-offset="207" max-vertical-offset="765">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Scorers.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/Scorers.scala">
+      <file leaf-file-name="Paths.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Paths.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="31" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrimaryConstraints.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/PrimaryConstraints.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="6" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="660">
+            <state line="8" column="44" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
               <folding />
             </state>
           </provider>
@@ -205,12 +212,10 @@
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Analyzer.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Color.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Problem.scala" />
-        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Paths.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Space.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/Samples.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/BoardTests.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/IsNumberTests.scala" />
-        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Board.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/TestSetSolver.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/Constraint.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/repr/AllRepr.scala" />
@@ -224,9 +229,14 @@
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/Scorers.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala" />
-        <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/AllSolver.scala" />
-        <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala" />
+        <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/ProblemGenerator.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala" />
+        <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Board.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Paths.scala" />
+        <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/AllSolver.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/ProblemGenerator.scala" />
+        <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestProblemGenerator.scala" />
       </list>
     </option>
   </component>
@@ -467,54 +477,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="simd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PoirotPuzzles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PoirotPuzzles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="puzzles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="simd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProblemGenerator.scala" />
-              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PoirotPuzzles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PoirotPuzzles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="puzzles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="alpha" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -696,47 +658,17 @@
       <recent name="$PROJECT_DIR$/tests" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.xogeny.puzzles.deduxio.alpha.solver" />
       <recent name="com.xogeny.puzzles.deduxio.tests.alpha.repr" />
       <recent name="com.xogeny.puzzles.deduxio.tests.alpha.solver" />
       <recent name="com.xogeny.puzzles.deduxio.tests.alpha.cons" />
       <recent name="com.xogeny.puzzles.simd" />
-      <recent name="com.xogeny.puzzles.tictac" />
     </key>
   </component>
-  <component name="RunManager" selected="ScalaTest.TestPuzzleBuilder">
-    <configuration default="false" name="IsNumberTests" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
-      <module name="PoirotPuzzles" />
-      <setting name="path" value="com.xogeny.puzzles.deduxio.tests.alpha.IsNumberTests" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="ScalaTest.TestProblemGenerator">
     <configuration default="false" name="AllTests" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <module name="PoirotPuzzles" />
       <setting name="path" value="com.xogeny.puzzles.deduxio.tests.alpha.AllTests" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="TestSetSolver" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
-      <module name="PoirotPuzzles" />
-      <setting name="path" value="com.xogeny.puzzles.deduxio.tests.alpha.TestSetSolver" />
       <setting name="package" value="" />
       <setting name="vmparams" value="" />
       <setting name="params" value="" />
@@ -767,6 +699,36 @@
     <configuration default="false" name="TestPuzzleBuilder" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <module name="PoirotPuzzles" />
       <setting name="path" value="com.xogeny.puzzles.deduxio.tests.alpha.solver.TestPuzzleBuilder" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestPuzzleBuilder.Puzzle builder algorithm" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <module name="PoirotPuzzles" />
+      <setting name="path" value="com.xogeny.puzzles.deduxio.tests.alpha.solver.TestPuzzleBuilder" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="Puzzle builder algorithm" />
+      <setting name="testKind" value="Test name" />
+      <setting name="showProgressMessages" value="true" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestProblemGenerator" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <module name="PoirotPuzzles" />
+      <setting name="path" value="com.xogeny.puzzles.deduxio.tests.alpha.solver.TestProblemGenerator" />
       <setting name="package" value="" />
       <setting name="vmparams" value="" />
       <setting name="params" value="" />
@@ -940,19 +902,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="ScalaTest.IsNumberTests" />
-      <item index="1" class="java.lang.String" itemvalue="ScalaTest.AllTests" />
-      <item index="2" class="java.lang.String" itemvalue="ScalaTest.TestSetSolver" />
-      <item index="3" class="java.lang.String" itemvalue="ScalaTest.TestSetSolver (1)" />
-      <item index="4" class="java.lang.String" itemvalue="ScalaTest.TestPuzzleBuilder" />
+      <item index="0" class="java.lang.String" itemvalue="ScalaTest.AllTests" />
+      <item index="1" class="java.lang.String" itemvalue="ScalaTest.TestSetSolver (1)" />
+      <item index="2" class="java.lang.String" itemvalue="ScalaTest.TestPuzzleBuilder" />
+      <item index="3" class="java.lang.String" itemvalue="ScalaTest.TestPuzzleBuilder.Puzzle builder algorithm" />
+      <item index="4" class="java.lang.String" itemvalue="ScalaTest.TestProblemGenerator" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="ScalaTest.TestPuzzleBuilder" />
-        <item index="1" class="java.lang.String" itemvalue="ScalaTest.AllTests" />
-        <item index="2" class="java.lang.String" itemvalue="ScalaTest.TestSetSolver (1)" />
-        <item index="3" class="java.lang.String" itemvalue="ScalaTest.TestSetSolver" />
-        <item index="4" class="java.lang.String" itemvalue="ScalaTest.IsNumberTests" />
+        <item index="0" class="java.lang.String" itemvalue="ScalaTest.TestProblemGenerator" />
+        <item index="1" class="java.lang.String" itemvalue="ScalaTest.TestPuzzleBuilder.Puzzle builder algorithm" />
+        <item index="2" class="java.lang.String" itemvalue="ScalaTest.TestPuzzleBuilder" />
+        <item index="3" class="java.lang.String" itemvalue="ScalaTest.AllTests" />
+        <item index="4" class="java.lang.String" itemvalue="ScalaTest.TestSetSolver (1)" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1168,7 +1130,11 @@
       <created>1388843389202</created>
       <updated>1388843389202</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Implemented a better puzzle solver&#10;&#10;The previous solver was flawed, but I reimplemented the&#10;sculptor algorithm and it was almost trivial.  I need to add&#10;the random element to puzzle construction, but that should&#10;be pretty easy.">
+      <created>1388844557430</created>
+      <updated>1388844557430</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1195,7 +1161,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25035766" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3987952" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3385542" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3385542" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1213,7 +1179,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Starting on rendering" />
     <MESSAGE value="More graphics" />
     <MESSAGE value="Fixed a visualization bug" />
     <MESSAGE value="Generating puzzlers with priority adjustments" />
@@ -1238,7 +1203,8 @@
     <MESSAGE value="Trying to make solution algorithm tighter" />
     <MESSAGE value="Cleaned up some junk in solver, starting on builder" />
     <MESSAGE value="Basic puzzle builder working&#10;&#10;There is an issue here though that it seems to be leaving&#10;redundant constraints in the mix.  I'm not sure if it is a&#10;bug in the constraint implementation or the puzzle builder.&#10;Other than that, it seems to be working as expected and&#10;it is very simple (and I suspect quite efficient due to the&#10;solver on the stack approach)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic puzzle builder working&#10;&#10;There is an issue here though that it seems to be leaving&#10;redundant constraints in the mix.  I'm not sure if it is a&#10;bug in the constraint implementation or the puzzle builder.&#10;Other than that, it seems to be working as expected and&#10;it is very simple (and I suspect quite efficient due to the&#10;solver on the stack approach)." />
+    <MESSAGE value="Implemented a better puzzle solver&#10;&#10;The previous solver was flawed, but I reimplemented the&#10;sculptor algorithm and it was almost trivial.  I need to add&#10;the random element to puzzle construction, but that should&#10;be pretty easy." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented a better puzzle solver&#10;&#10;The previous solver was flawed, but I reimplemented the&#10;sculptor algorithm and it was almost trivial.  I need to add&#10;the random element to puzzle construction, but that should&#10;be pretty easy." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1248,20 +1214,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/PrimaryConstraints.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="0" selection-start="3599" selection-end="3599" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/SimdConstraint.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="21" selection-start="1657" selection-end="1657" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="780">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Problem.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="109" column="31" selection-start="3735" selection-end="3735" vertical-scroll-proportion="0.0" vertical-offset="719" max-vertical-offset="2595">
@@ -1383,13 +1335,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Board.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="102" selection-end="401" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1470">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Color.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="0" selection-start="77" selection-end="521" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
@@ -1404,23 +1349,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Paths.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="102" selection-end="262" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Problem.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="19" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Paths.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="45" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
           <folding />
         </state>
       </provider>
@@ -1442,13 +1373,6 @@
     <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/simd/tests/PathSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="31" selection-start="186" selection-end="202" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Board.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="62" selection-start="636" selection-end="636" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
           <folding />
         </state>
       </provider>
@@ -1494,7 +1418,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="31" selection-start="535" selection-end="535" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
           <folding>
-            <element signature="e#53#82#0" expanded="true" />
+            <element signature="e#53#82#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1531,7 +1455,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="3" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
           <folding>
-            <element signature="e#53#82#0" expanded="true" />
+            <element signature="e#53#82#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1557,13 +1481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="0" selection-start="2684" selection-end="2684" vertical-scroll-proportion="0.0" vertical-offset="724" max-vertical-offset="1425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="11" selection-start="575" selection-end="575" vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="960">
@@ -1577,22 +1494,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="123" selection-end="197" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/AllSolver.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="6" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="58" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <folding>
-            <element signature="e#55#84#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1610,9 +1511,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Paths.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="0" selection-start="264" selection-end="1675" vertical-scroll-proportion="0.0" vertical-offset="207" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Board.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="835" selection-end="1131" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1470">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="0" selection-start="2684" selection-end="2684" vertical-scroll-proportion="0.0" vertical-offset="724" max-vertical-offset="1425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="6" selection-start="271" selection-end="271" vertical-scroll-proportion="0.27108434" vertical-offset="0" max-vertical-offset="498">
+        <state line="22" column="70" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+          <folding>
+            <element signature="e#49#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="17" selection-start="524" selection-end="524" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+          <folding>
+            <element signature="e#55#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Paths.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="44" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Board.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/AllSolver.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="3" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestProblemGenerator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="4" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <folding>
+            <element signature="e#55#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/ProblemGenerator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="27" selection-start="2618" selection-end="2618" vertical-scroll-proportion="0.57028115" vertical-offset="691" max-vertical-offset="1380">
           <folding>
             <element signature="e#49#95#0" expanded="true" />
           </folding>

@@ -11,8 +11,9 @@ import com.xogeny.puzzles.deduxio.alpha.solver._
  */
 class TestPuzzleBuilder extends FunSuite {
   test("Puzzle builder algorithm") {
-    val prob = Problem(Samples.B1, Set("A", "B"))
-    val sol = Map("A" -> 0, "B" -> 2)
+    val (prob, sol) = ProblemGenerator.generate(0, 3, 3, 3, List(Red, Green, Blue))
+    println(prob);
+    println(sol);
     val builder = PuzzleBuilder(prob, sol, PvS)
     println("Base constraints: "+builder.baseConstraints);
     val cons = builder.craft();
