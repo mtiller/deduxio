@@ -78,16 +78,17 @@ class TestSetSolver extends FunSuite {
     assert(sol==Set(Map("A" -> 0, "B" -> 1, "C" -> 2)));
   }
 
-  test("For comprehensions") {
-    val x: Option[Int] = Some(1)
-    val y: List[Int] = List(2,3,4)
-    val z: Set[Int] = Set(5,6)
-    val a = for(zv <- z; if zv>=0; xv <- x.toList; if xv>=0; yv <-y) yield (xv, yv, zv)
-    println(a)
-  }
-
-  test("Test forall") {
-    val x = Nil;
-    assert(x forall { x => false}, true);
+  test("Test PrimaryNot constraints") {
+    val ss1 = SetSolver.forProblem(Problem(Samples.B1, Set("A", "B", "C")));
+    val c1 = IsNumber("A", 1)
+    val c2 = IsColor("A", Red)
+    val c3 = IsNumber("B", 2)
+    val c4 = IsColor("B", Red)
+    val c5 = PrimaryNot(IsNumber("C", 2))
+    val c6 = PrimaryNot(IsNumber("C", 1))
+    val c7 = PrimaryNot(IsColor("C", Green))
+    val c8 = PrimaryNot(IsColor("C", Blue))
+    val sol = ss1.impose(c1 :: c2 :: c3 :: c4 :: c5 :: c6 :: c7 :: c8 :: Nil).solve()
+    assert(sol==Set(Map("A" -> 0, "B" -> 1, "C" -> 2)));
   }
 }

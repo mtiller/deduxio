@@ -33,4 +33,10 @@ class TestPrimaryNot extends FunSuite {
     val sets = n.evaluate(Samples.B1);
     assert(sets==Set(3, 4, 5, 6, 7, 8))
   }
+  test("Test PrimaryNot(IsOnPath(Blue)) constraint class") {
+    val c = IsOnPath("A", Blue);
+    val n = PrimaryNot(c);
+    val sets = n.evaluate(Samples.B1);
+    assert(sets==Set(3, 4, 5, 6, 7, 8))
+  }
 }
