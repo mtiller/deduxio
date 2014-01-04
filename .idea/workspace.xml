@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="434d5255-624f-4425-9866-c7f9f6805082" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/AllSolver.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -83,13 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestIsNumber.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/TestIsNumber.scala">
+      <file leaf-file-name="Sculptor.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Sculptor.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="3" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-              <folding>
-                <element signature="e#53#82#0" expanded="true" />
-              </folding>
+            <state line="26" column="19" selection-start="948" selection-end="948" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="795">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,7 +113,7 @@
       <file leaf-file-name="PuzzleBuilder.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="19" selection-start="447" selection-end="447" vertical-scroll-proportion="0.39156628" vertical-offset="0" max-vertical-offset="498">
+            <state line="9" column="6" selection-start="271" selection-end="271" vertical-scroll-proportion="0.27108434" vertical-offset="0" max-vertical-offset="498">
               <folding>
                 <element signature="e#49#95#0" expanded="true" />
               </folding>
@@ -451,6 +447,54 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="puzzles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PoirotPuzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProblemGenerator.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1120,7 +1164,11 @@
       <created>1388842185438</created>
       <updated>1388842185438</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Basic puzzle builder working&#10;&#10;There is an issue here though that it seems to be leaving&#10;redundant constraints in the mix.  I'm not sure if it is a&#10;bug in the constraint implementation or the puzzle builder.&#10;Other than that, it seems to be working as expected and&#10;it is very simple (and I suspect quite efficient due to the&#10;solver on the stack approach).">
+      <created>1388843389202</created>
+      <updated>1388843389202</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1165,7 +1213,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Using new path generation and more flexible conformity checks" />
     <MESSAGE value="Starting on rendering" />
     <MESSAGE value="More graphics" />
     <MESSAGE value="Fixed a visualization bug" />
@@ -1190,7 +1237,8 @@
     <MESSAGE value="Simpler solve method" />
     <MESSAGE value="Trying to make solution algorithm tighter" />
     <MESSAGE value="Cleaned up some junk in solver, starting on builder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up some junk in solver, starting on builder" />
+    <MESSAGE value="Basic puzzle builder working&#10;&#10;There is an issue here though that it seems to be leaving&#10;redundant constraints in the mix.  I'm not sure if it is a&#10;bug in the constraint implementation or the puzzle builder.&#10;Other than that, it seems to be working as expected and&#10;it is very simple (and I suspect quite efficient due to the&#10;solver on the stack approach)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic puzzle builder working&#10;&#10;There is an issue here though that it seems to be leaving&#10;redundant constraints in the mix.  I'm not sure if it is a&#10;bug in the constraint implementation or the puzzle builder.&#10;Other than that, it seems to be working as expected and&#10;it is very simple (and I suspect quite efficient due to the&#10;solver on the stack approach)." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1307,13 +1355,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Sculptor.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="768" selection-end="768" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Tweaker.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="56" column="17" selection-start="1651" selection-end="1651" vertical-scroll-proportion="0.0" vertical-offset="589" max-vertical-offset="1095">
@@ -1324,13 +1365,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Simd.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="4" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0" vertical-offset="117" max-vertical-offset="615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/ProblemGenerator.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="52" selection-start="2386" selection-end="2386" vertical-scroll-proportion="0.0" vertical-offset="301" max-vertical-offset="1080">
           <folding />
         </state>
       </provider>
@@ -1562,9 +1596,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/ProblemGenerator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="6" selection-start="1493" selection-end="1493" vertical-scroll-proportion="1.3012048" vertical-offset="27" max-vertical-offset="1080">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/simd/Sculptor.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="19" selection-start="948" selection-end="948" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="19" selection-start="447" selection-end="447" vertical-scroll-proportion="0.39156628" vertical-offset="0" max-vertical-offset="498">
+        <state line="9" column="6" selection-start="271" selection-end="271" vertical-scroll-proportion="0.27108434" vertical-offset="0" max-vertical-offset="498">
           <folding>
             <element signature="e#49#95#0" expanded="true" />
           </folding>

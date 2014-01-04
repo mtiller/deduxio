@@ -11,17 +11,14 @@ case class PuzzleBuilder(prob: Problem, sol: Map[String,Int], scorer: Scorer) {
     val pgens = List(IsNumber, IsColor);
     val sgens = List(SamePath);
     val cons = (pgens ::: sgens) flatMap { _.valid(prob, sol) }
-    cons.sortBy { -scorer.score(_) }
+    cons.sortBy { scorer.score(_) }
   }
-  private def investigate(given: List[Constraint], left: List[Constraint], solver: Solver): Option[List[Constraint]] = left match {
-    case Nil => None  // Assume that this yields exactly one solution, so we haven't found the smallest subset
-    case x :: y => investigate(x :: given, y, solver.impose(x)) match {  // Investigate without x
-      case None => if (solver.solve().size>1) Some(x :: given) else None  // If subset not found, see if x is critical
-      case Some(c) => Some(c)  // If subset was found, return it
+  private def trim(given: List[Constraint], left: List[Constraint], solver: Solver): List[Constraint] = left match {
+    case Nil => given
+    case x :: y => solver.impose(given ::: y).solve() match {
+      case sols if sols.size>1 => trim(x :: given, y, solver)
+      case _ => trim(given, y, solver)
     }
   }
-  def craft() = investigate(Nil, baseConstraints, SetSolver.forProblem(prob)) match {
-    case None => throw new RuntimeException("Couldn't find a problem in "+baseConstraints);
-    case Some(x) => x
-  }
+  def craft() = trim(Nil, baseConstraints, SetSolver.forProblem(prob))
 }
