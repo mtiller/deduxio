@@ -16,7 +16,8 @@ case class PuzzleBuilder(seed: Long, prob: Problem, sol: Map[String,Int], scorer
   val baseConstraints = {
     /* Generators to use */
     val pgens = List(IsColor, IsColumn, IsNumber, IsOnPath, IsRow, IsNotColor, IsNotColumn, IsNotNumber, IsNotRow);
-    val sgens = List(AdjacentTo, GreaterThan, LessThan, SameColor, SameColumn, SameNumber, SamePath, SameRow);
+    val sgens = List(AdjacentTo, GreaterThan, LessThan, SameColor, SameColumn, SameNumber, SamePath, SameRow,
+                     NotAdjacentTo, NotSameColor, NotSameColumn, NotSameNumber, NotSameRow);
 
     Random.setSeed(seed);
     /* Compute set of all consistent primary constraints (positive and negative) and then randomize and sort them */

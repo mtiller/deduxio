@@ -66,7 +66,7 @@ case class SameColumn(V1: String, V2: String) extends PositiveSecondaryConstrain
 }
 
 case object SameNumber extends SecondaryConstraintGenerator {
-  def generate(board: Board, v1: String, s1: Space, v2: String, s2: Space) = if (s1.color==s2.color) List(SameNumber(v1, v2)) else Nil
+  def generate(board: Board, v1: String, s1: Space, v2: String, s2: Space) = if (s1.number==s2.number) List(SameNumber(v1, v2)) else Nil
 }
 case class SameNumber(V1: String, V2: String) extends PositiveSecondaryConstraint(V1, V2) {
   def satisfies(board: Board, s1: Space, s2: Space): Boolean = s1.number==s2.number;
@@ -91,4 +91,25 @@ case class SameRow(V1: String, V2: String) extends PositiveSecondaryConstraint(V
 
 case class SecondaryNot(c: PositiveSecondaryConstraint) extends SecondaryConstraint(c.v1, c.v2) {
   def satisfies(board: Board, s1: Space, s2: Space): Boolean = !c.satisfies(board, s1, s2);
+}
+
+/* Negative Secondary Generators */
+case object NotAdjacentTo extends SecondaryConstraintGenerator {
+  def generate(board: Board, v1: String, s1: Space, v2: String, s2: Space) = if (!s1.adjacent(s2)) List(SecondaryNot(AdjacentTo(v1, v2))) else Nil
+}
+
+case object NotSameColor extends SecondaryConstraintGenerator {
+  def generate(board: Board, v1: String, s1: Space, v2: String, s2: Space) = if (s1.color!=s2.color) List(SecondaryNot(SameColor(v1, v2))) else Nil
+}
+
+case object NotSameColumn extends SecondaryConstraintGenerator {
+  def generate(board: Board, v1: String, s1: Space, v2: String, s2: Space) = if (s1.x!=s2.x) List(SecondaryNot(SameColumn(v1, v2))) else Nil
+}
+
+case object NotSameNumber extends SecondaryConstraintGenerator {
+  def generate(board: Board, v1: String, s1: Space, v2: String, s2: Space) = if (s1.number!=s2.number) List(SecondaryNot(SameNumber(v1, v2))) else Nil
+}
+
+case object NotSameRow extends SecondaryConstraintGenerator {
+  def generate(board: Board, v1: String, s1: Space, v2: String, s2: Space) = if (s1.y!=s2.y) List(SecondaryNot(SameRow(v1, v2))) else Nil
 }
