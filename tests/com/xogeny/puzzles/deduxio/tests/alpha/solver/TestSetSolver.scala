@@ -15,8 +15,6 @@ class TestSetSolver extends FunSuite {
     assert(ss.vals.get("A").get==Set(0, 1, 2, 3, 4, 5, 6, 7, 8))
     assert(ss.vals.get("B").get==Set(0, 1, 2, 3, 4, 5, 6, 7, 8))
     assert(ss.cons==Nil)
-    assert(ss.involving.get("A")==Some(Nil));
-    assert(ss.involving.get("B")==Some(Nil));
   }
 
   test("Applying primary constraints") {
@@ -34,9 +32,6 @@ class TestSetSolver extends FunSuite {
     val c1 = SamePath("A", "B")
     val ss2 = ss1.impose(c1);
     assert(ss2.cons==List(c1));
-    assert(ss2.involving.get("A")==Some(List(c1)));
-    assert(ss2.involving.get("B")==Some(List(c1)));
-    assert(ss2.involving.get("C")==None);
   }
 
   test("Simple solver test") {

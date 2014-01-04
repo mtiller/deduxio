@@ -7,26 +7,24 @@ import com.xogeny.puzzles.deduxio.alpha.repr._
  * Created by mtiller on 1/3/14.
  */
 
+trait Solver {
+  def solve(): Set[Map[String,Int]];
+  def impose(c: Constraint): Solver;
+  def impose(cl: List[Constraint]): Solver = cl match {
+    case Nil => this
+    case x :: y => impose(y).impose(x)
+  }
+}
+
 object SetSolver {
   def forProblem(prob: Problem) = {
     SetSolver(prob, Map() ++ (prob.vars map { v => v -> (0 to prob.board.spaces.length-1).toSet}), Nil)
   }
 }
 
-case class SetSolver(prob: Problem, vals: Map[String,Set[Int]], cons: List[SecondaryConstraint]) {
+case class SetSolver(prob: Problem, vals: Map[String,Set[Int]], cons: List[SecondaryConstraint]) extends Solver {
   val board = prob.board;
-  val involving: Map[String, List[SecondaryConstraint]] = {
-    val im = Map[String, List[SecondaryConstraint]]() ++ (vals.keys.toList map { v => v -> Nil})
-    cons.foldLeft(im) { (m, c) =>
-      val l1 = c :: m.get(c.v1).get
-      val l2 = c :: m.get(c.v2).get
-      m ++ List(c.v1 -> l1, c.v2 -> l2)
-    }
-  }
-  def impose(cl: List[Constraint]): SetSolver = cl match {
-    case Nil => this
-    case x :: y => impose(y).impose(x)
-  }
+
   def impose(c: Constraint): SetSolver = c match {
     case p: PrimaryConstraint => {
       val orig = vals.get(p.v).get
@@ -37,6 +35,7 @@ case class SetSolver(prob: Problem, vals: Map[String,Set[Int]], cons: List[Secon
       SetSolver(prob, vals, s :: cons)
     }
   }
+
   def solve(): Set[Map[String,Int]] = solve(Map[String,Int](), None, prob.vars.toList, cons);
 
 
