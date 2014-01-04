@@ -54,6 +54,15 @@ class TestSetSolver extends FunSuite {
     assert(bsol2.size==9*8*7);
   }
 
+  test("Test solveAtMost") {
+    val ss1 = SetSolver.forProblem(Problem(Samples.B1, Set("A", "B")));
+    val bsol1 = ss1.solveAtMost(2);
+    assert(bsol1.size==2);
+    val ss2 = SetSolver.forProblem(Problem(Samples.B1, Set("A", "B", "C")));
+    val bsol2 = ss2.solveAtMost(2);
+    assert(bsol2.size==2);
+  }
+
   test("Test SetSolver with primary constraints") {
     val ss1 = SetSolver.forProblem(Problem(Samples.B1, Set("A", "B", "C")));
     val c1 = IsNumber("A", 1)

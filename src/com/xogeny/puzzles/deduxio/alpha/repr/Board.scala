@@ -7,16 +7,16 @@ import scala.util.Random
  */
 
 case class Board(spaces: List[Space], paths: Paths) {
-  def elements: List[(Int,Space)] = (0 to spaces.length-1).toList map { i => i -> spaces(i)}
+  val elements = (0 to spaces.length-1).toList map { i => i -> spaces(i)}
+  val numbers = spaces.foldLeft(Set[Int]()) { (nums, s) => nums + s.number }
+  val colors = spaces.foldLeft(Set[Color]()) { (cols, s) => cols + s.color }
+  val rows = spaces.foldLeft(Set[Int]()) { (rws, s) => rws + s.y }
+  val columns = spaces.foldLeft(Set[Int]()) { (cls, s) => cls + s.x }
   def element(s: Space): Int = spaces.indexOf(s)
   def paths(e: Int): Set[Color] = paths.map.keys.filter { k => paths.map.getOrElse(k, Set()).toList.contains(e) }.toSet
   def paths(s: Space): Set[Color] = paths(element(s))
   def adjacent(s: Space): Set[Int] = (for(i <- elements;
-                                          a <- Some(i._2);
                                           if element(s)!=i._1;
-                                          if (a.x==s.x && a.y==s.y+1) ||
-                                             (a.x==s.x && a.y==s.y-1) ||
-                                             (a.x==s.x+1 && a.y==s.y) ||
-                                             (a.x==s.x-1 && a.y==s.y)) yield i._1).toSet
+                                          if i._2.adjacent(s)) yield i._1).toSet
   def adjacent(e: Int): Set[Int] = adjacent(spaces(e));
 }

@@ -15,9 +15,6 @@ object ProblemGenerator {
     val board = randomBoard(seed, size, n, colors);
     val s = randomSolution(board, n)
     val p = Problem(board, s.keys.toSet)
-    val pgens = List(IsNumber, IsColor);
-    val sgens = List(SamePath);
-    val cons = (pgens ::: sgens) flatMap { _.valid(p, s) }
     (p, s)
   }
 

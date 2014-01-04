@@ -14,15 +14,16 @@ trait PrimaryConstraintGenerator extends ConstraintGenerator {
   def valid(prob: Problem, sol: Map[String,Int]): Set[Constraint] = {
     for (v: String <- prob.vars;
          s: Space <- (sol.get(v) map { prob.board.spaces(_) }).toList;
-         c: Constraint <- generate(prob.board, v, s)) yield c;
+         c <- generate(prob.board, v, s)) yield c;
   }
-  def generate(board: Board, v: String, s: Space): List[PrimaryConstraint];
+  def generate(board: Board, v: String, s: Space): List[Constraint];
 }
 
 sealed abstract class PositivePrimaryConstraint(V: String) extends PrimaryConstraint(V);
 
-class SpaceBasedConstraintGenerator(f: ((String, Board, Space) => PrimaryConstraint)) extends PrimaryConstraintGenerator {
-  def generate(board: Board, v: String, s: Space): List[PrimaryConstraint] = List(f(v, board, s))
+class SpaceBasedConstraintGenerator(f: ((String, Board, Space) => PositivePrimaryConstraint))
+  extends PrimaryConstraintGenerator {
+  def generate(board: Board, v: String, s: Space) = List(f(v, board, s))
 }
 
 case object IsNumber extends SpaceBasedConstraintGenerator({ (v, b, s) => new IsNumber(v, s.number) })
@@ -56,4 +57,32 @@ case class PrimaryNot(c: PositivePrimaryConstraint) extends PrimaryConstraint(c.
   def satisfies(board: Board, s: Space): Boolean = !c.satisfies(board, s)
 }
 
+/* Negative Generators */
 
+case object IsNotColor extends PrimaryConstraintGenerator {
+  def generate(board: Board, v: String, s: Space): List[PrimaryConstraint] = {
+    for(c <- board.colors.toList;
+        if c!=s.color) yield PrimaryNot(IsColor(v, c));
+  }
+}
+
+case object IsNotColumn extends PrimaryConstraintGenerator {
+  def generate(board: Board, v: String, s: Space): List[PrimaryConstraint] = {
+    for(c <- board.columns.toList;
+        if c!=s.x) yield PrimaryNot(IsColumn(v, c));
+  }
+}
+
+case object IsNotNumber extends PrimaryConstraintGenerator {
+  def generate(board: Board, v: String, s: Space): List[PrimaryConstraint] = {
+    for(n <- board.numbers.toList;
+        if n!=s.number) yield PrimaryNot(IsNumber(v, n));
+  }
+}
+
+case object IsNotRow extends PrimaryConstraintGenerator {
+  def generate(board: Board, v: String, s: Space): List[PrimaryConstraint] = {
+    for(c <- board.rows.toList;
+        if c!=s.y) yield PrimaryNot(IsRow(v, c));
+  }
+}

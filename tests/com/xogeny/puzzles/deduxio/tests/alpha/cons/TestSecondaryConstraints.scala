@@ -12,7 +12,6 @@ class TestSecondaryConstraints extends FunSuite {
   test("Test AdjacentTo") {
     val c = AdjacentTo("A", "B");
     val sets = c.evaluate(Samples.B1);
-    println(sets);
     assert(sets.size==24);
     assert(sets.contains((0,1)))
     assert(!sets.contains((0,4)))
@@ -20,7 +19,6 @@ class TestSecondaryConstraints extends FunSuite {
   test("Test GreaterThan") {
     val c = GreaterThan("A", "B");
     val sets = c.evaluate(Samples.B1);
-    println(sets);
     assert(sets.size==27);
     assert(!sets.contains((0,1)))
     assert(sets.contains((1,0)))
@@ -28,7 +26,6 @@ class TestSecondaryConstraints extends FunSuite {
   test("Test LessThan") {
     val c = LessThan("A", "B");
     val sets = c.evaluate(Samples.B1);
-    println(sets);
     assert(sets.size==27);
     assert(sets.contains((0,1)))
     assert(!sets.contains((1,0)))
@@ -36,7 +33,6 @@ class TestSecondaryConstraints extends FunSuite {
   test("Test SameColor") {
     val c = SameColor("A", "B");
     val sets = c.evaluate(Samples.B1);
-    println(sets);
     assert(sets.size==18);
     assert(sets.contains((0,1)))
     assert(!sets.contains((0,3)))
@@ -44,7 +40,6 @@ class TestSecondaryConstraints extends FunSuite {
   test("Test SameColumn") {
     val c = SameColumn("A", "B");
     val sets = c.evaluate(Samples.B1);
-    println(sets);
     assert(sets.size==18);
     assert(!sets.contains((0,1)))
     assert(sets.contains((0,3)))
@@ -52,7 +47,6 @@ class TestSecondaryConstraints extends FunSuite {
   test("Test SamePath") {
     val c = SamePath("A", "B");
     val sets = c.evaluate(Samples.B1);
-    println(sets);
     assert(sets.size==18);
     assert(sets.contains((0,1)))
     assert(!sets.contains((0,3)))
@@ -60,9 +54,23 @@ class TestSecondaryConstraints extends FunSuite {
   test("Test SameRow") {
     val c = SameRow("A", "B");
     val sets = c.evaluate(Samples.B1);
-    println(sets);
     assert(sets.size==18);
     assert(sets.contains((0,1)))
     assert(!sets.contains((0,3)))
+  }
+  test("Test SecondaryNot") {
+    val l = LessThan("A", "B");
+    val g = GreaterThan("A", "B");
+    val e = SameNumber("A", "B");
+    val lset = l.evaluate(Samples.B1);
+    val gset = g.evaluate(Samples.B1);
+    val eset = e.evaluate(Samples.B1);
+    val nl = SecondaryNot(l);
+    val ng = SecondaryNot(g);
+    val nlset = nl.evaluate(Samples.B1);
+    val ngset = ng.evaluate(Samples.B1);
+
+    assert(lset ++ eset == ngset);
+    assert(gset ++ eset == nlset);
   }
 }

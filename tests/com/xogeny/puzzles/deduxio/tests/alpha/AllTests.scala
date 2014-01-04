@@ -11,7 +11,7 @@ import com.xogeny.puzzles.deduxio.tests.alpha.repr._
 class AllTests extends Suites(
   new AllCons,
   new AllRepr,
-  new TestSetSolver
+  new AllSolver
 ) {
 
 }
