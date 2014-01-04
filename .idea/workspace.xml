@@ -124,7 +124,7 @@
       <file leaf-file-name="SetSolver.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="26" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.30722892" vertical-offset="522" max-vertical-offset="1020">
+            <state line="46" column="70" selection-start="1655" selection-end="1655" vertical-scroll-proportion="0.5180723" vertical-offset="432" max-vertical-offset="975">
               <folding>
                 <element signature="e#49#95#0" expanded="true" />
               </folding>
@@ -625,7 +625,7 @@
       <recent name="com.xogeny.puzzles.tictac" />
     </key>
   </component>
-  <component name="RunManager" selected="ScalaTest.TestSetSolver (1)">
+  <component name="RunManager" selected="ScalaTest.AllTests">
     <configuration default="false" name="BoardTests" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <module name="PoirotPuzzles" />
       <setting name="path" value="com.xogeny.puzzles.deduxio.tests.alpha.BoardTests" />
@@ -870,8 +870,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="ScalaTest.TestSetSolver (1)" />
-        <item index="1" class="java.lang.String" itemvalue="ScalaTest.AllTests" />
+        <item index="0" class="java.lang.String" itemvalue="ScalaTest.AllTests" />
+        <item index="1" class="java.lang.String" itemvalue="ScalaTest.TestSetSolver (1)" />
         <item index="2" class="java.lang.String" itemvalue="ScalaTest.TestSetSolver" />
         <item index="3" class="java.lang.String" itemvalue="ScalaTest.IsNumberTests" />
         <item index="4" class="java.lang.String" itemvalue="ScalaTest.BoardTests" />
@@ -1074,7 +1074,11 @@
       <created>1388838596380</created>
       <updated>1388838596380</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Simpler solve method">
+      <created>1388839739391</created>
+      <updated>1388839739391</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1119,7 +1123,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Fixed a bug in sorting&#10;&#10;Now I use all possible valid constraints and it seems&#10;to very consistently get rid of primaries if at all possible." />
     <MESSAGE value="Need to start testing&#10;&#10;Things are getting too complicated and too much of&#10;what I'm running as an application is really a test.  So&#10;I'm getting serious about testing.  I installed ScalaTest&#10;through Maven and I created a tests directory (I figured&#10;out that I have to &quot;Mark&quot; the directory as a tests directory).&#10;&#10;Now I'm figuring out how to trigger the test runners&#10;in IDEA.  Then, I can start writing the tests I need to&#10;validate all this stuff.  In the short term, the critical&#10;piece is debugging the new path generation stuff." />
     <MESSAGE value="Some refactoring and just starting some testing" />
     <MESSAGE value="Using new path generation and more flexible conformity checks" />
@@ -1144,7 +1147,8 @@
     <MESSAGE value="Refactored Tests" />
     <MESSAGE value="Refactored generators and it looks good.&#10;&#10;There is some weird issue I'm having with for&#10;comprehensions and option types.  I converted&#10;the options to a List and it fixed the issue.  I think it&#10;might be some kind of bug in IntelliJ, the presentation&#10;compiler, the fast compiler or whatever zinc-y kind&#10;thing they are doing to compile because it looks&#10;perfectly valid to me." />
     <MESSAGE value="Got rid of the stupid flatten operation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Got rid of the stupid flatten operation" />
+    <MESSAGE value="Simpler solve method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simpler solve method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1514,7 +1518,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="26" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.30722892" vertical-offset="522" max-vertical-offset="1020">
+        <state line="46" column="70" selection-start="1655" selection-end="1655" vertical-scroll-proportion="0.5180723" vertical-offset="432" max-vertical-offset="975">
           <folding>
             <element signature="e#49#95#0" expanded="true" />
           </folding>

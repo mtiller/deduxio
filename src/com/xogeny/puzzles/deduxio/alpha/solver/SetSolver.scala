@@ -44,14 +44,11 @@ case class SetSolver(prob: Problem, vals: Map[String,Set[Int]], cons: List[Secon
                     left: List[String], scons: List[SecondaryConstraint]): Set[Map[String,Int]] = left match {
     case Nil => Set(sol)
     case next :: tail => {
-      val (consistent, rem) = last match {
-        case None => ({ ns: Space => true}, scons)
-        case Some(x) => {
-          val (active, rem) = scons.partition { _.involves(x, next) }
-          val ls = board.spaces(sol.get(x).get);
-          ({ ns: Space => active.forall { _.satisfies(board, ls, ns)}}, rem)
-        }
+      val activeInfo = last map { x: String =>                          // If there was a last variable solved for
+        val (active, rem) = scons.partition { _.involves(x, next) }     // Get newly active constraints
+        ({ ns: Space => active.forall { _.satisfies(board, board.spaces(sol.get(x).get), ns)}}, rem)
       }
+      val (consistent, rem) = activeInfo.getOrElse(({ns: Space => true}, scons))
       for(ne <- vals.get(next).get;             // Consider each potential value for current variable
           if !sol.values.toSet.contains(ne);    // Make sure that value hasn't already been assigned
           if consistent(board.spaces(ne));      // Make sure it is consistent with activated constraints
