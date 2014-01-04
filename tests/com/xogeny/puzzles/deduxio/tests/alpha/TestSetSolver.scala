@@ -37,4 +37,21 @@ class TestSetSolver extends FunSuite {
     assert(ss2.involving.get("B")==Some(List(c1)));
     assert(ss2.involving.get("C")==None);
   }
+
+  test("Simple solver test") {
+    val ss1 = SetSolver.forProblem(Problem(Samples.B1, Set("A")));
+    val bsols = ss1.solve();
+    assert(bsols.size==9);
+    val c1 = IsNumber("A", 1);
+    val ss2 = ss1.impose(c1);
+    val sols = ss2.solve();
+    println("Solutions: "+sols);
+    assert(sols==Set(Map("A" -> 0), Map("A" -> 3), Map("A" -> 6)))
+  }
+
+  test("Test collision detection") {
+    val ss1 = SetSolver.forProblem(Problem(Samples.B1, Set("A", "B")));
+    val bsols = ss1.solve();
+    assert(bsols.size==72);
+  }
 }

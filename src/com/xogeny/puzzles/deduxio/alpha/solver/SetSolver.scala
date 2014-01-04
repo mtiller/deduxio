@@ -33,25 +33,24 @@ case class SetSolver(prob: Problem, vals: Map[String,Set[Int]], cons: List[Secon
       SetSolver(prob, vals, s :: cons)
     }
   }
-  def solve(): List[Map[String,Int]] = solve(Map[String,Int](), None, prob.vars.toList, cons);
+  def solve(): Set[Map[String,Int]] = solve(Map[String,Int](), None, prob.vars.toList, cons);
   private def solve(sol: Map[String,Int], last: Option[String],
-                    left: List[String], scons: List[SecondaryConstraint]): List[Map[String,Int]] = left match {
-    case Nil => sol :: Nil
+                    left: List[String], scons: List[SecondaryConstraint]): Set[Map[String,Int]] = left match {
+    case Nil => Set(sol)
     case next :: tail => {
       val sols = last match {
         case None => for(ne <- vals.get(next).get.toList;
-                         ns <- Some(board.spaces(ne));
-                         c <- scons) yield solve(sol + (next -> ne), Some(next), tail, scons);
+                         ns <- Some(board.spaces(ne))) yield solve(sol + (next -> ne), Some(next), tail, scons);
         case Some(x) => {
           val (active, rem) = scons.partition { _.involves(x, next) }
           val ls = board.spaces(sol.get(x).get);
           for(ne <- vals.get(next).get.toList;
+              if !sol.values.toSet.contains(ne);
               ns <- Some(board.spaces(ne));
-              c <- active;
-              if c.satisfies(board, ls, ns)) yield solve(sol + (next -> ne), Some(next), tail, rem)
+              if active.forall { _.satisfies(board, ls, ns)}) yield solve(sol + (next -> ne), Some(next), tail, rem)
         }
       }
-      sols.flatten
+      sols.flatten.toSet
     }
   }
 }
