@@ -44,7 +44,6 @@ case class PuzzleBuilder(seed: Long, prob: Problem, sol: Map[String,Int], scorer
     case Nil => given
     case x :: y => {
       val sgy = solver.impose(given ::: y);
-      //val ns = sgy.solve().size;
       val multiple = sgy.multiple;
       if (multiple) { trim(x :: given, y, solver) }
       else { trim(given, y, solver) }

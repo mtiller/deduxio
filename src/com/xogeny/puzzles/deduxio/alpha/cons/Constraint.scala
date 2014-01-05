@@ -8,11 +8,7 @@ import com.xogeny.puzzles.deduxio.alpha.repr._
 
 abstract class Constraint {
   def consistent(board: Board, sol: Map[String,Int]): Boolean = this match {
-    case p: PrimaryConstraint => {
-      p.evaluate(board) exists { e => e==sol.get(p.v).get }
-    }
-    case s: SecondaryConstraint => {
-      s.evaluate(board) exists { e => e._1==sol.get(s.v1).get && e._2==sol.get(s.v2).get }
-    }
+    case p: PrimaryConstraint => p.satisfies(board, board.spaces(sol.get(p.v).get))
+    case s: SecondaryConstraint => s.satisfies(board, board.spaces(sol.get(s.v1).get), board.spaces(sol.get(s.v2).get))
   }
 }

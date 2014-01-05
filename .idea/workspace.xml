@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="434d5255-624f-4425-9866-c7f9f6805082" name="Default" comment="Reinstated several important optimizations&#10;">
+    <list default="true" id="434d5255-624f-4425-9866-c7f9f6805082" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/Constraint.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/Constraint.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala" afterPath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PoirotPuzzles.iws" />
@@ -74,6 +73,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="PrimaryConstraints.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/PrimaryConstraints.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="22" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1395">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="TestPuzzleBuilder.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala">
           <provider selected="true" editor-type-id="text-editor">
@@ -103,17 +111,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestGenerators.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/TestGenerators.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="44" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0" vertical-offset="177" max-vertical-offset="945">
-              <folding>
-                <element signature="e#53#82#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TestSetSolver.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala">
           <provider selected="true" editor-type-id="text-editor">
@@ -123,10 +120,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constraint.scala" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Constraint.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/Constraint.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+            <state line="11" column="119" selection-start="445" selection-end="445" vertical-scroll-proportion="0.3313253" vertical-offset="0" max-vertical-offset="498">
               <folding />
             </state>
           </provider>
@@ -135,16 +132,16 @@
       <file leaf-file-name="SetSolver.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="61" selection-start="2069" selection-end="2069" vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="1020">
+            <state line="52" column="61" selection-start="2069" selection-end="2069" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="1020">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PuzzleBuilder.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PuzzleBuilder.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="8" selection-start="2408" selection-end="2408" vertical-scroll-proportion="0.6084337" vertical-offset="387" max-vertical-offset="900">
+            <state line="22" column="0" selection-start="981" selection-end="981" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="885">
               <folding>
                 <element signature="e#49#95#0" expanded="true" />
               </folding>
@@ -228,7 +225,6 @@
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/ConstraintGenerator.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/PrimaryConstraints.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestSetSolver.scala" />
-        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/Constraint.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/TestIsColor.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/TestPrimaryGenerators.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/AllCons.scala" />
@@ -239,6 +235,7 @@
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/Constraint.scala" />
       </list>
     </option>
   </component>
@@ -1214,7 +1211,11 @@
       <created>1388892026998</created>
       <updated>1388892026999</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="All tests passing again&#10;&#10;I noted that LessThan and GreaterThan were the only&#10;asymmetric SecondaryConstraints.  Then I started looking&#10;into how the SetSolver worked to make sure there was&#10;nothing strange with the way SecondaryConstraints were&#10;solved.  I noticed that the code the check for consistency&#10;of constraints didn't use the new &quot;consistent&quot; method&#10;in Constraint.  I changed it to use that and then the issue&#10;resolved itself (LessThan and GreaterThan are back in&#10;the generators).  However, it did create a new performance&#10;issue that I need to look into.  The current performance is&#10;acceptable, but I'd like to see if there are any obvious&#10;ways to speed it up.">
+      <created>1388892959125</created>
+      <updated>1388892959125</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1239,7 +1240,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25035766" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3385542" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3385542" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1259,7 +1260,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Added some solver tests&#10;&#10;Very happy with solver implementation so far, but I need&#10;to implement the actual solve routine which I think will&#10;actually be pretty simple.&#10;" />
     <MESSAGE value="Implemented a solver&#10;&#10;But it doesn't work.  Not sure what the issue is yet." />
     <MESSAGE value="Solver seems to be working" />
     <MESSAGE value="Solver seems to be completely implemented&#10;&#10;I tried a couple of basic problems with constraints and&#10;they all seem to work.  I don't have any of the generation&#10;stuff implemented yet, so that might complicate things.&#10;But overall, I'm pretty happy with simplicity of the&#10;implementations so far." />
@@ -1284,7 +1284,8 @@
     <MESSAGE value="Incorporated negative secondaries in the generator&#10;&#10;I haven't tested the generators and I just found a bug&#10;in one.  So I'm a little worried that I may be generating&#10;puzzles that are bogus.  I should add some tests&#10;to generate a bunch of puzzles and then make sure they&#10;have the expected unique solution.&#10;" />
     <MESSAGE value="Issues seem to be isolated to LessThan and GreaterThan constraints?&#10;&#10;I've looked at the code for these constraints and it&#10;isn't obvious to me where the issue is.  But if I remove&#10;them from the generators, the &quot;uniqueness&quot; test&#10;runs.  I need to scrutinize the code a bit more." />
     <MESSAGE value="Reinstated several important optimizations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reinstated several important optimizations" />
+    <MESSAGE value="All tests passing again&#10;&#10;I noted that LessThan and GreaterThan were the only&#10;asymmetric SecondaryConstraints.  Then I started looking&#10;into how the SetSolver worked to make sure there was&#10;nothing strange with the way SecondaryConstraints were&#10;solved.  I noticed that the code the check for consistency&#10;of constraints didn't use the new &quot;consistent&quot; method&#10;in Constraint.  I changed it to use that and then the issue&#10;resolved itself (LessThan and GreaterThan are back in&#10;the generators).  However, it did create a new performance&#10;issue that I need to look into.  The current performance is&#10;acceptable, but I'd like to see if there are any obvious&#10;ways to speed it up." />
+    <option name="LAST_COMMIT_MESSAGE" value="All tests passing again&#10;&#10;I noted that LessThan and GreaterThan were the only&#10;asymmetric SecondaryConstraints.  Then I started looking&#10;into how the SetSolver worked to make sure there was&#10;nothing strange with the way SecondaryConstraints were&#10;solved.  I noticed that the code the check for consistency&#10;of constraints didn't use the new &quot;consistent&quot; method&#10;in Constraint.  I changed it to use that and then the issue&#10;resolved itself (LessThan and GreaterThan are back in&#10;the generators).  However, it did create a new performance&#10;issue that I need to look into.  The current performance is&#10;acceptable, but I'd like to see if there are any obvious&#10;ways to speed it up." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1506,13 +1507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/PrimaryConstraints.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="12" selection-start="1790" selection-end="1790" vertical-scroll-proportion="0.0" vertical-offset="614" max-vertical-offset="1395">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/TestIsColor.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="0" selection-start="797" selection-end="991" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="585">
@@ -1592,20 +1586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/Constraint.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="61" selection-start="2069" selection-end="2069" vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="1020">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="70" column="19" selection-start="3397" selection-end="3397" vertical-scroll-proportion="0.0" vertical-offset="447" max-vertical-offset="1245">
@@ -1617,10 +1597,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="8" selection-start="2408" selection-end="2408" vertical-scroll-proportion="0.6084337" vertical-offset="387" max-vertical-offset="900">
+        <state line="22" column="0" selection-start="981" selection-end="981" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="885">
           <folding>
             <element signature="e#49#95#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="61" selection-start="2069" selection-end="2069" vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/PrimaryConstraints.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="22" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1395">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/Constraint.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="119" selection-start="445" selection-end="445" vertical-scroll-proportion="0.3313253" vertical-offset="0" max-vertical-offset="498">
+          <folding />
         </state>
       </provider>
     </entry>
