@@ -7,7 +7,7 @@ import scala.util.Random
 case object PuzzleBuilder {
   val pgens = List(IsColor, IsColumn, IsNumber, IsOnPath, IsRow, IsNotColor, IsNotColumn, IsNotNumber, IsNotRow);
   val sgens = List(AdjacentTo, GreaterThan, LessThan, SameColor, SameColumn, SameNumber, SamePath, SameRow,
-    NotAdjacentTo, NotSameColor, NotSameColumn, NotSameNumber, NotSameRow);
+                   NotAdjacentTo, NotSameColor, NotSameColumn, NotSameNumber, NotSameRow);
 }
 /**
  * Created by mtiller on 1/4/14.

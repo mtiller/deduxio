@@ -9,16 +9,15 @@ import com.xogeny.puzzles.deduxio.alpha.cons._
 /**
  * Created by mtiller on 1/5/14.
  */
-object GenTool {
-  def main(argc: Array[String]) = {
-    (0 to 10) foreach { seed =>
-      generatePuzzle(seed, false);
-    }
-  }
 
-  def generatePuzzle(seed: Int, verbose: Boolean) = {
+trait GeneratorConfiguration[T] {
+  def generate(seed: Int, verbose: Boolean): (Problem, List[Constraint], Map[String,Int], T);
+}
+
+class StandardConfiguration(nvars: Int, size: Int) extends GeneratorConfiguration[Int] {
+  def generate(seed: Int, verbose: Boolean): (Problem, List[Constraint], Map[String,Int], Int) = {
     println("Seed: "+seed);
-    val pgen = new ProblemGenerator(5, (6,6), 6, List(Red, Green, Blue, Yellow, Purple, Cyan));
+    val pgen = new ProblemGenerator(nvars, (size,size), size, Color.all take size);
     val (prob, sol) = pgen.generate(seed)
     val plan = pgen.randomPlan(seed);
     if (verbose) println("  plan = "+plan);
@@ -33,9 +32,25 @@ object GenTool {
     val steps = rater.analyze();
     println("  Steps: "+steps);
     val sum = steps.foldLeft(0) { _ + _._2 }
-    val diff = "%04d".format(sum)
     println("  Score: "+sum)
-    val svg = SVGRenderer.render(prob.board, cons, sol)
-    File("output/puzzle_"+diff+"_seed-"+seed+".html").writeAll(svg)
+    (prob, cons, sol, sum)
+  }
+}
+
+case object P4x4_3 extends StandardConfiguration(3, 4);
+case object P5x5_4 extends StandardConfiguration(4, 5);
+case object P6x6_5 extends StandardConfiguration(5, 6);
+case object P6x6_7 extends StandardConfiguration(7, 6);
+case object P9x9_3 extends StandardConfiguration(3, 9);
+
+object GenTool {
+  def main(argc: Array[String]) = {
+    (0 to 100) foreach { seed =>
+      val config = P5x5_4;
+      val (prob, cons, sol, sum) = config.generate(seed, false);
+      val diff = "%04d".format(sum)
+      val svg = SVGRenderer.render(prob.board, cons, sol)
+      File("output/puzzle_"+diff+"_seed-"+seed+".html").writeAll(svg)
+    }
   }
 }

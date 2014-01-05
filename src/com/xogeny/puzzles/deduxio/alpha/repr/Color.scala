@@ -7,6 +7,7 @@ package com.xogeny.puzzles.deduxio.alpha.repr
 object Color {
   def lowest = Black;
   def highest = Purple;
+  val all = List(Red, Green, Blue, Yellow, Purple, Cyan, CA, CB, CC);
 }
 
 abstract sealed class Color(c: Int, val rgb: String);
@@ -17,3 +18,6 @@ case object Blue extends Color(3, "#8080ff");
 case object Yellow extends Color(4, "#ffff80");
 case object Purple extends Color(5, "#ff80ff");
 case object Cyan extends Color(6, "#80ffff");
+case object CA extends Color(7, "#004080");
+case object CB extends Color(8, "#408000");
+case object CC extends Color(9, "#800040");

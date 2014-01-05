@@ -22,7 +22,7 @@ case class TreeScorer(tree: List[(String,String)]) extends Scorer {
     others.toSet.size
   }
   def score(c: Constraint) = c match {
-    case pn: PrimaryNot => -10;
+    case pn: PrimaryNot => -10;   // commenting this out makes problems a bit more difficult (I think)
     case p: PrimaryConstraint if degree(p.v)==1 => 5;
     case p: PrimaryConstraint => -5;
     case s: SecondaryConstraint if tree.exists { p => p._1==s.v1 && p._2==s.v2 || p._1==s.v2 && p._2==s.v1 } => 20;
