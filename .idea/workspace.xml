@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="434d5255-624f-4425-9866-c7f9f6805082" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleRater.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/tool/GenTool.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/tool/GenTool.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PoirotPuzzles.iws" />
@@ -164,7 +162,7 @@
       <file leaf-file-name="GenTool.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/tool/GenTool.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="440" selection-end="440" vertical-scroll-proportion="0.45180723" vertical-offset="0" max-vertical-offset="690">
+            <state line="16" column="3" selection-start="449" selection-end="449" vertical-scroll-proportion="0.30120483" vertical-offset="90" max-vertical-offset="705">
               <folding>
                 <element signature="e#47#95#0" expanded="true" />
               </folding>
@@ -1355,12 +1353,16 @@
       <created>1388935472707</created>
       <updated>1388935472708</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Interesting insights in studying difficulty&#10;&#10;My original concept was a bit bogus.  I turned out that&#10;it effectively amounted to just running all the primary&#10;constraints over the sets of possible values and then&#10;looking at what could be eliminated in that way.  But then&#10;when I looked at the results, I noticed a pattern.  The tree&#10;based approach tends to build up problems where the&#10;first variable to be solved can be deduced strictly from&#10;primary constraints (i.e. there is only one possible value&#10;considering only primary constraint).  Then you tended&#10;to see the next one having been reduced to 4 possible&#10;values (basically, the same as the number of rows/columns).&#10;This is because the primaries tend to reduce the number of&#10;possibilities by a factor of 4.  Then the next one was 16&#10;(another factor of 4).&#10;&#10;The bottom line was that scoring just amounted to adding&#10;up the number of possibilities that existed across all&#10;variables after all primary constraints had been applied.">
+      <created>1388937675985</created>
+      <updated>1388937675985</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -1380,7 +1382,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25035766" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3385542" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3385542" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1400,7 +1402,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Refactored Constraints&#10;&#10;Now I need to really look at generators." />
     <MESSAGE value="Refactored Tests" />
     <MESSAGE value="Refactored generators and it looks good.&#10;&#10;There is some weird issue I'm having with for&#10;comprehensions and option types.  I converted&#10;the options to a List and it fixed the issue.  I think it&#10;might be some kind of bug in IntelliJ, the presentation&#10;compiler, the fast compiler or whatever zinc-y kind&#10;thing they are doing to compile because it looks&#10;perfectly valid to me." />
     <MESSAGE value="Got rid of the stupid flatten operation" />
@@ -1425,7 +1426,8 @@
     <MESSAGE value="Performance issue identified&#10;&#10;I was doing a really inefficient way of checking consistency&#10;of constraints that involved an unnecessary loop.  I removed&#10;it and used something much smarter, simpler and faster&#10;and all the tests continue to pass (even with LessThan&#10;and GreaterThan in the generators).  So things are looking&#10;pretty rock solid.  The current approach creates 100&#10;puzzles as part of the testing and makes sure that all&#10;100 have unique solutions." />
     <MESSAGE value="Identified another performance issue&#10;&#10;Things are running as fast as ever, all tests pass and&#10;I even generate a 6x6 problem with 10 variables now.&#10;&#10;Next steps: Implement the tree based scoring system&#10;and then integrate SVG renderer!!!" />
     <MESSAGE value="Implemented tree scorer&#10;&#10;Initially, there was some glitches, but initial results&#10;look good.  Next is difficulty metrics.  I've got a good&#10;idea for that." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented tree scorer&#10;&#10;Initially, there was some glitches, but initial results&#10;look good.  Next is difficulty metrics.  I've got a good&#10;idea for that." />
+    <MESSAGE value="Interesting insights in studying difficulty&#10;&#10;My original concept was a bit bogus.  I turned out that&#10;it effectively amounted to just running all the primary&#10;constraints over the sets of possible values and then&#10;looking at what could be eliminated in that way.  But then&#10;when I looked at the results, I noticed a pattern.  The tree&#10;based approach tends to build up problems where the&#10;first variable to be solved can be deduced strictly from&#10;primary constraints (i.e. there is only one possible value&#10;considering only primary constraint).  Then you tended&#10;to see the next one having been reduced to 4 possible&#10;values (basically, the same as the number of rows/columns).&#10;This is because the primaries tend to reduce the number of&#10;possibilities by a factor of 4.  Then the next one was 16&#10;(another factor of 4).&#10;&#10;The bottom line was that scoring just amounted to adding&#10;up the number of possibilities that existed across all&#10;variables after all primary constraints had been applied." />
+    <option name="LAST_COMMIT_MESSAGE" value="Interesting insights in studying difficulty&#10;&#10;My original concept was a bit bogus.  I turned out that&#10;it effectively amounted to just running all the primary&#10;constraints over the sets of possible values and then&#10;looking at what could be eliminated in that way.  But then&#10;when I looked at the results, I noticed a pattern.  The tree&#10;based approach tends to build up problems where the&#10;first variable to be solved can be deduced strictly from&#10;primary constraints (i.e. there is only one possible value&#10;considering only primary constraint).  Then you tended&#10;to see the next one having been reduced to 4 possible&#10;values (basically, the same as the number of rows/columns).&#10;This is because the primaries tend to reduce the number of&#10;possibilities by a factor of 4.  Then the next one was 16&#10;(another factor of 4).&#10;&#10;The bottom line was that scoring just amounted to adding&#10;up the number of possibilities that existed across all&#10;variables after all primary constraints had been applied." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1791,7 +1793,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/tool/GenTool.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="440" selection-end="440" vertical-scroll-proportion="0.45180723" vertical-offset="0" max-vertical-offset="690">
+        <state line="16" column="3" selection-start="449" selection-end="449" vertical-scroll-proportion="0.30120483" vertical-offset="90" max-vertical-offset="705">
           <folding>
             <element signature="e#47#95#0" expanded="true" />
           </folding>

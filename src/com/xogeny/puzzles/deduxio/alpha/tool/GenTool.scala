@@ -18,7 +18,7 @@ object GenTool {
 
   def generatePuzzle(seed: Int, verbose: Boolean) = {
     println("Seed: "+seed);
-    val pgen = new ProblemGenerator(3, (4,4), 4, List(Red, Green, Blue, Yellow));
+    val pgen = new ProblemGenerator(5, (6,6), 6, List(Red, Green, Blue, Yellow, Purple, Cyan));
     val (prob, sol) = pgen.generate(seed)
     val plan = pgen.randomPlan(seed);
     if (verbose) println("  plan = "+plan);
@@ -33,8 +33,9 @@ object GenTool {
     val steps = rater.analyze();
     println("  Steps: "+steps);
     val sum = steps.foldLeft(0) { _ + _._2 }
-    println("  Score: "+(sum/21.0))
+    val diff = "%04d".format(sum)
+    println("  Score: "+sum)
     val svg = SVGRenderer.render(prob.board, cons, sol)
-    File("output/puzzle_"+seed+".html").writeAll(svg)
+    File("output/puzzle_"+diff+"_seed-"+seed+".html").writeAll(svg)
   }
 }
