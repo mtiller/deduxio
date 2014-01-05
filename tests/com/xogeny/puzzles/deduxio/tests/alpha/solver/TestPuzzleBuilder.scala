@@ -10,31 +10,36 @@ import com.xogeny.puzzles.deduxio.alpha.solver._
  */
 class TestPuzzleBuilder extends FunSuite {
   test("Puzzle builder algorithm for 3x3 problem") {
-    val (prob, sol) = ProblemGenerator.generate(0, (3, 3), 3, List(Red, Green, Blue))
+    val pgen = new ProblemGenerator(3, (3, 3), 3, List(Red, Green, Blue))
+    val (prob, sol) = pgen.generate(0)
     val builder = PuzzleBuilder(0, prob, sol, PvS)
     val cons = builder.craft();
     assert(cons.length>0)
   }
   test("Puzzle builder algorithm for 4x4 problem") {
-    val (prob, sol) = ProblemGenerator.generate(0, (4, 4), 4, List(Red, Green, Blue, Yellow))
+    val pgen = new ProblemGenerator(4, (4, 4), 4, List(Red, Green, Blue, Yellow))
+    val (prob, sol) = pgen.generate(0)
     val builder = PuzzleBuilder(0, prob, sol, PvS)
     val cons = builder.craft();
     assert(cons.length>0)
   }
   test("Puzzle builder algorithm for 5x5 problem") {
-    val (prob, sol) = ProblemGenerator.generate(0, (5, 5), 5, List(Red, Green, Blue, Yellow, Purple))
+    val pgen = new ProblemGenerator(5, (5, 5), 5, List(Red, Green, Blue, Yellow, Purple))
+    val (prob, sol) = pgen.generate(0)
     val builder = PuzzleBuilder(0, prob, sol, PvS)
     val cons = builder.craft();
     assert(cons.length>0)
   }
   test("Puzzle builder algorithm for 6x6 problem") {
-    val (prob, sol) = ProblemGenerator.generate(0, (6, 6), 6, List(Red, Green, Blue, Yellow, Purple, Cyan))
+    val pgen = new ProblemGenerator(6, (6, 6), 6, List(Red, Green, Blue, Yellow, Purple, Cyan))
+    val (prob, sol) = pgen.generate(0)
     val builder = PuzzleBuilder(0, prob, sol, PvS)
     val cons = builder.craft();
     assert(cons.length>0)
   }
   test("Puzzle builder algorithm for 6x6 problem with 10 variables") {
-    val (prob, sol) = ProblemGenerator.generate(0, (6, 6), 10, List(Red, Green, Blue, Yellow, Purple, Cyan))
+    val pgen = new ProblemGenerator(10, (6, 6), 6, List(Red, Green, Blue, Yellow, Purple, Cyan))
+    val (prob, sol) = pgen.generate(0)
     val builder = PuzzleBuilder(0, prob, sol, PvS)
     val cons = builder.craft();
     assert(cons.length>0)
@@ -44,7 +49,8 @@ class TestPuzzleBuilder extends FunSuite {
     val verbose = false;
     (0 to 100) foreach { seed =>
       if (verbose) println("Using seed "+seed);
-      val (prob, sol) = ProblemGenerator.generate(seed, (4, 4), 4, List(Red, Green, Blue, Yellow))
+      val pgen = new ProblemGenerator(4, (4, 4), 4, List(Red, Green, Blue, Yellow, Purple, Cyan))
+      val (prob, sol) = pgen.generate(0)
       if (verbose) println("Board: "+prob.board)
       val builder = PuzzleBuilder(seed, prob, sol, PvS)
       val cons = builder.craft();

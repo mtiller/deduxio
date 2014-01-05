@@ -7,18 +7,18 @@ import scala.util.Random
 /**
  * Created by mtiller on 1/4/14.
  */
-object ProblemGenerator {
+class ProblemGenerator(val nvars: Int, val size: (Int,Int), val n: Int, val colors: List[Color]) {
   type CurList = List[Pair[Color,List[Int]]];
 
-  def generate(seed: Long, size: (Int, Int), n: Int, colors: List[Color]) = {
+  def generate(seed: Long) = {
     val (w, h) = size
-    val board = randomBoard(seed, size, n, colors);
-    val s = randomSolution(board, n)
+    val board = randomBoard(seed);
+    val s = randomSolution(board, nvars)
     val p = Problem(board, s.keys.toSet)
     (p, s)
   }
 
-  def randomBoard(seed: Long, size: (Int, Int), n: Int, colors: List[Color]): Board = {
+  def randomBoard(seed: Long): Board = {
     val (w, h) = size
     val nums = 0 to w*h-1;
     Random.setSeed(seed);

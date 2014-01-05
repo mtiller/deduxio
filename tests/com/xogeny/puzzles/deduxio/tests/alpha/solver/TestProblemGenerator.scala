@@ -9,7 +9,8 @@ import com.xogeny.puzzles.deduxio.alpha.repr._
  */
 class TestProblemGenerator extends FunSuite {
   test("Board generation") {
-    val board = ProblemGenerator.randomBoard(0, (3, 3), 3, List(Red, Blue, Green))
+    val pgen = new ProblemGenerator(3, (3,3), 3, List(Red, Blue, Green));
+    val board = pgen.randomBoard(0)
     println(board);
   }
 }
