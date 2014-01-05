@@ -6,7 +6,7 @@ import scala.util.Random
 
 case object PuzzleBuilder {
   val pgens = List(IsColor, IsColumn, IsNumber, IsOnPath, IsRow, IsNotColor, IsNotColumn, IsNotNumber, IsNotRow);
-  val sgens = List(AdjacentTo, /* GreaterThan, */ /*LessThan, */ SameColor, SameColumn, SameNumber, SamePath, SameRow,
+  val sgens = List(AdjacentTo, GreaterThan, LessThan, SameColor, SameColumn, SameNumber, SamePath, SameRow,
     NotAdjacentTo, NotSameColor, NotSameColumn, NotSameNumber, NotSameRow);
 }
 /**
@@ -44,9 +44,10 @@ case class PuzzleBuilder(seed: Long, prob: Problem, sol: Map[String,Int], scorer
     case Nil => given
     case x :: y => {
       val sgy = solver.impose(given ::: y);
-      val ns = sgy.solve().size;
-      if (ns>1) { println("We need "+x+" otherwise we get "+ns+" solutions"); trim(x :: given, y, solver) }
-      else { println("We don't need "+x+" without it we still have "+ns+" solutions"); trim(given, y, solver) }
+      //val ns = sgy.solve().size;
+      val multiple = sgy.multiple;
+      if (multiple) { trim(x :: given, y, solver) }
+      else { trim(given, y, solver) }
     }
   }
   def craft() = trim(Nil, baseConstraints, SetSolver.forProblem(prob))
