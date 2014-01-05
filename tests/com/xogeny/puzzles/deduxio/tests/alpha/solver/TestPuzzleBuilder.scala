@@ -33,12 +33,18 @@ class TestPuzzleBuilder extends FunSuite {
     val cons = builder.craft();
     assert(cons.length>0)
   }
+  test("Puzzle builder algorithm for 6x6 problem with 10 variables") {
+    val (prob, sol) = ProblemGenerator.generate(0, (6, 6), 10, List(Red, Green, Blue, Yellow, Purple, Cyan))
+    val builder = PuzzleBuilder(0, prob, sol, PvS)
+    val cons = builder.craft();
+    assert(cons.length>0)
+  }
 
   test("Test uniqueness") {
     val verbose = false;
     (0 to 100) foreach { seed =>
       if (verbose) println("Using seed "+seed);
-      val (prob, sol) = ProblemGenerator.generate(seed, (3, 3), 3, List(Red, Green, Blue, Yellow))
+      val (prob, sol) = ProblemGenerator.generate(seed, (4, 4), 4, List(Red, Green, Blue, Yellow))
       if (verbose) println("Board: "+prob.board)
       val builder = PuzzleBuilder(seed, prob, sol, PvS)
       val cons = builder.craft();

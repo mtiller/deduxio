@@ -35,7 +35,7 @@ object ProblemGenerator {
 
   def randomSolution(board: Board, n: Int): Map[String,Int] = {
     require(n>0);
-    val letters = List("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "L");
+    val letters = List("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "L", "M", "N", "O", "P", "Q", "R", "S", "T");
     val names = letters take n
     val values = Random.shuffle((0 to board.spaces.length-1).toList)
     Map() ++ (names zip values)

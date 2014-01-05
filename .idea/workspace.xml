@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="434d5255-624f-4425-9866-c7f9f6805082" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/Constraint.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/Constraint.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/ProblemGenerator.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/ProblemGenerator.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala" afterPath="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala" afterPath="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PoirotPuzzles.iws" />
@@ -85,10 +86,19 @@
       <file leaf-file-name="TestPuzzleBuilder.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="19" selection-start="3397" selection-end="3397" vertical-scroll-proportion="0.0" vertical-offset="447" max-vertical-offset="1245">
+            <state line="33" column="25" selection-start="1362" selection-end="1362" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1335">
               <folding>
                 <element signature="e#55#84#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProblemGenerator.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/ProblemGenerator.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="63" selection-start="1154" selection-end="1154" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1215">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,10 +130,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constraint.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Constraint.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/Constraint.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="119" selection-start="445" selection-end="445" vertical-scroll-proportion="0.3313253" vertical-offset="0" max-vertical-offset="498">
+            <state line="11" column="119" selection-start="445" selection-end="445" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
               <folding />
             </state>
           </provider>
@@ -138,10 +148,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PuzzleBuilder.scala" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PuzzleBuilder.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="981" selection-end="981" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="885">
+            <state line="22" column="116" selection-start="1097" selection-end="1097" vertical-scroll-proportion="0.26907632" vertical-offset="196" max-vertical-offset="900">
               <folding>
                 <element signature="e#49#95#0" expanded="true" />
               </folding>
@@ -153,15 +163,6 @@
         <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/SecondaryConstraints.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state line="42" column="56" selection-start="1980" selection-end="1980" vertical-scroll-proportion="0.0" vertical-offset="1315" max-vertical-offset="1815">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestIsNumber.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/TestIsNumber.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="311" selection-end="685" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
               <folding />
             </state>
           </provider>
@@ -220,7 +221,6 @@
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/TestSameColor.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/AllTests.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Space.scala" />
-        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/ProblemGenerator.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Board.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/ConstraintGenerator.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/PrimaryConstraints.scala" />
@@ -233,9 +233,10 @@
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/TestRelationalConstraints.scala" />
         <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/cons/TestSecondaryConstraints.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala" />
-        <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala" />
-        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala" />
         <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/Constraint.scala" />
+        <option value="$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/ProblemGenerator.scala" />
+        <option value="$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala" />
       </list>
     </option>
   </component>
@@ -710,21 +711,6 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="TestGenerators" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
-      <module name="PoirotPuzzles" />
-      <setting name="path" value="com.xogeny.puzzles.deduxio.tests.alpha.cons.TestGenerators" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="false" name="TestPuzzleBuilder" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <module name="PoirotPuzzles" />
       <setting name="path" value="com.xogeny.puzzles.deduxio.tests.alpha.solver.TestPuzzleBuilder" />
@@ -755,16 +741,31 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="TestSecondaryConstraints" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+    <configuration default="false" name="TestPuzzleBuilder.Puzzle builder algorithm for 6x6 problem with 10 variables" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <module name="PoirotPuzzles" />
-      <setting name="path" value="com.xogeny.puzzles.deduxio.tests.alpha.cons.TestSecondaryConstraints" />
+      <setting name="path" value="com.xogeny.puzzles.deduxio.tests.alpha.solver.TestPuzzleBuilder" />
       <setting name="package" value="" />
       <setting name="vmparams" value="" />
       <setting name="params" value="" />
       <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
       <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
+      <setting name="testName" value="Puzzle builder algorithm for 6x6 problem with 10 variables" />
+      <setting name="testKind" value="Test name" />
+      <setting name="showProgressMessages" value="true" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestPuzzleBuilder.Puzzle builder algorithm for 6x6 problem" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <module name="PoirotPuzzles" />
+      <setting name="path" value="com.xogeny.puzzles.deduxio.tests.alpha.solver.TestPuzzleBuilder" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="Puzzle builder algorithm for 6x6 problem" />
+      <setting name="testKind" value="Test name" />
       <setting name="showProgressMessages" value="true" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -932,18 +933,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="ScalaTest.AllTests" />
-      <item index="1" class="java.lang.String" itemvalue="ScalaTest.TestGenerators" />
-      <item index="2" class="java.lang.String" itemvalue="ScalaTest.TestPuzzleBuilder" />
-      <item index="3" class="java.lang.String" itemvalue="ScalaTest.TestPuzzleBuilder.Test uniqueness" />
-      <item index="4" class="java.lang.String" itemvalue="ScalaTest.TestSecondaryConstraints" />
+      <item index="1" class="java.lang.String" itemvalue="ScalaTest.TestPuzzleBuilder" />
+      <item index="2" class="java.lang.String" itemvalue="ScalaTest.TestPuzzleBuilder.Test uniqueness" />
+      <item index="3" class="java.lang.String" itemvalue="ScalaTest.TestPuzzleBuilder.Puzzle builder algorithm for 6x6 problem with 10 variables" />
+      <item index="4" class="java.lang.String" itemvalue="ScalaTest.TestPuzzleBuilder.Puzzle builder algorithm for 6x6 problem" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="ScalaTest.AllTests" />
         <item index="1" class="java.lang.String" itemvalue="ScalaTest.TestPuzzleBuilder" />
-        <item index="2" class="java.lang.String" itemvalue="ScalaTest.TestPuzzleBuilder.Test uniqueness" />
-        <item index="3" class="java.lang.String" itemvalue="ScalaTest.TestSecondaryConstraints" />
-        <item index="4" class="java.lang.String" itemvalue="ScalaTest.TestGenerators" />
+        <item index="2" class="java.lang.String" itemvalue="ScalaTest.TestPuzzleBuilder.Puzzle builder algorithm for 6x6 problem" />
+        <item index="3" class="java.lang.String" itemvalue="ScalaTest.TestPuzzleBuilder.Puzzle builder algorithm for 6x6 problem with 10 variables" />
+        <item index="4" class="java.lang.String" itemvalue="ScalaTest.TestPuzzleBuilder.Test uniqueness" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1215,7 +1216,11 @@
       <created>1388892959125</created>
       <updated>1388892959125</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Performance issue identified&#10;&#10;I was doing a really inefficient way of checking consistency&#10;of constraints that involved an unnecessary loop.  I removed&#10;it and used something much smarter, simpler and faster&#10;and all the tests continue to pass (even with LessThan&#10;and GreaterThan in the generators).  So things are looking&#10;pretty rock solid.  The current approach creates 100&#10;puzzles as part of the testing and makes sure that all&#10;100 have unique solutions.">
+      <created>1388893374501</created>
+      <updated>1388893374501</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1240,7 +1245,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25035766" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3385542" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3385542" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1260,7 +1265,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Implemented a solver&#10;&#10;But it doesn't work.  Not sure what the issue is yet." />
     <MESSAGE value="Solver seems to be working" />
     <MESSAGE value="Solver seems to be completely implemented&#10;&#10;I tried a couple of basic problems with constraints and&#10;they all seem to work.  I don't have any of the generation&#10;stuff implemented yet, so that might complicate things.&#10;But overall, I'm pretty happy with simplicity of the&#10;implementations so far." />
     <MESSAGE value="Refactored Constraints&#10;&#10;Now I need to really look at generators." />
@@ -1285,7 +1289,8 @@
     <MESSAGE value="Issues seem to be isolated to LessThan and GreaterThan constraints?&#10;&#10;I've looked at the code for these constraints and it&#10;isn't obvious to me where the issue is.  But if I remove&#10;them from the generators, the &quot;uniqueness&quot; test&#10;runs.  I need to scrutinize the code a bit more." />
     <MESSAGE value="Reinstated several important optimizations" />
     <MESSAGE value="All tests passing again&#10;&#10;I noted that LessThan and GreaterThan were the only&#10;asymmetric SecondaryConstraints.  Then I started looking&#10;into how the SetSolver worked to make sure there was&#10;nothing strange with the way SecondaryConstraints were&#10;solved.  I noticed that the code the check for consistency&#10;of constraints didn't use the new &quot;consistent&quot; method&#10;in Constraint.  I changed it to use that and then the issue&#10;resolved itself (LessThan and GreaterThan are back in&#10;the generators).  However, it did create a new performance&#10;issue that I need to look into.  The current performance is&#10;acceptable, but I'd like to see if there are any obvious&#10;ways to speed it up." />
-    <option name="LAST_COMMIT_MESSAGE" value="All tests passing again&#10;&#10;I noted that LessThan and GreaterThan were the only&#10;asymmetric SecondaryConstraints.  Then I started looking&#10;into how the SetSolver worked to make sure there was&#10;nothing strange with the way SecondaryConstraints were&#10;solved.  I noticed that the code the check for consistency&#10;of constraints didn't use the new &quot;consistent&quot; method&#10;in Constraint.  I changed it to use that and then the issue&#10;resolved itself (LessThan and GreaterThan are back in&#10;the generators).  However, it did create a new performance&#10;issue that I need to look into.  The current performance is&#10;acceptable, but I'd like to see if there are any obvious&#10;ways to speed it up." />
+    <MESSAGE value="Performance issue identified&#10;&#10;I was doing a really inefficient way of checking consistency&#10;of constraints that involved an unnecessary loop.  I removed&#10;it and used something much smarter, simpler and faster&#10;and all the tests continue to pass (even with LessThan&#10;and GreaterThan in the generators).  So things are looking&#10;pretty rock solid.  The current approach creates 100&#10;puzzles as part of the testing and makes sure that all&#10;100 have unique solutions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Performance issue identified&#10;&#10;I was doing a really inefficient way of checking consistency&#10;of constraints that involved an unnecessary loop.  I removed&#10;it and used something much smarter, simpler and faster&#10;and all the tests continue to pass (even with LessThan&#10;and GreaterThan in the generators).  So things are looking&#10;pretty rock solid.  The current approach creates 100&#10;puzzles as part of the testing and makes sure that all&#10;100 have unique solutions." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1477,15 +1482,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/ProblemGenerator.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0" vertical-offset="12" max-vertical-offset="1245">
-          <folding>
-            <element signature="e#49#95#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/repr/Board.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="76" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
@@ -1586,24 +1582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="19" selection-start="3397" selection-end="3397" vertical-scroll-proportion="0.0" vertical-offset="447" max-vertical-offset="1245">
-          <folding>
-            <element signature="e#55#84#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="981" selection-end="981" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="885">
-          <folding>
-            <element signature="e#49#95#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/SetSolver.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="52" column="61" selection-start="2069" selection-end="2069" vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="1020">
@@ -1620,8 +1598,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/cons/Constraint.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="119" selection-start="445" selection-end="445" vertical-scroll-proportion="0.3313253" vertical-offset="0" max-vertical-offset="498">
+        <state line="11" column="119" selection-start="445" selection-end="445" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/ProblemGenerator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="63" selection-start="1154" selection-end="1154" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/com/xogeny/puzzles/deduxio/tests/alpha/solver/TestPuzzleBuilder.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="25" selection-start="1362" selection-end="1362" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1335">
+          <folding>
+            <element signature="e#55#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xogeny/puzzles/deduxio/alpha/solver/PuzzleBuilder.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="116" selection-start="1097" selection-end="1097" vertical-scroll-proportion="0.26907632" vertical-offset="196" max-vertical-offset="900">
+          <folding>
+            <element signature="e#49#95#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
