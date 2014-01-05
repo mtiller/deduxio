@@ -10,7 +10,7 @@ import scala.reflect.io.File
  */
 object GenTool {
   def main(argc: Array[String]) = {
-    (0 to 10) foreach { seed =>
+    (0 to 0) foreach { seed =>
       generatePuzzle(seed);
       println("Generated puzzle for seed "+seed)
     }
@@ -19,8 +19,15 @@ object GenTool {
   def generatePuzzle(seed: Int) = {
     val pgen = new ProblemGenerator(3, (4,4), 4, List(Red, Green, Blue, Yellow));
     val (prob, sol) = pgen.generate(seed)
-    val builder = PuzzleBuilder(0, prob, sol, PvS)
+    val plan = pgen.randomPlan(seed);
+    println("plan = "+plan);
+    val tscorer = TreeScorer(plan);
+    val builder = PuzzleBuilder(0, prob, sol, tscorer)
+    println("Base Constraints: ");
+    builder.baseConstraints foreach { c => println(c+": "+tscorer.score(c)) }
     val cons = builder.craft();
+    println("Chosen: ");
+    cons foreach { println(_) }
     val svg = SVGRenderer.render(prob.board, cons, sol)
     File("output/puzzle_"+seed+".html").writeAll(svg)
   }

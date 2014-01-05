@@ -9,6 +9,7 @@ import scala.util.Random
  */
 class ProblemGenerator(val nvars: Int, val size: (Int,Int), val n: Int, val colors: List[Color]) {
   type CurList = List[Pair[Color,List[Int]]];
+  val letters = List("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "L", "M", "N", "O", "P", "Q", "R", "S", "T");
 
   def generate(seed: Long) = {
     val (w, h) = size
@@ -35,7 +36,6 @@ class ProblemGenerator(val nvars: Int, val size: (Int,Int), val n: Int, val colo
 
   def randomSolution(board: Board, n: Int): Map[String,Int] = {
     require(n>0);
-    val letters = List("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "L", "M", "N", "O", "P", "Q", "R", "S", "T");
     val names = letters take n
     val values = Random.shuffle((0 to board.spaces.length-1).toList)
     Map() ++ (names zip values)
@@ -73,5 +73,32 @@ class ProblemGenerator(val nvars: Int, val size: (Int,Int), val n: Int, val colo
         }
       }
     }
+  }
+
+  private def process(vars: List[String]): List[(String,String)] = vars match {
+    case x :: a :: b :: r => {  /* x depends on a and b */
+    val head = List(x -> a, x -> b)
+      r match {
+        case Nil => (x -> a) :: (x -> b) :: Nil
+        case _ => {
+          val tlen = r.length
+          val n = Random.nextInt(tlen)
+          val atail = r take n
+          val btail = r drop n
+          head ::: process(a :: atail) ::: process(b :: btail)
+        }
+      }
+    }
+    case x :: a :: Nil => {  /* x depends only on a */
+      (x, a) :: Nil
+    }
+    case x :: Nil => Nil  /* x is a leaf */
+    case Nil => Nil /* done */
+  }
+
+  def randomPlan(seed: Int): List[(String,String)] = {
+    val vars = letters take nvars;
+    Random.setSeed(seed);
+    process(Random.shuffle(vars));
   }
 }
