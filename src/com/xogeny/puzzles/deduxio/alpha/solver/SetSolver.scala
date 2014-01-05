@@ -19,7 +19,7 @@ trait Solver {
 }
 
 object SetSolver {
-  def forProblem(prob: Problem) = {
+  def forProblem(prob: Problem): SetSolver = {
     SetSolver(prob, Map() ++ (prob.vars map { v => v -> (0 to prob.board.spaces.length-1).toSet}), Nil)
   }
 }
@@ -28,7 +28,8 @@ case class SetSolver(prob: Problem, vals: Map[String,Set[Int]], cons: List[Secon
   val board = prob.board;
 
   def unique = vals.values forall { _.size==1 }
-  def multiple = solveAtMost(2).size>1
+  //def multiple = solveAtMost(2).size>1
+  def multiple = solve().size>1
 
   def impose(c: Constraint): SetSolver = c match {
     case p: PrimaryConstraint => {

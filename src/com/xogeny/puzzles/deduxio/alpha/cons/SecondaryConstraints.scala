@@ -38,7 +38,7 @@ case class AdjacentTo(V1: String, V2: String) extends PositiveSecondaryConstrain
 }
 
 case object GreaterThan extends SecondaryConstraintGenerator {
-  def generate(board: Board, v1: String, s1: Space, v2: String, s2: Space) = if (s1.number<s2.number) List(GreaterThan(v1, v2)) else Nil
+  def generate(board: Board, v1: String, s1: Space, v2: String, s2: Space) = if (s1.number>s2.number) List(GreaterThan(v1, v2)) else Nil
 }
 case class GreaterThan(V1: String, V2: String) extends PositiveSecondaryConstraint(V1, V2) {
   def satisfies(board: Board, s1: Space, s2: Space): Boolean = s1.number>s2.number;

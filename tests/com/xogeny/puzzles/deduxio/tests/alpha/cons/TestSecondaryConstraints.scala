@@ -73,4 +73,13 @@ class TestSecondaryConstraints extends FunSuite {
     assert(lset ++ eset == ngset);
     assert(gset ++ eset == nlset);
   }
+
+  test("More GreaterThan testing") {
+    val c = GreaterThan("C", "B");
+    val sol = Map("A" -> 0, "B" -> 7, "C" -> 8);
+    val bv = Samples.B1.spaces(7).number;
+    val cv = Samples.B1.spaces(8).number;
+    assert(c.consistent(Samples.B1, sol));
+    assert(cv>bv);
+  }
 }

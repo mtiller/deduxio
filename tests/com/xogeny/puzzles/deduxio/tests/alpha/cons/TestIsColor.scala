@@ -24,4 +24,13 @@ class TestIsColor extends FunSuite {
     val sets = c.evaluate(Samples.B1);
     assert(sets==Set(6, 7, 8))
   }
+
+  test("IsColor generator") {
+    val prob = Problem(Samples.B1, Set("A"));
+    val sol = Map("A" -> 0);
+    val cons = IsColor.valid(prob, sol);
+    cons.toList forall { c: Constraint =>
+      c.consistent(Samples.B1, sol);
+    }
+  }
 }

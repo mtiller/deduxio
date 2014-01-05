@@ -11,7 +11,9 @@ class AllCons extends Suites(
   new TestIsNumber,
   new TestIsOnPath,
   new TestIsRow,
-  new TestPrimaryNot
+  new TestGenerators,
+  new TestPrimaryNot,
+  new TestSecondaryConstraints
 ) {
 
 }
