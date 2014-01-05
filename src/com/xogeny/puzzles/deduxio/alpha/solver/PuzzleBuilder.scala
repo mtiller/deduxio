@@ -20,7 +20,7 @@ case class PuzzleBuilder(seed: Long, prob: Problem, sol: Map[String,Int], scorer
     case x :: y if solver.unique => keep
     case x :: y => sufficient(solver.impose(x), x :: keep, y);
   }
-  val fast = false;
+  val fast = true;
   val baseConstraints = {
     Random.setSeed(seed);
     /* Compute set of all consistent primary constraints (positive and negative) and then randomize and sort them */

@@ -28,8 +28,7 @@ case class SetSolver(prob: Problem, vals: Map[String,Set[Int]], cons: List[Secon
   val board = prob.board;
 
   def unique = vals.values forall { _.size==1 }
-  //def multiple = solveAtMost(2).size>1
-  def multiple = solve().size>1
+  def multiple = solveAtMost(2).size>1
 
   def impose(c: Constraint): SetSolver = c match {
     case p: PrimaryConstraint => {
