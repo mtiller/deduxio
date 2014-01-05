@@ -41,6 +41,11 @@ case class SetSolver(prob: Problem, vals: Map[String,Set[Int]], cons: List[Secon
     }
   }
 
+  override def impose(cl: List[Constraint]): SetSolver = cl match {
+    case Nil => this
+    case x :: y => impose(y).impose(x)
+  }
+
   def solve(): Set[Map[String,Int]] = solutionStream(Map[String,Int](), None, prob.vars.toList, cons).toSet;
   def solveAtMost(atmost: Int): Set[Map[String,Int]] = (solutionStream(Map[String,Int](), None, prob.vars.toList, cons) take atmost).toSet
 
