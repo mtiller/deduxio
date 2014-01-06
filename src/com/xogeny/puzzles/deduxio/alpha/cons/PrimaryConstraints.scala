@@ -5,20 +5,58 @@ import com.xogeny.puzzles.deduxio.alpha.repr._
 /**
  * Created by mtiller on 1/4/14.
  */
+
+/**
+ * A PrimaryConstraint is one that involves only one variable.  Note that this class
+ * is sealed.  This means all primary constraints are defined in this file.
+ * @param v The variable associated with the constraint
+ */
 sealed abstract class PrimaryConstraint(val v: String) extends Constraint {
   def satisfies(board: Board, s: Space): Boolean;
+
+  /**
+   * The evaluate method is used to, on a given board, which squares satisfy this constraint.
+   * @param board The specified board
+   * @return A list of squares on the specified board (that satisfy this constraint)
+   */
   def evaluate(board: Board): Set[Int] = (for (s <- board.elements; if satisfies(board, s._2)) yield s._1).toSet;
 }
 
+/**
+ * This class is used to generate sets of primary constraints.  It works by looping over all variables
+ * in the problem, then identifying the Space associated with that variable in the solution and then
+ * generating a list of constraints (for the specified constraint type) that are consistent with that
+ * solution for that variable.
+ */
 trait PrimaryConstraintGenerator extends ConstraintGenerator {
+  /**
+   * This method computes the set of all valid (consistent) constraints of a given type for a specified
+   * board and solution
+   * @param prob The specified board (along with solution variables)
+   * @param sol The specified solution
+   * @return A set of constraints that are consistent with the board and solution
+   */
   def valid(prob: Problem, sol: Map[String,Int]): Set[Constraint] = {
     for (v: String <- prob.vars;
          s: Space <- (sol.get(v) map { prob.board.spaces(_) }).toList;
          c <- generate(prob.board, v, s)) yield c;
   }
+
+  /**
+   * This method is filled in by each subclass.  It generates the list of all constraints (for that
+   * subclass) that can be applied to the specifid space on the specified board.
+   * @param board The specified board
+   * @param v The variable to be solved for
+   * @param s The spaces that the constraint will apply to
+   * @return A list of all constraint that are consistent with the specified space
+   */
   def generate(board: Board, v: String, s: Space): List[Constraint];
 }
 
+/**
+ * This class represents all "normal" primary constraints but NOT their inverses.
+ * @param V The variable to be solved for
+ */
 sealed abstract class PositivePrimaryConstraint(V: String) extends PrimaryConstraint(V);
 
 class SpaceBasedConstraintGenerator(f: ((String, Board, Space) => PositivePrimaryConstraint))

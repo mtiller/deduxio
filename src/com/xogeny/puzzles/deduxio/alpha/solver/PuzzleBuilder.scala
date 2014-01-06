@@ -20,26 +20,18 @@ case class PuzzleBuilder(seed: Long, prob: Problem, sol: Map[String,Int], scorer
     case x :: y if solver.unique => keep
     case x :: y => sufficient(solver.impose(x), x :: keep, y);
   }
-  val fast = false;    // This actually seems to make things slower!?! (sufficiency checking taking lots of time???)
   val verbose = false;
   val baseConstraints = {
     Random.setSeed(seed);
     /* Compute set of all consistent primary constraints (positive and negative) and then randomize and sort them */
     val pcons = Random.shuffle(PuzzleBuilder.pgens flatMap { _.valid(prob, sol) }) sortBy { scorer.score(_) }
     if (verbose) println("This problem has "+pcons.length+" consistent primary constraints")
-    /* Find a subset that is sufficient to fully identify the solution */
-    val psuf = if (fast) sufficient(SetSolver.forProblem(prob), Nil, pcons) else pcons;
-    if (verbose) println("Took "+psuf.length+" primaries out of "+pcons.length+" to be sufficient")
 
     /* Compute set of all consistent secondary constraints (positive and negative) and then randomize and sort them */
     val scons = Random.shuffle(PuzzleBuilder.sgens flatMap { _.valid(prob, sol) }) sortBy { scorer.score(_) }
     if (verbose) println("This problem has "+scons.length+" consistent secondary constraints");
 
-    /* Find a subset that is sufficient to fully identify the solution */
-    val ssuf = if (fast) sufficient(SetSolver.forProblem(prob), Nil, scons) else scons;
-    if (verbose) println("Took "+ssuf.length+" secondaries out of "+scons.length+" to be sufficient")
-
-    psuf ::: ssuf
+    pcons ::: scons
   }
   private def trim(given: List[Constraint], left: List[Constraint], solver: Solver): List[Constraint] = left match {
     case Nil => given
