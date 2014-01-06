@@ -2,9 +2,9 @@ package com.xogeny.puzzles.deduxio.alpha.tool
 
 import com.xogeny.puzzles.deduxio.alpha.solver._
 import com.xogeny.puzzles.deduxio.alpha.repr._
-import com.xogeny.puzzles.deduxio.alpha.render.SVGRenderer
-import scala.reflect.io.File
+import com.xogeny.puzzles.deduxio.alpha.render._
 import com.xogeny.puzzles.deduxio.alpha.cons._
+import scala.reflect.io.File
 
 /**
  * Created by mtiller on 1/5/14.
@@ -47,10 +47,12 @@ object GenTool {
   def main(argc: Array[String]) = {
     (0 to 100) foreach { seed =>
       val config = P5x5_4;
-      val (prob, cons, sol, sum) = config.generate(seed, false);
+      val (prob, cons, sol, sum) = config.generate(seed, verbose=false);
       val diff = "%04d".format(sum)
       val svg = SVGRenderer.render(prob.board, cons, sol)
       File("output/puzzle_"+diff+"_seed-"+seed+".html").writeAll(svg)
+      val json = JSONRenderer.render(prob.board, cons, sol)
+      File("output/puzzle_"+diff+"_seed-"+seed+".json").writeAll(json)
     }
   }
 }
