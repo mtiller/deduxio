@@ -6,6 +6,11 @@ import com.xogeny.puzzles.deduxio.alpha.repr._
 /**
  * Created by mtiller on 1/5/14.
  */
+
+/**
+ * This object is used to generate JSON code about a given problem and solution.  I expect this to be the
+ * gateway to any programs or web-apps built around these puzzles.
+ */
 object JSONRenderer {
   def render(board: Board, cons: List[Constraint], sol: Map[String,Int]) = {
     val bobj = renderBoard(board);

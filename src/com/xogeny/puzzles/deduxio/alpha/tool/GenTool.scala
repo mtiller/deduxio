@@ -10,10 +10,22 @@ import scala.reflect.io.File
  * Created by mtiller on 1/5/14.
  */
 
+/**
+ * This trait is just a wrapper around the notion that it should
+ * be possible to isolate all parameters for building problems
+ * except for the seed.
+ * @tparam T Additional data required for a given configuration
+ */
 trait GeneratorConfiguration[T] {
   def generate(seed: Int, verbose: Boolean): (Problem, List[Constraint], Map[String,Int], T);
 }
 
+/**
+ * This is some boilerplate code for generating puzzles that satisfies the
+ * GeneratorConfiguration trait.
+ * @param nvars The number of variables
+ * @param size The size of the problem to generate (assumes a square board)
+ */
 class StandardConfiguration(nvars: Int, size: Int) extends GeneratorConfiguration[Int] {
   def generate(seed: Int, verbose: Boolean): (Problem, List[Constraint], Map[String,Int], Int) = {
     println("Seed: "+seed);
@@ -37,12 +49,16 @@ class StandardConfiguration(nvars: Int, size: Int) extends GeneratorConfiguratio
   }
 }
 
+/* A bunch of standard configurations */
 case object P4x4_3 extends StandardConfiguration(3, 4);
 case object P5x5_4 extends StandardConfiguration(4, 5);
 case object P6x6_5 extends StandardConfiguration(5, 6);
 case object P6x6_7 extends StandardConfiguration(7, 6);
 case object P9x9_3 extends StandardConfiguration(3, 9);
 
+/**
+ * This object is used as the main function for generating puzzles.
+ */
 object GenTool {
   def main(argc: Array[String]) = {
     (0 to 100) foreach { seed =>

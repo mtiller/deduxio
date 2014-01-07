@@ -6,6 +6,11 @@ import com.xogeny.puzzles.deduxio.alpha.repr._
  * Created by mtiller on 1/4/14.
  */
 
+/**
+ * A SecondaryConstraint always imposes a constraint between two variables.
+ * @param v1 The first variable (order matters, e.g. GreaterThan)
+ * @param v2 The second variable (order matters, e.g. GreaterThan)
+ */
 sealed abstract class SecondaryConstraint(val v1: String, val v2: String) extends Constraint {
   def involves(i1: String, i2: String) = (i1==v1 && i2==v2) || (i1==v2 && i2==v1)
   def satisfies(board: Board, s1: Space, s2: Space): Boolean;
@@ -15,6 +20,9 @@ sealed abstract class SecondaryConstraint(val v1: String, val v2: String) extend
                                                      if satisfies(board, s1._2, s2._2)) yield (s1._1, s2._1)).toSet;
 }
 
+/**
+ * This class can be used as a generator for secondary constraints
+ */
 trait SecondaryConstraintGenerator extends ConstraintGenerator {
   def valid(prob: Problem, sol: Map[String,Int]): Set[Constraint] = {
     for (v1 <- prob.vars;
@@ -28,8 +36,17 @@ trait SecondaryConstraintGenerator extends ConstraintGenerator {
   def generate(board: Board, v1: String, s1: Space, v2: String, s2: Space): List[SecondaryConstraint];
 }
 
+/**
+ * This class represents a non-inverted secondary constraint
+ * @param V1 The first variable (order matters)
+ * @param V2 The second variable (order matters)
+ */
 sealed abstract class PositiveSecondaryConstraint(V1: String, V2: String) extends SecondaryConstraint(V1, V2);
 
+/**
+ * This constraint indicates that the two named spaces are either above/below each other or left/right
+ * of each other (not diagonal)
+ */
 case object AdjacentTo extends SecondaryConstraintGenerator {
   def generate(board: Board, v1: String, s1: Space, v2: String, s2: Space) = if (s1.adjacent(s2)) List(AdjacentTo(v1, v2)) else Nil
 }

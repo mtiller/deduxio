@@ -5,13 +5,15 @@ package com.xogeny.puzzles.deduxio.alpha.repr
  */
 
 object Color {
-  def lowest = Black;
-  def highest = Purple;
   val all = List(Red, Green, Blue, Yellow, Purple, Cyan, CA, CB, CC);
 }
 
+/**
+ * This class is used to represent all colors in the puzzle.
+ * @param c A color number (probably not used anywhere)
+ * @param rgb The RGB string for the color.
+ */
 abstract sealed class Color(c: Int, val rgb: String);
-case object Black extends Color(0, "#000000");
 case object Red extends Color(1, "#ff6060");
 case object Green extends Color(2, "#60ff60");
 case object Blue extends Color(3, "#8080ff");
